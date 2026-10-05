@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=5">
+<meta name="theme-color" content="#16306E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="321社交生活">
+<meta name="description" content="321學神院生活操練課程：52週從有己的社交走向無己的愛，成為和好的使者。">
+<title>321社交生活</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+<style>:root{--brand:#16306E;--brand2:#2A55B0;--gold:#C9962A;--gold2:#F2C75C;--bg:#F8F4EA;--card:#FFFFFF;--ink:#2A2633;--mute:#6E6878;--line:#E6DFD2;--soft:#EEF1F8;--ok:#3E8E5A;--warn:#C27A1A;--bad:#B8473E;--s1:#C9961E;--s2:#4F8A3A;--s3:#C46A2E;--s4:#2E6DB4;--s5:#7A4BA8;--fs:17px;--serif:"Noto Serif TC","Noto Serif CJK TC","Songti TC","PMingLiU",serif;--sans:-apple-system,"PingFang TC","Noto Sans TC","Noto Sans CJK TC","Microsoft JhengHei",sans-serif}html[data-lang=zs]{--serif:"Noto Serif SC","Noto Serif CJK SC","Songti SC","SimSun",serif;--sans:-apple-system,"PingFang SC","Noto Sans SC","Noto Sans CJK SC","Microsoft YaHei",sans-serif}html[data-lang=en]{--serif:Georgia,"Times New Roman",serif;--sans:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17141F;--card:#221E2C;--ink:#EDE8F3;--mute:#A9A2B6;--line:#363044;--soft:#2B2540;--brand:#8FB0F5;--brand2:#A9C3FA}}:root[data-theme=dark]{--bg:#17141F;--card:#221E2C;--ink:#EDE8F3;--mute:#A9A2B6;--line:#363044;--soft:#2B2540;--brand:#8FB0F5;--brand2:#A9C3FA}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:var(--fs);line-height:1.65}body{padding-bottom:calc(76px + env(safe-area-inset-bottom));min-height:100vh}button,input,textarea,select{font:inherit;color:inherit}a{color:var(--brand)}#app{max-width:720px;margin:0 auto;padding:0 16px}.top{position:sticky;top:0;z-index:20;background:var(--bg);padding:calc(10px + env(safe-area-inset-top)) 0 8px;display:flex;align-items:center;gap:10px}.top h1{font-size:1.08em;margin:0;flex:1;font-weight:700;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ib{border:0;background:var(--card);border-radius:12px;min-width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(0,0,0,.08);cursor:pointer;padding:0 10px}.ib svg{width:22px;height:22px}.card{background:var(--card);border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 1px 4px rgba(40,30,70,.07);border:1px solid var(--line)}.eyebrow{font-size:.78em;color:var(--mute);letter-spacing:.08em;margin:0 0 6px;font-weight:600}.muted{color:var(--mute)}.sm{font-size:.88em}.xs{font-size:.76em}.c{text-align:center}.h2{font-size:1.25em;font-weight:700;margin:4px 0 6px;font-family:var(--serif);line-height:1.4}.h3{font-size:1.05em;font-weight:700;margin:2px 0 6px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:14px;padding:10px 16px;min-height:46px;cursor:pointer;font-weight:600}.btn.pri{background:var(--brand);border-color:var(--brand);color:#fff}.btn.gold{background:linear-gradient(180deg,#F5D47A,#D9A830);border-color:#C9962A;color:#3A2A00}.btn.full{width:100%}.btn.sm{min-height:36px;padding:6px 12px;font-size:.88em;border-radius:11px}.row{display:flex;gap:10px;align-items:center}.wrap{flex-wrap:wrap}.grow{flex:1}.sp{justify-content:space-between}.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 14px;white-space:nowrap;cursor:pointer;font-size:.9em}.chip.on{background:var(--brand);color:#fff;border-color:var(--brand)}.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:6px 4px calc(6px + env(safe-area-inset-bottom))}.tabbar button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.72em;color:var(--mute);min-width:60px;padding:4px;cursor:pointer}.tabbar button svg{width:24px;height:24px}.tabbar button.on{color:var(--brand);font-weight:700}.hero{border-radius:20px;overflow:hidden;position:relative;margin:8px 0 12px;aspect-ratio:16/9;background:#1F3C88 center/cover no-repeat}.hero .cap{position:absolute;left:0;right:0;bottom:0;padding:16px;color:#fff;background:linear-gradient(transparent,rgba(20,10,40,.78))}.hero .cap b{font-family:var(--serif);font-size:1.2em;display:block;line-height:1.35}.bar{height:8px;background:var(--soft);border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--gold));border-radius:8px}.stage{border-left:5px solid var(--sc,var(--brand));padding-left:12px}.tag{display:inline-block;font-size:.74em;padding:2px 9px;border-radius:999px;background:var(--soft);color:var(--brand);font-weight:700;letter-spacing:.04em}.wk{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);cursor:pointer}.wk:last-child{border-bottom:0}.wk .n{width:38px;height:38px;border-radius:12px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--brand);flex:none;font-size:.9em}.wk .n.done{background:var(--ok);color:#fff}.dots{display:flex;gap:4px}.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--ok)}.sec{margin:18px 0}.sec>.lbl{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--brand);margin-bottom:8px;letter-spacing:.06em}.sec>.lbl .k{width:34px;height:34px;border-radius:10px;background:var(--brand);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif)}.scr{font-family:var(--serif);font-size:1.04em;line-height:1.9}.scr sup{color:var(--gold);font-weight:700;font-size:.62em;margin-right:2px;font-family:var(--sans)}.prose p{margin:0 0 .9em;font-family:var(--serif);line-height:1.95;text-align:justify}.light{background:linear-gradient(135deg,#FFF8E2,#F6EEFF);border-radius:14px;padding:14px 16px;border:1px solid #EADFBF;color:#3A2E12}:root[data-theme=dark] .light{background:#2E2840;color:var(--ink);border-color:#4A4060}@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .light{background:#2E2840;color:var(--ink);border-color:#4A4060}}.light b{color:#8A6510}.q{margin:10px 0}.q label{display:block;font-weight:600;margin-bottom:6px}textarea,input[type=text],input[type=date],select{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:var(--bg);min-height:46px}textarea{min-height:84px;resize:vertical;line-height:1.6}.pray{font-family:var(--serif);background:var(--soft);border-radius:14px;padding:14px 16px;line-height:1.9}.do{border:2px dashed var(--gold);border-radius:14px;padding:14px 16px;background:rgba(242,199,92,.08)}.chk{display:flex;gap:10px;align-items:center;margin-top:10px;cursor:pointer;font-weight:600}.chk input{width:22px;height:22px;accent-color:var(--brand)}.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#2A2140;color:#fff;padding:10px 18px;border-radius:999px;z-index:90;font-size:.92em;opacity:0;transition:opacity .25s;pointer-events:none;max-width:88vw;text-align:center}.toast.on{opacity:1}.sheet{position:fixed;inset:0;background:rgba(20,10,40,.45);z-index:60;display:none;align-items:flex-end;justify-content:center}.sheet.on{display:flex}.sheet .in{background:var(--card);width:100%;max-width:720px;max-height:88vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom))}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;cursor:pointer;min-height:92px}.tile b{display:block;margin-top:4px}.tile .ic{font-size:1.4em}.ocard{border-radius:18px;padding:20px;color:#fff;background:linear-gradient(135deg,#1F3C88,#3A6FD0);position:relative;overflow:hidden}.ocard .v{font-family:var(--serif);opacity:.95;line-height:1.85;margin:10px 0}.ocard .r{font-size:.82em;opacity:.85}.mini{display:flex;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}.mini:last-child{border-bottom:0}.person{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.person .av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;flex:none}.seg{display:flex;background:var(--soft);border-radius:14px;padding:4px;gap:4px;margin:6px 0 10px}.seg button{flex:1;border:0;background:none;padding:9px 4px;border-radius:11px;font-weight:600;color:var(--mute);cursor:pointer;font-size:.92em}.seg button.on{background:var(--card);color:var(--brand);box-shadow:0 1px 3px rgba(0,0,0,.1)}.scale{display:flex;gap:6px;margin:8px 0 14px}.scale button{flex:1;border:1px solid var(--line);background:var(--card);border-radius:10px;height:42px;cursor:pointer;font-weight:700}.scale button.on{background:var(--brand);color:#fff;border-color:var(--brand)}.empty{text-align:center;color:var(--mute);padding:22px 8px}.fab{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:40;width:56px;height:56px;border-radius:50%;border:0;background:linear-gradient(135deg,#1F3C88,#3A6FD0);color:#fff;box-shadow:0 6px 18px rgba(31,60,136,.35);font-weight:800;cursor:pointer;font-size:.86em}.xz{position:fixed;inset:0;z-index:70;background:var(--bg);display:none;flex-direction:column}.xz.on{display:flex}.xz .hd{display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 16px 10px;border-bottom:1px solid var(--line);background:var(--card)}.xz .bd{flex:1;overflow:auto;padding:14px 16px}.xz .ft{display:flex;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--card)}.xm{max-width:88%;padding:10px 14px;border-radius:16px;margin:6px 0;white-space:pre-wrap;line-height:1.7}.xm.u{margin-left:auto;background:var(--brand);color:#fff;border-bottom-right-radius:6px}.xm.a{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:6px}.spk{position:fixed;left:12px;right:12px;bottom:calc(80px + env(safe-area-inset-bottom));z-index:45;background:#2A2140;color:#fff;border-radius:16px;padding:8px 10px;display:flex;align-items:center;gap:8px;max-width:696px;margin:0 auto}.spk button{border:0;background:rgba(255,255,255,.14);color:#fff;border-radius:10px;min-width:40px;height:38px;cursor:pointer}.spk .t{flex:1;font-size:.84em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.play{border:0;background:var(--soft);color:var(--brand);border-radius:10px;height:34px;padding:0 10px;cursor:pointer;font-size:.8em;font-weight:700;margin-left:auto}.lvl{display:flex;align-items:center;gap:12px}.lvl .bdg{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,#F5D47A,#C9962A);display:flex;align-items:center;justify-content:center;font-weight:800;color:#3A2A00;font-family:var(--serif);font-size:1.3em;flex:none}.banner{background:var(--brand);color:#fff;padding:10px 14px;border-radius:14px;margin:10px 0;cursor:pointer;font-size:.92em}.ob{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:24px 0}.opt{display:block;width:100%;text-align:left;border:2px solid var(--line);background:var(--card);border-radius:16px;padding:14px 16px;margin:8px 0;cursor:pointer}.opt.on{border-color:var(--brand);background:var(--soft)}.opt b{display:block}hr.s{border:0;border-top:1px solid var(--line);margin:14px 0}.kv{font-family:var(--serif);font-size:1.08em;line-height:1.85}.pill{display:inline-block;padding:2px 8px;border-radius:8px;font-size:.75em;font-weight:700}.foot{text-align:center;color:var(--mute);font-size:.8em;padding:24px 0 8px;line-height:1.8}.seg.sc{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}.seg.sc::-webkit-scrollbar{display:none}.seg.sc button{flex:1 0 auto;padding:9px 10px;white-space:nowrap}.col{display:flex;flex-direction:column;gap:6px}.dots.ww i{width:9px;height:9px}.ww-i{display:inline-block;width:14px;text-align:center;font-size:.9em}.ocard .btn{color:var(--brand);background:#fff;border-color:#fff}</style>
+</head>
+<body>
+<div id="app"><div class="empty" style="padding-top:40vh">321社交生活</div></div>
+<nav id="tabbar" class="tabbar"></nav>
+<button id="fab" class="fab" onclick="openXz()">小智</button>
+<div id="sheet" class="sheet" onclick="if(event.target===this)closeSheet()"><div class="in" id="sbody"></div></div>
+<div id="toast" class="toast"></div>
+<script>
+/* 321社交生活 · core (ES5) */
+var APPVER = '1.0.202610050654';
+var KEY = 'sl321';
+var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
+var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
+var UNITS = [[1, 1, 4], [2, 5, 8], [3, 9, 12], [4, 13, 21], [5, 22, 24], [6, 25, 27], [7, 28, 30], [8, 31, 35], [9, 36, 40], [10, 41, 44], [11, 45, 48], [12, 49, 52]];
+var SCOL = ['', '#C9961E', '#4F8A3A', '#C46A2E', '#2E6DB4', '#7A4BA8'];
+var PATHS = { main: [], quiet: [1, 8, 9, 22, 29, 31], digital: [5, 25, 26, 27, 23, 24, 34, 46], stranger: [2, 29, 36, 37, 40, 34], recon: [4, 30, 41, 42, 43, 44], senior: [9, 12, 19, 31, 37, 39, 50, 51], leader: [1, 6, 10, 13, 22, 26, 30, 33, 37, 43, 46, 50] };
+(function () { for (var i = 1; i <= 52; i++) PATHS.main.push(i); })();
+var PATH_IDS = ['main', 'quiet', 'digital', 'stranger', 'recon', 'senior', 'leader'];
+/* ---------- utils ---------- */
+function $(s, r) { return (r || document).querySelector(s); }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function pad(n) { return (n < 10 ? '0' : '') + n; }
+function lid(w, d) { return 'w' + pad(w) + 'd' + d; }
+function now() { return new Date().getTime(); }
+function today() { var d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+function fmtDate(ts) { var d = new Date(ts); return (d.getMonth() + 1) + '/' + d.getDate(); }
+function uid() { return now().toString(36) + Math.random().toString(36).slice(2, 6); }
+function each(o, f) { for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) f(k, o[k]); }
+function stageOf(w) { for (var i = 0; i < STAGES.length; i++) if (w >= STAGES[i][1] && w <= STAGES[i][2]) return STAGES[i][0]; return 1; }
+function unitOf(w) { for (var i = 0; i < UNITS.length; i++) if (w >= UNITS[i][1] && w <= UNITS[i][2]) return UNITS[i][0]; return 1; }
+function isoWeek(d) { d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())); var day = d.getUTCDay() || 7; d.setUTCDate(d.getUTCDate() + 4 - day); var y = new Date(Date.UTC(d.getUTCFullYear(), 0, 1)); return Math.ceil((((d - y) / 864e5) + 1) / 7); }
+function toast(m) { var t = $('#toast'); t.textContent = m; t.className = 'toast on'; clearTimeout(toast.h); toast.h = setTimeout(function () { t.className = 'toast'; }, 2200); }
+/* ---------- state ---------- */
+function defState() {
+return { v: 1, lang: '', name: '', mode: '', path: 'main', start: today(), done: {}, notes: {}, jr: [], ppl: [], pr: [], fruits: [], rc: [], cardLog: [], way: [], t235: [], sun: {}, five: [], host: [], ww: {}, dg: {}, dgChk: null, set: { fs: 17, human: 1, voice: '', rate: 0, theme: '', sab: '' }, seen: {} };
+}
+function load() {
+var s = null;
+try { s = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { s = null; }
+var d = defState();
+if (!s) return d;
+each(d, function (k, v) { if (s[k] === undefined) s[k] = v; });
+each(d.set, function (k, v) { if (s.set[k] === undefined) s.set[k] = v; });
+return s;
+}
+var S = load();
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast(T('saveFail')); } }
+/* ---------- i18n ---------- */
+var I18N = {"zh":{"appName":"321社交生活","tagline":"從有己的社交，到無己的愛；成為和好的使者","saveFail":"儲存失敗：手機空間可能不足","netErr":"網路連線失敗","reading":"朗讀中","ttsPrep":"正在準備語音…","noTTS":"這台裝置不支援朗讀","xz":"小智","xzBtn":"小智","xzHi":"平安！我是小智，陪你一起操練社交生活，在人群中活出基督。","xzNote":"小智是 AI 陪伴，不是牧者或輔導，也不能代替聖靈與真實的屬靈群體。重要的事，請與你的牧者和屬靈同伴一起禱告。","xzQuick":"我很怕跟人相處，怎麼辦？|朋友誤會我，我該怎麼開口？|群組裡有人一直酸我|怎樣和鄰居建立關係？|我想向朋友分享福音，但怕尷尬","xzOffline":"目前沒有網路，小智暫時陪不了你。別忘了，最好的同伴是聖靈與神的話，你隨時可以向主傾心吐意。","xzFail":"小智暫時連不上線，請稍後再試。你也可以先把這件事帶到主面前禱告。","xzThinking":"小智思考中…","xzNew":"新對話","xzPh":"想問小智甚麼？","send":"送出","upToDate":"已是最新版本","xzLessonQ":"我正在上「{0}」這一課，請幫我更明白，並告訴我今天可以怎樣活出來。","xzCtx":"【對方正在上的課】週主題：{0}；本課：{1}；經文 {2}：{3}\n本課短講摘要：{4}","xzRecon":"我和一個人之間有衝突，我想照聖經的方式去和好。請陪我想一想下一步，也提醒我要注意的地方。","tab_today":"今日","tab_course":"課程","tab_one":"關係","tab_serve":"服事","tab_me":"我的","loading":"載入中…","loadFail":"讀不到課程檔案","retry":"重試","obVerse":"「我賜給你們一條新命令，乃是叫你們彼此相愛；我怎樣愛你們，你們也要怎樣相愛。」（約13:34）","obMode":"你打算怎樣使用？","obPath":"從哪一條路開始？","obName":"你的稱呼（可留空）","obStart":"開始愛的旅程","obPick":"請先選擇使用方式","mode_self":"我自己開始","mode_self_d":"每天10分鐘，建議再配一位屬靈同伴","mode_group":"和小組一起走","mode_group_d":"每天個人操練＋每週小組分享","mode_church":"全教會愛鄰舍季","mode_church_d":"講台、小組與每日操練同步，一起走進社區","mode_air":"國度321空中團契","mode_air_d":"線上屬靈家人，一起操練321","gMorning":"早安","gDay":"平安","gEve":"晚安","newVer":"已有新版本，點這裡立即更新","heroLine":"長桌與燈：在十字架的光中圍坐分享","progress":"已完成 {0}／{1} 堂","t_recon":"和好路徑","t_recon_d":"照太18章一步步走","t_pray":"代禱牆","t_pray_d":"為肢體守望","t_fruit":"九果自評","t_fruit_d":"看見生命的成長","t_xz_d":"社交生活的陪伴","foot":"國度321空中團契 · 321學神院生活操練課程\n願一切榮耀歸給耶穌","allDone":"這條路你走完了！","allDone_d":"一切都是神的恩典。選一條新的路，或回頭溫習。","choosePath":"選擇路徑","dN":"第{0}堂","wkN":"第{0}週","startToday":"開始今天的操練","quick3":"3分鐘","full":"完整","cardOfWeek":"本週愛鄰舍卡","tapAct":"點我看行動","sunday":"週末生活實驗室","sunR":"我的計畫：要去愛誰？做甚麼？","sunO":"實際發生了甚麼？我看見神怎樣作工？","sunS":"感恩與分享：我要告訴誰？","see":"看","hear":"聽","think":"想","speak":"講","do":"行","listen":"朗讀","light321":"321光照","writeHere":"寫下你的回應…","askXz":"問小智","myPrayer":"我自己的禱告","quickTitle":"一句話","iWill":"我願意今天去做","reviewQ":"檢討：今天我在哪裡有己？哪裡無己？","reviewPh":"簡短寫下就好","finish":"完成今天的操練","doneAgain":"已完成 · 再次標記","prev":"上一堂","next":"下一堂","weekInfo":"本週","lvlUp":"你成為「{0}」了！","glory":"「不是我，乃是神的恩與我同在。」一切榮耀歸給耶穌。","amen":"阿們","doneToast":"完成了！願主使這粒種子結果子","weekDoneToast":"這週五堂都完成了，週末到生活實驗室實作吧","memory":"背誦經文","groupQ":"小組三問","copyShare":"複製／分享給小組","copied":"已複製","paths":"學習路徑","stageN":"第{0}階段","wRange":"第{0}–{1}週","pathSet":"已切換學習路徑","pathNote":"各路徑共用同一份進度：在任何路徑完成的課，在主課程也算完成。","path_main":"52週主課程","path_main_d":"從觀念到事工，完整走過五重改變。","path_home":"進入神的家","path_home_d":"6週・給新朋友、初信者與受洗班。","path_back":"回家之路","path_back_d":"8週・給在教會受過傷、離開或想離開的人。慢慢來，主等你。","path_rest":"服事不耗竭","path_rest_d":"12週・給熱心卻疲憊的同工。","path_lead":"無己的領導","path_lead_d":"12週・給牧者、長執與小組長。","path_air":"空中團契入家","path_air_d":"6週・給國度321空中團契的新成員。","st1_d":"改變觀點：社交的源頭是三一神，問題的根源是有己。","st2_d":"被神的愛充滿，在人際中結出聖靈九果。","st3_d":"舌頭、手機與界線，都讓耶穌作王。","st4_d":"友誼、鄰舍、接待，主動和好。","st5_d":"作鹽作光、和好的使者，建立235屬靈同伴網絡。","seg_cards":"愛鄰舍卡","seg_920":"920圖譜","seg_pray":"代禱","seg_recon":"和好","cardsIntro":"共 {0} 張愛鄰舍卡。每週一張，對一個真實的人活出來。","doThis":"這週的行動","forWhom":"對誰？（可留空）","forWhomPh":"他的名字","iDidIt":"我做到了，感謝主","history":"紀錄","praiseGod":"感謝主！","me":"我","t920_d":"每個與你有關係的人都是你的「2」；操練無己的「0」，在關係中結出九種果子「9」。名字只存在你的手機。點名字可以記錄代禱與關心。","heatKey":"綠：7天內關心過　黃：30天內　灰：還沒有","pName":"名字","addPerson":"加入我的關係圖譜","noPeople":"先加入家人、朋友、鄰居或同事的名字吧。","c_grp":"小組","c_team":"服事團隊","c_lead":"牧者領袖","c_fam":"家人","c_hard":"難相處的那一位","lastCare":"上次 {0}","noCare":"還沒有紀錄","loggedPray":"已記下：為他禱告","loggedCare":"已記下：關心了他","lg_pray":"為他禱告","lg_care":"關心問候","lg_serve":"相聚吃飯","lg_recon":"和好行動","lg_card":"愛鄰舍卡","pNote":"代禱與備註（只存在你的手機）","fruitFor":"在這段關係中，我最需要結的果子","delConfirm":"確定刪除？","delete":"刪除","prPh":"寫下代禱事項（只存在你的手機）","addPr":"加入代禱","answered":"蒙應允","praying":"持續代禱中","noPr":"還沒有代禱事項","answeredList":"神的回應","safetyFirst":"安全優先","reconIntro":"和好導航根據馬太福音五章與十八章，一步一步陪你走。內容只存在你的手機。","reconWho":"對象（可用代稱）","reconNew":"開始一段和好路徑","someone":"某個人","stepN":"第{0}步／共{1}步","openers":"謙卑的開口（點一下複製）","nextStep":"下一步","reconDone":"交託給主，完成","reconPrivate":"和好的目標是得著這個人，不是贏得爭論。","seg_gifts":"恩賜","seg_way":"服事之路","seg_235":"235","seg_fruit":"九果","giftsTitle":"恩賜探索","giftsIntro":"36 個問題，約 6 分鐘。結果是「傾向」，不是標籤；請再加上肢體的回饋與實際服事來確認。","giftsStart":"開始探索","giftsRetake":"重新探索","giftsTop":"你最明顯的三個傾向","serveIdeas":"可以服事的地方：","giftsNote":"恩賜是為了建立身體，不是為了比較。請三位認識你的肢體也說說看你的恩賜。","giftsAskBtn":"請肢體給我回饋","giftsAsk":"我正在用《321教會生活》探索自己的恩賜。你覺得我在教會裡最能祝福人的地方是甚麼？請說一兩個具體的例子，謝謝你！","giftsScale":"1＝完全不像我　5＝非常像我。照實際的你作答，不是理想中的你。","seeResult":"看結果","answerAll":"還有 {0} 題沒有作答","wayTitle":"服事之路：靈・悟・命・侍・神","wayIntro":"每次與人相處、接待或關心人之前，用五個問題對準主。","wayWhat":"這次的相處（例：和鄰居吃飯）","yes":"是的","wayGo":"帶著無己的心去愛人","wayAll":"五個都對準了，願主透過你愛人！","wayPart":"把還沒對準的交給主，祂會幫助你。","t235_d":"2：與無己的人成為屬靈同伴；3：建立屬靈父母兒女的關係；5：成為五重職事的屬靈戰友團隊。","r_comp":"屬靈同伴（2）","r_comp_d":"每週互相問候、代禱、分享「行」的結果","r_parent":"我的屬靈父母（3）","r_parent_d":"陪伴我成長的人","r_child":"我陪伴的屬靈兒女（3）","r_child_d":"我願意陪他走一段路的人","r_team":"屬靈戰友團隊（5）","r_team_d":"使徒、先知、傳福音的、牧師、教師的職事配搭","fruitTitle":"九果自評","fruitIntro":"在朋友、鄰舍、同事與網路的情境中，誠實地看自己。只和自己比，不和別人比。","fruitCompare":"灰色：{0}　藍色：{1}","fruitLast":"上次自評：{0}","fruitSave":"儲存這次自評","fruitNote":"建議每季一次，也可請屬靈同伴幫你看。","saved":"已儲存","fr0":"仁愛","fr1":"喜樂","fr2":"和平","fr3":"忍耐","fr4":"恩慈","fr5":"良善","fr6":"信實","fr7":"溫柔","fr8":"節制","myLevel":"我的成長","templeNote":"每完成一週，就放上一塊活石；點石頭可看那一週。","statLessons":"完成的課","statCards":"愛鄰舍行動","statPrayers":"代禱事項","statNotes":"筆記","journal":"社交生活日誌","journal_d":"你的默想、禱告與檢討","settings":"設定","settings_d":"語言、字級、語音、備份","vision321":"三個基礎：耶穌是我的榜樣，聖經是我的準則，聖靈是我的引導。兩個核心：讓耶穌作王，讓耶穌得著一切的榮耀。一個目的：建立屬神的體系。","exportNotes":"匯出成文字檔","noNotes":"還沒有筆記。上課時寫下的回應會出現在這裡。","exported":"已匯出","language":"語言","langNote":"進度在三種語言間共用。","fontSize":"字級","theme":"外觀","auto":"自動","light":"淺色","dark":"深色","voice":"朗讀語音","humanVoice":"使用真人語音（需網路；沒有網路時改用手機內建語音）","v_yunjhe":"雲哲（台灣男聲）","v_yunfan":"雲帆（高清男聲）","v_xiaochen":"曉辰（高清女聲）","v_andrew":"Andrew","v_ava":"Ava","rate":"語速","testVoice":"我賜給你們一條新命令，乃是叫你們彼此相愛。","test":"試聽","howUse":"使用方式與稱呼","offline":"離線使用","offline_d":"下載目前語言的全年課程，在沒有網路時也能上課。","dlAll":"下載全部課程","dlDone":"下載完成，可離線使用","backup":"備份與還原","exportAll":"匯出備份","importAll":"匯入備份","importFail":"這不是有效的備份檔","about":"關於","aboutText":"321學神院・生活操練課程第六門。經文：新標點和合本（神版）；English: World English Bible。資料只存在你的手機。若有一天你在聖經裡看見與本課不同的亮光，請跟隨聖經。","checkUpd":"檢查更新","reset":"清除全部資料","resetConfirm":"確定要清除全部進度與筆記嗎？此動作無法復原。","lvlName0":"踏上愛的路","lvlName0_d":"神先愛了我們，你已經上路了","lvlName1":"學愛者","lvlName1_d":"從有己的社交，轉向無己的愛","lvlName2":"朋友","lvlName2_d":"被神的愛充滿，結出聖靈的果子","lvlName3":"好鄰舍","lvlName3_d":"言語、手機與界線都讓耶穌作王","lvlName4":"使人和睦者","lvlName4_d":"主動接待、勇敢和好","lvlName5":"和好的使者","lvlName5_d":"作鹽作光，建立屬神的關係網絡","k_看":"看","k_聽":"聽","k_想":"想","k_講":"講","k_行":"行","xzSys":"你是「小智」，《321社交生活》App 裡的陪伴者，屬於國度321空中團契、321學神院。你像一位謙卑、溫暖、滿有信心盼望與愛的屬靈朋友，陪伴使用者在朋友、家人、鄰舍、同事、網路與社會中活出基督，從有己的社交走向無己的愛，成為和好的使者。\n\n【界線】你不是聖靈，不能代替神；你絕不取代真實的牧者、輔導、屬靈父母、屬靈同伴與教會。總是把人引向耶穌、聖經、禱告與聖靈的引導，並鼓勵他走回面對面的真實關係。\n\n【321理念】三個基礎：耶穌是我的榜樣、聖經是我的準則、聖靈是我的引導。兩個核心：讓耶穌作王、讓耶穌得著一切的榮耀。一個目的：建立屬神的體系。有己是問題的根源，驕傲是離開本位、抓住權力；謙卑是回到本位、放下權力。驕傲激起驕傲、兩敗俱傷；謙卑帶動謙卑、達到雙贏。人比事重要，關係比東西重要。關係的次序：先與神，再與自己，再與人，再與事。920：每個與我有關係的人是我的「2」，操練無己的「0」，結出九果的「9」。235：屬靈同伴、屬靈父母兒女、五重職事團隊。\n\n【社交生活的回應原則】\n1. 先聽、再回應；先同理，再引向神的觀點。不說教、不定罪。\n2. 衝突時：先幫助對方看自己的部分（太7:3-5），再照太5:23-24、太18:15的方式私下、溫柔地溝通；不鼓勵背後議論或在群組公開指責。\n3. 安全優先：若涉及家暴、性騷擾或侵犯、跟蹤、詐騙、勒索、霸凌、威脅或犯罪，明確告訴對方不必獨自面對、不需要先私下去說，應先確保安全，尋求可信任的人、專業協助，必要時報警。不要用「饒恕」「和睦」「忍耐」叫人沉默或留在危險中。饒恕不等於立刻恢復信任。\n4. 接待與交友要有智慧：提醒與異性單獨相處、深夜、陌生網友、借貸金錢的界線。\n5. 傳福音不施壓、不把人當業績；友誼本身就有價值。\n6. 不談論政黨立場；不論斷特定宗派或人物。\n7. 遇到孤獨、社交焦慮、憂鬱、自我傷害念頭、醫療或法律問題，溫柔關心，不下診斷；鼓勵尋求輔導、醫療等專業協助與信任的人；若有立即危險，請他立刻聯絡當地緊急求助電話。\n\n【風格】一律用繁體中文。引用聖經用和合本，只在有把握時引用，絕不杜撰經文或出處。深入淺出、善用比喻、溫暖有盼望，回答精簡（通常兩三段）。回答會被朗讀：不用表格、不用 Markdown 符號，經文章節寫成可朗讀的形式（如「約翰福音十三章三十四節」）。結尾可給一個今天就能對一個真實的人做的小行動。","tab_grow":"操練","t_920":"920 圖譜","t_920_d":"為身邊的人代禱關心","t_words":"言語守望","t_words_d":"每晚三問省察言語","t_five":"五個名字","t_five_d":"福音友誼名單","path_quiet":"安靜的光","path_quiet_d":"6週・給內向、怕開口的人：從聆聽與禱告開始的小步社交。","path_digital":"數位原住民","path_digital_d":"8週・給青年：社群媒體、比較心與線上見證。","path_stranger":"異鄉人","path_stranger_d":"6週・給剛到新城市或在海外工作留學的人：找到屬靈的家，也成為接待人的人。","path_recon":"和好之路","path_recon_d":"6週・給正經歷關係破裂的人：饒恕、道歉、界線與和好。慢慢來，主與你同在。","path_senior":"樂齡同行","path_senior_d":"8週・給退休長者：從失落的人脈，到成為屬靈父母、陪伴下一代。","path_leader":"小組長帶領版","path_leader_d":"12週・每單元精選一週，給小組長帶小組走完核心內容。","seg_five":"五個名字","seg_host":"接待","seg_words":"言語守望","seg_digi":"數位安息","c_friend":"朋友","c_nb":"鄰居","c_work":"同事同學","c_seek":"還沒信主的朋友","lg_love":"愛的行動","lg_host":"接待","tableNote":"每完成一週，長桌旁就多一盞燈；點座位可看那一週。","statPeople":"關係圖譜","statWords":"言語守望","fiveIntroT":"五個名字","fiveAdd":"加入名字","fiveFull":"已經有五個名字了；可以先為他們禱告。","fiveToday":"今天為他禱告","fivePrayed":"我為他禱告了","fiveLove":"愛的行動","fiveStep":"友誼旅程","fivePrays":"可以這樣為他禱告","fiveNone":"寫下第一個名字，開始為他禱告。","loggedLove":"已記下：一個愛的行動","fiveJourney":"福音友誼的六步旅程","prayedN":"禱告 {0} 次","hostTitle":"接待計畫","hostWho":"要接待誰？","hostWhen":"日期","hostWhat":"準備做甚麼（例：一起吃麵）","hostAdd":"加入計畫","hostDoneBtn":"完成了","hostTips":"接待心法","hostIce":"破冰問題","hostDraw":"抽一題","hostNone":"還沒有計畫。這個月邀請一個人吃頓便飯吧。","hostPlans":"我的接待計畫","hostDoneList":"已完成的接待","wwTitle":"言語守望","wwIntro":"每晚花一分鐘，用三個問題省察今天的言語。21天為一個操練週期。「耶和華啊，求你禁止我的口，把守我的嘴！」（詩141:3）","wwA0":"有","wwA1":"一點","wwA2":"沒有","wwNote":"一句檢討、認罪或感恩（可留空）","wwSave":"儲存今晚的守望","wwStreak":"近21天守望了 {0} 天","wwBank":"好話句庫（點一下複製）","wwDone":"今晚的守望已儲存，願主祝福你的口","wwHist":"最近的守望","dgTitle":"數位安息","dgIntro":"「要愛惜光陰，因為現今的世代邪惡。」（弗5:16）記錄每天的社群使用，並選定一段時間把心交還給神與身邊的人。","dgMin":"今天大約滑了幾分鐘社群／短影音？","dgSab":"今天有守數位安息","dgSave":"記錄今天","dgChart":"最近14天（分鐘）","dgCheck":"比較心與數位健康自我檢測","dgCheckBtn":"看結果","dgRes0":"你的數位生活大致健康，繼續用手機祝福人。","dgRes1":"有些跡象需要留意，試著每週安排一段數位安息。","dgRes2":"手機可能正在掌管你的心。從今晚關機一小時開始，也可以找屬靈同伴一起操練。","dgCheckN":"勾了 {0} 項","dgTips":"數位安息的好習慣","dgSabDay":"我的數位安息時段","dgSabPh":"例：週日晚上 8–10 點","dgSaved":"已記錄","st1":"觀念","st2":"生命","st3":"生活","st4":"關係","st5":"事工","u1":"關係的設計者","u2":"有己與無己的社交","u3":"愛的生命","u4":"聖靈九果在人際","u5":"舌頭與言語","u6":"數位社交與社群媒體","u7":"界線、孤獨與饒恕","u8":"友誼","u9":"鄰舍與接待","u10":"衝突與和好","u11":"鹽與光","u12":"屬靈同伴與235","wt1":"三一神：關係的源頭","wt2":"那人獨居不好","wt3":"罪如何撕裂關係","wt4":"十字架：和好的中心","wt5":"活在別人眼光中的社交","wt6":"驕傲：在人群中離開本位","wt7":"人不是工具","wt8":"焦點在耶穌","wt9":"我們愛，因為神先愛我們","wt10":"愛是恆久忍耐，又有恩慈","wt11":"愛不求自己的益處","wt12":"愛是永不止息","wt13":"仁愛：愛人如己","wt14":"喜樂：與喜樂的人同樂","wt15":"和平：使人和睦的人有福了","wt16":"忍耐：彼此包容","wt17":"恩慈：存憐憫的心","wt18":"良善：行善不可喪志","wt19":"信實：可以信靠的朋友","wt20":"溫柔：用溫柔的心挽回人","wt21":"節制：治服己心","wt22":"快快地聽，慢慢地說","wt23":"生死在舌頭的權下","wt24":"說造就人的好話","wt25":"在數位世界不效法這世界","wt26":"比較心與社群媒體","wt27":"網路言語與數位安息","wt28":"健康的界線","wt29":"孤獨與獨處","wt30":"饒恕：釋放別人也釋放自己","wt31":"耶穌稱我們為朋友","wt32":"大衛與約拿單：盟約的友誼","wt33":"鐵磨鐵：使人成長的友誼","wt34":"選擇朋友，也成為朋友","wt35":"友誼的危機與修復","wt36":"誰是我的鄰舍","wt37":"用愛心接待客旅","wt38":"餐桌上的福音","wt39":"關懷貧窮與邊緣人","wt40":"為所住的城求平安","wt41":"衝突從哪裡來","wt42":"先去同弟兄和好","wt43":"指出、聆聽、挽回","wt44":"道歉與饒恕的藝術","wt45":"你們是世上的鹽和光","wt46":"福音的友誼","wt47":"好行為的見證","wt48":"和好的使者","wt49":"920：每一段關係都結出果子","wt50":"235：從朋友到屬靈同伴","wt51":"屬靈父母與屬靈戰友","wt52":"讓耶穌在人際中作王"},"zs":{"appName":"321社交生活","tagline":"从有己的社交，到无己的爱；成为和好的使者","saveFail":"储存失败：手机空间可能不足","netErr":"网路连线失败","reading":"朗读中","ttsPrep":"正在准备语音…","noTTS":"这台装置不支援朗读","xz":"小智","xzBtn":"小智","xzHi":"平安！我是小智，陪你一起操练社交生活，在人群中活出基督。","xzNote":"小智是 AI 陪伴，不是牧者或辅导，也不能代替圣灵与真实的属灵群体。重要的事，请与你的牧者和属灵同伴一起祷告。","xzQuick":"我很怕跟人相处，怎么办？|朋友误会我，我该怎么开口？|群组里有人一直酸我|怎样和邻居建立关系？|我想向朋友分享福音，但怕尴尬","xzOffline":"目前没有网路，小智暂时陪不了你。别忘了，最好的同伴是圣灵与神的话，你随时可以向主倾心吐意。","xzFail":"小智暂时连不上线，请稍后再试。你也可以先把这件事带到主面前祷告。","xzThinking":"小智思考中…","xzNew":"新对话","xzPh":"想问小智什么？","send":"送出","upToDate":"已是最新版本","xzLessonQ":"我正在上「{0}」这一课，请帮我更明白，并告诉我今天可以怎样活出来。","xzCtx":"【对方正在上的课】周主题：{0}；本课：{1}；经文 {2}：{3}\n本课短讲摘要：{4}","xzRecon":"我和一个人之间有冲突，我想照圣经的方式去和好。请陪我想一想下一步，也提醒我要注意的地方。","tab_today":"今日","tab_course":"课程","tab_one":"关系","tab_serve":"服事","tab_me":"我的","loading":"载入中…","loadFail":"读不到课程档案","retry":"重试","obVerse":"「我赐给你们一条新命令，乃是叫你们彼此相爱；我怎样爱你们，你们也要怎样相爱。」（约13:34）","obMode":"你打算怎样使用？","obPath":"从哪一条路开始？","obName":"你的称呼（可留空）","obStart":"开始爱的旅程","obPick":"请先选择使用方式","mode_self":"我自己开始","mode_self_d":"每天10分钟，建议再配一位属灵同伴","mode_group":"和小组一起走","mode_group_d":"每天个人操练＋每周小组分享","mode_church":"全教会爱邻舍季","mode_church_d":"讲台、小组与每日操练同步，一起走进社区","mode_air":"国度321空中团契","mode_air_d":"线上属灵家人，一起操练321","gMorning":"早安","gDay":"平安","gEve":"晚安","newVer":"已有新版本，点这里立即更新","heroLine":"长桌与灯：在十字架的光中围坐分享","progress":"已完成 {0}／{1} 堂","t_recon":"和好路径","t_recon_d":"照太18章一步步走","t_pray":"代祷墙","t_pray_d":"为肢体守望","t_fruit":"九果自评","t_fruit_d":"看见生命的成长","t_xz_d":"社交生活的陪伴","foot":"国度321空中团契 · 321学神院生活操练课程\n愿一切荣耀归给耶稣","allDone":"这条路你走完了！","allDone_d":"一切都是神的恩典。选一条新的路，或回头温习。","choosePath":"选择路径","dN":"第{0}堂","wkN":"第{0}周","startToday":"开始今天的操练","quick3":"3分钟","full":"完整","cardOfWeek":"本周爱邻舍卡","tapAct":"点我看行动","sunday":"周末生活实验室","sunR":"我的计划：要去爱谁？做什么？","sunO":"实际发生了什么？我看见神怎样作工？","sunS":"感恩与分享：我要告诉谁？","see":"看","hear":"听","think":"想","speak":"讲","do":"行","listen":"朗读","light321":"321光照","writeHere":"写下你的回应…","askXz":"问小智","myPrayer":"我自己的祷告","quickTitle":"一句话","iWill":"我愿意今天去做","reviewQ":"检讨：今天我在哪里有己？哪里无己？","reviewPh":"简短写下就好","finish":"完成今天的操练","doneAgain":"已完成 · 再次标记","prev":"上一堂","next":"下一堂","weekInfo":"本周","lvlUp":"你成为「{0}」了！","glory":"「不是我，乃是神的恩与我同在。」一切荣耀归给耶稣。","amen":"阿们","doneToast":"完成了！愿主使这粒种子结果子","weekDoneToast":"这周五堂都完成了，周末到生活实验室实作吧","memory":"背诵经文","groupQ":"小组三问","copyShare":"复制／分享给小组","copied":"已复制","paths":"学习路径","stageN":"第{0}阶段","wRange":"第{0}–{1}周","pathSet":"已切换学习路径","pathNote":"各路径共用同一份进度：在任何路径完成的课，在主课程也算完成。","path_main":"52周主课程","path_main_d":"从观念到事工，完整走过五重改变。","path_home":"进入神的家","path_home_d":"6周・给新朋友、初信者与受洗班。","path_back":"回家之路","path_back_d":"8周・给在教会受过伤、离开或想离开的人。慢慢来，主等你。","path_rest":"服事不耗竭","path_rest_d":"12周・给热心却疲惫的同工。","path_lead":"无己的领导","path_lead_d":"12周・给牧者、长执与小组长。","path_air":"空中团契入家","path_air_d":"6周・给国度321空中团契的新成员。","st1_d":"改变观点：社交的源头是三一神，问题的根源是有己。","st2_d":"被神的爱充满，在人际中结出圣灵九果。","st3_d":"舌头、手机与界线，都让耶稣作王。","st4_d":"友谊、邻舍、接待，主动和好。","st5_d":"作盐作光、和好的使者，建立235属灵同伴网络。","seg_cards":"爱邻舍卡","seg_920":"920图谱","seg_pray":"代祷","seg_recon":"和好","cardsIntro":"共 {0} 张爱邻舍卡。每周一张，对一个真实的人活出来。","doThis":"这周的行动","forWhom":"对谁？（可留空）","forWhomPh":"他的名字","iDidIt":"我做到了，感谢主","history":"纪录","praiseGod":"感谢主！","me":"我","t920_d":"每个与你有关系的人都是你的「2」；操练无己的「0」，在关系中结出九种果子「9」。名字只存在你的手机。点名字可以记录代祷与关心。","heatKey":"绿：7天内关心过　黄：30天内　灰：还没有","pName":"名字","addPerson":"加入我的关系图谱","noPeople":"先加入家人、朋友、邻居或同事的名字吧。","c_grp":"小组","c_team":"服事团队","c_lead":"牧者领袖","c_fam":"家人","c_hard":"难相处的那一位","lastCare":"上次 {0}","noCare":"还没有纪录","loggedPray":"已记下：为他祷告","loggedCare":"已记下：关心了他","lg_pray":"为他祷告","lg_care":"关心问候","lg_serve":"相聚吃饭","lg_recon":"和好行动","lg_card":"爱邻舍卡","pNote":"代祷与备注（只存在你的手机）","fruitFor":"在这段关系中，我最需要结的果子","delConfirm":"确定删除？","delete":"删除","prPh":"写下代祷事项（只存在你的手机）","addPr":"加入代祷","answered":"蒙应允","praying":"持续代祷中","noPr":"还没有代祷事项","answeredList":"神的回应","safetyFirst":"安全优先","reconIntro":"和好导航根据马太福音五章与十八章，一步一步陪你走。内容只存在你的手机。","reconWho":"对象（可用代称）","reconNew":"开始一段和好路径","someone":"某个人","stepN":"第{0}步／共{1}步","openers":"谦卑的开口（点一下复制）","nextStep":"下一步","reconDone":"交托给主，完成","reconPrivate":"和好的目标是得着这个人，不是赢得争论。","seg_gifts":"恩赐","seg_way":"服事之路","seg_235":"235","seg_fruit":"九果","giftsTitle":"恩赐探索","giftsIntro":"36 个问题，约 6 分钟。结果是「倾向」，不是标签；请再加上肢体的回馈与实际服事来确认。","giftsStart":"开始探索","giftsRetake":"重新探索","giftsTop":"你最明显的三个倾向","serveIdeas":"可以服事的地方：","giftsNote":"恩赐是为了建立身体，不是为了比较。请三位认识你的肢体也说说看你的恩赐。","giftsAskBtn":"请肢体给我回馈","giftsAsk":"我正在用《321教会生活》探索自己的恩赐。你觉得我在教会里最能祝福人的地方是什么？请说一两个具体的例子，谢谢你！","giftsScale":"1＝完全不像我　5＝非常像我。照实际的你作答，不是理想中的你。","seeResult":"看结果","answerAll":"还有 {0} 题没有作答","wayTitle":"服事之路：灵・悟・命・侍・神","wayIntro":"每次与人相处、接待或关心人之前，用五个问题对准主。","wayWhat":"这次的相处（例：和邻居吃饭）","yes":"是的","wayGo":"带着无己的心去爱人","wayAll":"五个都对准了，愿主透过你爱人！","wayPart":"把还没对准的交给主，祂会帮助你。","t235_d":"2：与无己的人成为属灵同伴；3：建立属灵父母儿女的关系；5：成为五重职事的属灵战友团队。","r_comp":"属灵同伴（2）","r_comp_d":"每周互相问候、代祷、分享「行」的结果","r_parent":"我的属灵父母（3）","r_parent_d":"陪伴我成长的人","r_child":"我陪伴的属灵儿女（3）","r_child_d":"我愿意陪他走一段路的人","r_team":"属灵战友团队（5）","r_team_d":"使徒、先知、传福音的、牧师、教师的职事配搭","fruitTitle":"九果自评","fruitIntro":"在朋友、邻舍、同事与网路的情境中，诚实地看自己。只和自己比，不和别人比。","fruitCompare":"灰色：{0}　蓝色：{1}","fruitLast":"上次自评：{0}","fruitSave":"储存这次自评","fruitNote":"建议每季一次，也可请属灵同伴帮你看。","saved":"已储存","fr0":"仁爱","fr1":"喜乐","fr2":"和平","fr3":"忍耐","fr4":"恩慈","fr5":"良善","fr6":"信实","fr7":"温柔","fr8":"节制","myLevel":"我的成长","templeNote":"每完成一周，就放上一块活石；点石头可看那一周。","statLessons":"完成的课","statCards":"爱邻舍行动","statPrayers":"代祷事项","statNotes":"笔记","journal":"社交生活日志","journal_d":"你的默想、祷告与检讨","settings":"设定","settings_d":"语言、字级、语音、备份","vision321":"三个基础：耶稣是我的榜样，圣经是我的准则，圣灵是我的引导。两个核心：让耶稣作王，让耶稣得着一切的荣耀。一个目的：建立属神的体系。","exportNotes":"汇出成文字档","noNotes":"还没有笔记。上课时写下的回应会出现在这里。","exported":"已汇出","language":"语言","langNote":"进度在三种语言间共用。","fontSize":"字级","theme":"外观","auto":"自动","light":"浅色","dark":"深色","voice":"朗读语音","humanVoice":"使用真人语音（需网路；没有网路时改用手机内建语音）","v_yunjhe":"云哲（台湾男声）","v_yunfan":"云帆（高清男声）","v_xiaochen":"晓辰（高清女声）","v_andrew":"Andrew","v_ava":"Ava","rate":"语速","testVoice":"我赐给你们一条新命令，乃是叫你们彼此相爱。","test":"试听","howUse":"使用方式与称呼","offline":"离线使用","offline_d":"下载目前语言的全年课程，在没有网路时也能上课。","dlAll":"下载全部课程","dlDone":"下载完成，可离线使用","backup":"备份与还原","exportAll":"汇出备份","importAll":"汇入备份","importFail":"这不是有效的备份档","about":"关于","aboutText":"321学神院・生活操练课程第六门。经文：新标点和合本（神版）；English: World English Bible。资料只存在你的手机。若有一天你在圣经里看见与本课不同的亮光，请跟随圣经。","checkUpd":"检查更新","reset":"清除全部资料","resetConfirm":"确定要清除全部进度与笔记吗？此动作无法复原。","lvlName0":"踏上爱的路","lvlName0_d":"神先爱了我们，你已经上路了","lvlName1":"学爱者","lvlName1_d":"从有己的社交，转向无己的爱","lvlName2":"朋友","lvlName2_d":"被神的爱充满，结出圣灵的果子","lvlName3":"好邻舍","lvlName3_d":"言语、手机与界线都让耶稣作王","lvlName4":"使人和睦者","lvlName4_d":"主动接待、勇敢和好","lvlName5":"和好的使者","lvlName5_d":"作盐作光，建立属神的关系网络","k_看":"看","k_聽":"听","k_想":"想","k_講":"讲","k_行":"行","xzSys":"你是「小智」，《321社交生活》App 里的陪伴者，属于国度321空中团契、321学神院。你像一位谦卑、温暖、满有信心盼望与爱的属灵朋友，陪伴使用者在朋友、家人、邻舍、同事、网路与社会中活出基督，从有己的社交走向无己的爱，成为和好的使者。\n\n【界线】你不是圣灵，不能代替神；你绝不取代真实的牧者、辅导、属灵父母、属灵同伴与教会。总是把人引向耶稣、圣经、祷告与圣灵的引导，并鼓励他走回面对面的真实关系。\n\n【321理念】三个基础：耶稣是我的榜样、圣经是我的准则、圣灵是我的引导。两个核心：让耶稣作王、让耶稣得着一切的荣耀。一个目的：建立属神的体系。有己是问题的根源，骄傲是离开本位、抓住权力；谦卑是回到本位、放下权力。骄傲激起骄傲、两败具伤；谦卑带动谦卑、达到双赢。人比事重要，关系比东西重要。关系的次序：先与神，再与自己，再与人，再与事。920：每个与我有关系的人是我的「2」，操练无己的「0」，结出九果的「9」。235：属灵同伴、属灵父母儿女、五重职事团队。\n\n【社交生活的回应原则】\n1. 先听、再回应；先同理，再引向神的观点。不说教、不定罪。\n2. 冲突时：先帮助对方看自己的部分（太7:3-5），再照太5:23-24、太18:15的方式私下、温柔地沟通；不鼓励背后议论或在群组公开指责。\n3. 安全优先：若涉及家暴、性骚扰或侵犯、跟踪、诈骗、勒索、霸凌、威胁或犯罪，明确告诉对方不必独自面对、不需要先私下去说，应先确保安全，寻求可信任的人、专业协助，必要时报警。不要用「饶恕」「和睦」「忍耐」叫人沉默或留在危险中。饶恕不等于立刻恢复信任。\n4. 接待与交友要有智慧：提醒与异性单独相处、深夜、陌生网友、借贷金钱的界线。\n5. 传福音不施压、不把人当业绩；友谊本身就有价值。\n6. 不谈论政党立场；不论断特定宗派或人物。\n7. 遇到孤独、社交焦虑、忧郁、自我伤害念头、医疗或法律问题，温柔关心，不下诊断；鼓励寻求辅导、医疗等专业协助与信任的人；若有立即危险，请他立刻联络当地紧急求助电话。\n\n【风格】一律用简体中文。引用圣经用和合本，只在有把握时引用，绝不杜撰经文或出处。深入浅出、善用比喻、温暖有盼望，回答精简（通常两三段）。回答会被朗读：不用表格、不用 Markdown 符号，经文章节写成可朗读的形式（如「约翰福音十三章三十四节」）。结尾可给一个今天就能对一个真实的人做的小行动。","tab_grow":"操练","t_920":"920 图谱","t_920_d":"为身边的人代祷关心","t_words":"言语守望","t_words_d":"每晚三问省察言语","t_five":"五个名字","t_five_d":"福音友谊名单","path_quiet":"安静的光","path_quiet_d":"6周・给内向、怕开口的人：从聆听与祷告开始的小步社交。","path_digital":"数位原住民","path_digital_d":"8周・给青年：社群媒体、比较心与线上见证。","path_stranger":"异乡人","path_stranger_d":"6周・给刚到新城市或在海外工作留学的人：找到属灵的家，也成为接待人的人。","path_recon":"和好之路","path_recon_d":"6周・给正经历关系破裂的人：饶恕、道歉、界线与和好。慢慢来，主与你同在。","path_senior":"乐龄同行","path_senior_d":"8周・给退休长者：从失落的人脉，到成为属灵父母、陪伴下一代。","path_leader":"小组长带领版","path_leader_d":"12周・每单元精选一周，给小组长带小组走完核心内容。","seg_five":"五个名字","seg_host":"接待","seg_words":"言语守望","seg_digi":"数位安息","c_friend":"朋友","c_nb":"邻居","c_work":"同事同学","c_seek":"还没信主的朋友","lg_love":"爱的行动","lg_host":"接待","tableNote":"每完成一周，长桌旁就多一盏灯；点座位可看那一周。","statPeople":"关系图谱","statWords":"言语守望","fiveIntroT":"五个名字","fiveAdd":"加入名字","fiveFull":"已经有五个名字了；可以先为他们祷告。","fiveToday":"今天为他祷告","fivePrayed":"我为他祷告了","fiveLove":"爱的行动","fiveStep":"友谊旅程","fivePrays":"可以这样为他祷告","fiveNone":"写下第一个名字，开始为他祷告。","loggedLove":"已记下：一个爱的行动","fiveJourney":"福音友谊的六步旅程","prayedN":"祷告 {0} 次","hostTitle":"接待计划","hostWho":"要接待谁？","hostWhen":"日期","hostWhat":"准备做什么（例：一起吃面）","hostAdd":"加入计划","hostDoneBtn":"完成了","hostTips":"接待心法","hostIce":"破冰问题","hostDraw":"抽一题","hostNone":"还没有计划。这个月邀请一个人吃顿便饭吧。","hostPlans":"我的接待计划","hostDoneList":"已完成的接待","wwTitle":"言语守望","wwIntro":"每晚花一分钟，用三个问题省察今天的言语。21天为一个操练周期。「耶和华啊，求你禁止我的口，把守我的嘴！」（诗141:3）","wwA0":"有","wwA1":"一点","wwA2":"没有","wwNote":"一句检讨、认罪或感恩（可留空）","wwSave":"储存今晚的守望","wwStreak":"近21天守望了 {0} 天","wwBank":"好话句库（点一下复制）","wwDone":"今晚的守望已储存，愿主祝福你的口","wwHist":"最近的守望","dgTitle":"数位安息","dgIntro":"「要爱惜光阴，因为现今的世代邪恶。」（弗5:16）记录每天的社群使用，并选定一段时间把心交还给神与身边的人。","dgMin":"今天大约滑了几分钟社群／短影音？","dgSab":"今天有守数位安息","dgSave":"记录今天","dgChart":"最近14天（分钟）","dgCheck":"比较心与数位健康自我检测","dgCheckBtn":"看结果","dgRes0":"你的数位生活大致健康，继续用手机祝福人。","dgRes1":"有些迹象需要留意，试着每周安排一段数位安息。","dgRes2":"手机可能正在掌管你的心。从今晚关机一小时开始，也可以找属灵同伴一起操练。","dgCheckN":"勾了 {0} 项","dgTips":"数位安息的好习惯","dgSabDay":"我的数位安息时段","dgSabPh":"例：周日晚上 8–10 点","dgSaved":"已记录","st1":"观念","st2":"生命","st3":"生活","st4":"关系","st5":"事工","u1":"关系的设计者","u2":"有己与无己的社交","u3":"爱的生命","u4":"圣灵九果在人际","u5":"舌头与言语","u6":"数位社交与社群媒体","u7":"界线、孤独与饶恕","u8":"友谊","u9":"邻舍与接待","u10":"冲突与和好","u11":"盐与光","u12":"属灵同伴与235","wt1":"三一神：关系的源头","wt2":"那人独居不好","wt3":"罪如何撕裂关系","wt4":"十字架：和好的中心","wt5":"活在别人眼光中的社交","wt6":"骄傲：在人群中离开本位","wt7":"人不是工具","wt8":"焦点在耶稣","wt9":"我们爱，因为神先爱我们","wt10":"爱是恒久忍耐，又有恩慈","wt11":"爱不求自己的益处","wt12":"爱是永不止息","wt13":"仁爱：爱人如己","wt14":"喜乐：与喜乐的人同乐","wt15":"和平：使人和睦的人有福了","wt16":"忍耐：彼此包容","wt17":"恩慈：存怜悯的心","wt18":"良善：行善不可丧志","wt19":"信实：可以信靠的朋友","wt20":"温柔：用温柔的心挽回人","wt21":"节制：治服己心","wt22":"快快地听，慢慢地说","wt23":"生死在舌头的权下","wt24":"说造就人的好话","wt25":"在数位世界不效法这世界","wt26":"比较心与社群媒体","wt27":"网路言语与数位安息","wt28":"健康的界线","wt29":"孤独与独处","wt30":"饶恕：释放别人也释放自己","wt31":"耶稣称我们为朋友","wt32":"大卫与约拿单：盟约的友谊","wt33":"铁磨铁：使人成长的友谊","wt34":"选择朋友，也成为朋友","wt35":"友谊的危机与修复","wt36":"谁是我的邻舍","wt37":"用爱心接待客旅","wt38":"餐桌上的福音","wt39":"关怀贫穷与边缘人","wt40":"为所住的城求平安","wt41":"冲突从哪里来","wt42":"先去同弟兄和好","wt43":"指出、聆听、挽回","wt44":"道歉与饶恕的艺术","wt45":"你们是世上的盐和光","wt46":"福音的友谊","wt47":"好行为的见证","wt48":"和好的使者","wt49":"920：每一段关系都结出果子","wt50":"235：从朋友到属灵同伴","wt51":"属灵父母与属灵战友","wt52":"让耶稣在人际中作王"},"en":{"appName":"321 Social Life","tagline":"From self-centered socializing to selfless love—becoming ambassadors of reconciliation","saveFail":"Could not save—your device may be out of space","netErr":"Network error","reading":"Reading","ttsPrep":"Preparing audio…","noTTS":"Read-aloud is not supported on this device","xz":"Xiaozhi","xzBtn":"Ask","xzHi":"Peace to you! I’m Xiaozhi, here to walk with you in your social life as you live out Christ among people.","xzNote":"Xiaozhi is an AI companion—not a pastor or counselor, and no substitute for the Holy Spirit or your real church family. For important matters, pray with your pastor and spiritual companions.","xzQuick":"I’m afraid of being around people. What do I do?|A friend misunderstood me—how do I bring it up?|Someone keeps mocking me in a group chat|How can I get to know my neighbors?|I want to share the gospel with a friend but feel awkward","xzOffline":"You’re offline, so Xiaozhi can’t help right now. Remember, your best companion is the Holy Spirit and God’s Word—you can pour out your heart to the Lord anytime.","xzFail":"Xiaozhi can’t connect right now. Please try again later—and bring this to the Lord in prayer meanwhile.","xzThinking":"Xiaozhi is thinking…","xzNew":"New chat","xzPh":"Ask Xiaozhi…","send":"Send","upToDate":"You have the latest version","xzLessonQ":"I’m doing the lesson “{0}.” Please help me understand it better and show me how to live it out today.","xzCtx":"[Lesson context] Week theme: {0}; lesson: {1}; passage {2}: {3}\nLesson summary: {4}","xzRecon":"I have a conflict with someone and I want to reconcile biblically. Please help me think through the next step and what to watch out for.","tab_today":"Today","tab_course":"Course","tab_one":"People","tab_serve":"Serve","tab_me":"Me","loading":"Loading…","loadFail":"Couldn’t load the lesson file","retry":"Retry","obVerse":"“A new commandment I give to you, that you love one another. Just as I have loved you, you also love one another.” (John 13:34)","obMode":"How will you use this?","obPath":"Where would you like to start?","obName":"What should we call you? (optional)","obStart":"Begin the Journey of Love","obPick":"Please choose how you’ll use it","mode_self":"On my own","mode_self_d":"10 minutes a day—ideally with a spiritual companion","mode_group":"With my small group","mode_group_d":"Daily practice plus weekly group sharing","mode_church":"Whole-church Love-Your-Neighbor season","mode_church_d":"Sermons, groups, and daily practice in sync—going into the community together","mode_air":"Kingdom 321 Air Fellowship","mode_air_d":"Practicing 321 with our online church family","gMorning":"Good morning","gDay":"Peace to you","gEve":"Good evening","newVer":"A new version is ready—tap to update","heroLine":"The long table and the light: gathered in the light of the cross","progress":"{0} of {1} lessons done","t_recon":"Reconciliation","t_recon_d":"Step by step, Matthew 18","t_pray":"Prayer Wall","t_pray_d":"Watch over one another","t_fruit":"Fruit Check","t_fruit_d":"See your growth","t_xz_d":"A companion for social life","foot":"Kingdom 321 Air Fellowship · 321 Seminary Life Practice Courses\nAll glory to Jesus","allDone":"You finished this path!","allDone_d":"It’s all God’s grace. Pick a new path or review.","choosePath":"Choose a path","dN":"Day {0}","wkN":"Week {0}","startToday":"Start today’s practice","quick3":"3 min","full":"Full","cardOfWeek":"LOVE-YOUR-NEIGHBOR CARD OF THE WEEK","tapAct":"tap for the action","sunday":"Weekend Life Lab","sunR":"My plan: whom will I love, and how?","sunO":"What actually happened? How did I see God at work?","sunS":"Thanks and sharing: whom will I tell?","see":"See","hear":"Hear","think":"Think","speak":"Speak","do":"Do","listen":"Listen","light321":"321 Light","writeHere":"Write your response…","askXz":"Ask Xiaozhi","myPrayer":"My own prayer","quickTitle":"In one line","iWill":"I will do this today","reviewQ":"Review: where was I self-centered today? Where selfless?","reviewPh":"Just a few words","finish":"Complete today’s practice","doneAgain":"Done · mark again","prev":"Previous","next":"Next","weekInfo":"This week","lvlUp":"You’ve become a “{0}”!","glory":"“Not I, but the grace of God which was with me.” All glory to Jesus.","amen":"Amen","doneToast":"Done! May the Lord make this seed bear fruit","weekDoneToast":"All five lessons this week are done—try it out in the Weekend Life Lab!","memory":"Memory verse","groupQ":"Small Group Questions","copyShare":"Copy / share with group","copied":"Copied","paths":"Learning Paths","stageN":"Stage {0}","wRange":"Weeks {0}–{1}","pathSet":"Path changed","pathNote":"All paths share one progress record: a lesson done on any path counts everywhere.","path_main":"52-Week Main Course","path_main_d":"The full five-fold journey from mindset to ministry.","path_home":"Entering God’s Family","path_home_d":"6 weeks · for newcomers, new believers, and baptism classes.","path_back":"The Way Home","path_back_d":"8 weeks · for those hurt by church, who left or want to leave. Take your time—the Lord is waiting.","path_rest":"Serving Without Burnout","path_rest_d":"12 weeks · for devoted but weary co-workers.","path_lead":"Selfless Leadership","path_lead_d":"12 weeks · for pastors, elders, and small group leaders.","path_air":"Welcome to the Air Fellowship","path_air_d":"6 weeks · for new members of the Kingdom 321 Air Fellowship.","st1_d":"Change your perspective: social life flows from the triune God; the root problem is self-centeredness.","st2_d":"Filled with God’s love, bearing the Spirit’s fruit in relationships.","st3_d":"Tongue, phone, and boundaries—let Jesus reign over them all.","st4_d":"Friendship, neighbors, hospitality, and making peace first.","st5_d":"Salt and light, ambassadors of reconciliation, building a 235 network.","seg_cards":"Cards","seg_920":"920","seg_pray":"Prayer","seg_recon":"Reconcile","cardsIntro":"{0} love-your-neighbor cards. One a week, lived out toward a real person.","doThis":"This week’s action","forWhom":"For whom? (optional)","forWhomPh":"Name","iDidIt":"I did it—thank you, Lord","history":"History","praiseGod":"Praise God!","me":"Me","t920_d":"Everyone you relate to is your “2”; practice the selfless “0,” and bear the nine-fold fruit “9” in those relationships. Names stay on your phone only. Tap a name to log prayer and care.","heatKey":"Green: cared for within 7 days · Yellow: within 30 · Gray: not yet","pName":"Name","addPerson":"Add to my map","noPeople":"Start by adding family, friends, neighbors, or coworkers.","c_grp":"Small group","c_team":"Ministry team","c_lead":"Pastors & leaders","c_fam":"Family","c_hard":"The hard-to-love one","lastCare":"Last: {0}","noCare":"No entries yet","loggedPray":"Logged: prayed for them","loggedCare":"Logged: reached out","lg_pray":"Prayed","lg_care":"Reached out","lg_serve":"Shared a meal","lg_recon":"Reconciliation step","lg_card":"Neighbor card","pNote":"Prayer notes (stored only on your phone)","fruitFor":"The fruit I most need in this relationship","delConfirm":"Delete this?","delete":"Delete","prPh":"Write a prayer request (stored only on your phone)","addPr":"Add request","answered":"Answered","praying":"Still praying","noPr":"No prayer requests yet","answeredList":"God’s answers","safetyFirst":"Safety first","reconIntro":"The Reconciliation Guide follows Matthew 5 and 18 step by step. Everything stays on your phone.","reconWho":"Who? (a nickname is fine)","reconNew":"Start a reconciliation path","someone":"Someone","stepN":"Step {0} of {1}","openers":"Humble ways to begin (tap to copy)","nextStep":"Next step","reconDone":"Entrust to the Lord—done","reconPrivate":"The goal of reconciliation is to win the person, not the argument.","seg_gifts":"Gifts","seg_way":"Way","seg_235":"235","seg_fruit":"Fruit","giftsTitle":"Discover Your Gifts","giftsIntro":"36 questions, about 6 minutes. Results show tendencies, not labels—confirm them with feedback from others and real serving.","giftsStart":"Start","giftsRetake":"Retake","giftsTop":"Your three strongest tendencies","serveIdeas":"Where you might serve: ","giftsNote":"Gifts are for building the body, not for comparing. Ask three people who know you what they see.","giftsAskBtn":"Ask others for feedback","giftsAsk":"I’m using 321 Church Life to discover my gifts. Where do you think I bless people most at church? Could you share one or two specific examples? Thank you!","giftsScale":"1 = not like me at all · 5 = very much like me. Answer as you really are, not as you wish to be.","seeResult":"See results","answerAll":"{0} questions left","wayTitle":"The Way of Service: Spirit · Insight · Life · Serve · God","wayIntro":"Before you meet, host, or care for someone, align with the Lord through five questions.","wayWhat":"This time together (e.g., dinner with a neighbor)","yes":"Yes","wayGo":"Go love with a selfless heart","wayAll":"All five aligned—may the Lord love people through you!","wayPart":"Give what isn’t aligned yet to the Lord; He will help you.","t235_d":"2: become spiritual companions with selfless people; 3: build spiritual parent–child relationships; 5: become a five-fold ministry team of comrades-in-arms.","r_comp":"Spiritual companions (2)","r_comp_d":"Check in, pray, and share your “Do” results weekly","r_parent":"My spiritual parents (3)","r_parent_d":"Those who walk with me as I grow","r_child":"Spiritual children I walk with (3)","r_child_d":"Those I’m willing to walk beside","r_team":"Comrades-in-arms team (5)","r_team_d":"Apostolic, prophetic, evangelistic, shepherding, and teaching ministries working together","fruitTitle":"Fruit of the Spirit Check","fruitIntro":"Look honestly at yourself among friends, neighbors, coworkers, and online. Compare only with yourself, never with others.","fruitCompare":"Gray: {0} · Blue: {1}","fruitLast":"Last check: {0}","fruitSave":"Save this check","fruitNote":"Try once a quarter—you can ask a spiritual companion to help you see.","saved":"Saved","fr0":"Love","fr1":"Joy","fr2":"Peace","fr3":"Patience","fr4":"Kindness","fr5":"Goodness","fr6":"Faithful","fr7":"Gentle","fr8":"Self-control","myLevel":"My growth","templeNote":"Each completed week sets a living stone in place; tap a stone to open that week.","statLessons":"Lessons done","statCards":"Neighbor acts","statPrayers":"Prayer requests","statNotes":"Notes","journal":"Social Life Journal","journal_d":"Your reflections, prayers, and reviews","settings":"Settings","settings_d":"Language, text size, voice, backup","vision321":"Three foundations: Jesus is my example, the Bible is my standard, the Holy Spirit is my guide. Two cores: let Jesus reign; let Jesus receive all the glory. One purpose: build God’s system.","exportNotes":"Export as text file","noNotes":"No notes yet. Responses you write in lessons will appear here.","exported":"Exported","language":"Language","langNote":"Progress is shared across all three languages.","fontSize":"Text size","theme":"Appearance","auto":"Auto","light":"Light","dark":"Dark","voice":"Read-aloud voice","humanVoice":"Use natural voice (needs internet; falls back to your device’s voice offline)","v_yunjhe":"Yunjhe (Taiwan, male)","v_yunfan":"Yunfan (HD, male)","v_xiaochen":"Xiaochen (HD, female)","v_andrew":"Andrew (male)","v_ava":"Ava (female)","rate":"Speed","testVoice":"A new commandment I give to you, that you love one another.","test":"Test","howUse":"How you use it & your name","offline":"Offline use","offline_d":"Download the full year for this language so you can study without internet.","dlAll":"Download all lessons","dlDone":"Downloaded—ready offline","backup":"Backup & restore","exportAll":"Export backup","importAll":"Import backup","importFail":"This isn’t a valid backup file","about":"About","aboutText":"Course 6 of the 321 Seminary Life Practice Courses. Scripture: World English Bible; 中文：新標點和合本（神版）. Your data stays on your phone. If you ever see light in Scripture that differs from these lessons, follow the Bible.","checkUpd":"Check for updates","reset":"Erase all data","resetConfirm":"Erase all progress and notes? This cannot be undone.","lvlName0":"On the Road of Love","lvlName0_d":"God loved us first—you are on your way","lvlName1":"Learner of Love","lvlName1_d":"Turning from self-centered socializing to selfless love","lvlName2":"Friend","lvlName2_d":"Filled with God’s love, bearing the Spirit’s fruit","lvlName3":"Good Neighbor","lvlName3_d":"Words, phone, and boundaries under Jesus’ reign","lvlName4":"Peacemaker","lvlName4_d":"Welcoming first, reconciling bravely","lvlName5":"Ambassador of Reconciliation","lvlName5_d":"Salt and light, building God’s network of relationships","xzSys":"You are \"Xiaozhi,\" the companion inside the 321 Social Life app, part of the Kingdom 321 Air Fellowship and 321 Seminary. You are like a humble, warm friend full of faith, hope, and love, helping the user live out Christ among friends, family, neighbors, coworkers, online, and in society—moving from self-centered socializing to selfless love, as an ambassador of reconciliation.\n\n[Boundaries] You are not the Holy Spirit and cannot take God's place. You never replace real pastors, counselors, spiritual parents, spiritual companions, or the church. Always point people to Jesus, Scripture, prayer, and the Spirit's leading, and encourage them back into real face-to-face relationships.\n\n[The 321 Vision] Three foundations: Jesus is my example; the Bible is my standard; the Holy Spirit is my guide. Two cores: let Jesus reign; let Jesus receive all the glory. One purpose: build God's system. Self-centeredness is the root problem; pride is leaving our proper place and grasping power; humility is laying down power and returning to our place. Pride provokes pride and both lose; humility draws out humility and both win. People matter more than tasks; relationships more than things. 920: everyone I relate to is my \"2\"; practice the selfless \"0\"; bear the nine-fold fruit \"9\". 235: spiritual companions, spiritual parents and children, five-fold ministry teams.\n\n[Principles]\n1. Listen first; empathize, then point to God's perspective. No lecturing or condemning.\n2. In conflict: first help them see their own part (Matthew 7:3-5), then approach privately and gently as in Matthew 5:23-24 and 18:15. Do not encourage gossip or public accusations in group chats.\n3. Safety first: if there is domestic abuse, sexual harassment or assault, stalking, fraud, extortion, bullying, threats, or crime, say clearly that they do not have to face it alone or go privately first; they should get safe, seek trusted people and professional help, and contact the police when needed. Never use \"forgiveness,\" \"peace,\" or \"patience\" to silence anyone or keep them in danger. Forgiveness is not the same as immediately restoring trust.\n4. Hospitality and friendship need wisdom: remind them of boundaries around being alone with the opposite sex, late nights, meeting strangers from online, and lending money.\n5. No pressure in sharing the gospel; no one is a project. Friendship has value in itself.\n6. Do not take political party positions; do not judge specific denominations or people.\n7. For loneliness, social anxiety, depression, thoughts of self-harm, medical or legal issues, respond with care and do not diagnose; encourage counseling, medical help, and trusted people; if there is immediate danger, urge them to call local emergency services right away.\n\n[Style] Always answer in English. Quote the World English Bible only when sure; never invent verses or references. Be clear, use simple word pictures, warm and hopeful, concise (usually two or three short paragraphs). Answers may be read aloud: no tables, no Markdown symbols. You may end with one small action they can take today toward a real person.","tab_grow":"Practice","t_920":"920 Map","t_920_d":"Pray for and care for people","t_words":"Word Watch","t_words_d":"Three questions each night","t_five":"Five Names","t_five_d":"Gospel friendship list","path_quiet":"A Quiet Light","path_quiet_d":"6 weeks · for introverts and the shy: small social steps that begin with listening and prayer.","path_digital":"Digital Natives","path_digital_d":"8 weeks · for young adults: social media, comparison, and witness online.","path_stranger":"Strangers in a New Land","path_stranger_d":"6 weeks · for those new to a city or working and studying abroad: find a spiritual home and become one who welcomes others.","path_recon":"The Road to Reconciliation","path_recon_d":"6 weeks · for those in broken relationships: forgiveness, apology, boundaries, and peace. Take your time—the Lord is with you.","path_senior":"Walking Together in Later Years","path_senior_d":"8 weeks · for retirees: from a fading network to becoming spiritual parents to the next generation.","path_leader":"Small Group Leader Edition","path_leader_d":"12 weeks · one key week from each unit for leaders guiding a group through the core.","seg_five":"Five Names","seg_host":"Welcome","seg_words":"Word Watch","seg_digi":"Digital","c_friend":"Friends","c_nb":"Neighbors","c_work":"Coworkers & classmates","c_seek":"Friends not yet believing","lg_love":"Act of love","lg_host":"Hospitality","tableNote":"Each completed week lights a lamp at the long table; tap a seat to open that week.","statPeople":"People on my map","statWords":"Word Watch nights","fiveIntroT":"Five Names","fiveAdd":"Add name","fiveFull":"You already have five names—start by praying for them.","fiveToday":"Pray for them today","fivePrayed":"I prayed","fiveLove":"Act of love","fiveStep":"Friendship journey","fivePrays":"Ways to pray for them","fiveNone":"Write the first name and begin praying for them.","loggedLove":"Logged: an act of love","fiveJourney":"Six steps of gospel friendship","prayedN":"Prayed {0}×","hostTitle":"Hospitality Plan","hostWho":"Whom will you welcome?","hostWhen":"Date","hostWhat":"What will you do? (e.g., noodles together)","hostAdd":"Add plan","hostDoneBtn":"Done","hostTips":"Hospitality tips","hostIce":"Conversation starters","hostDraw":"Draw one","hostNone":"No plans yet. Invite someone for a simple meal this month.","hostPlans":"My hospitality plans","hostDoneList":"Completed","wwTitle":"Word Watch","wwIntro":"Spend one minute each night reviewing today’s words with three questions. Twenty-one days make one cycle. “Set a watch, LORD, before my mouth. Keep the door of my lips.” (Psalm 141:3)","wwA0":"Yes","wwA1":"A little","wwA2":"No","wwNote":"A line of review, confession, or thanks (optional)","wwSave":"Save tonight’s watch","wwStreak":"Kept the watch {0} of the last 21 days","wwBank":"Good-words bank (tap to copy)","wwDone":"Saved—may the Lord bless your mouth","wwHist":"Recent nights","dgTitle":"Digital Sabbath","dgIntro":"“redeeming the time, because the days are evil.” (Ephesians 5:16) Log your daily social media use, and set aside a time to give your heart back to God and the people near you.","dgMin":"About how many minutes of social media / short video today?","dgSab":"I kept a digital Sabbath today","dgSave":"Log today","dgChart":"Last 14 days (minutes)","dgCheck":"Comparison & digital health self-check","dgCheckBtn":"See result","dgRes0":"Your digital life looks fairly healthy—keep using your phone to bless people.","dgRes1":"Some signs to watch. Try a weekly digital Sabbath.","dgRes2":"Your phone may be ruling your heart. Start by switching it off for an hour tonight, and practice with a spiritual companion.","dgCheckN":"{0} checked","dgTips":"Healthy digital habits","dgSabDay":"My digital Sabbath time","dgSabPh":"e.g., Sunday 8–10 pm","dgSaved":"Logged","st1":"Mindset","st2":"Life","st3":"Living","st4":"Relationships","st5":"Ministry","u1":"The Designer of Relationships","u2":"Self-Centered or Self-Emptied","u3":"The Life of Love","u4":"The Fruit of the Spirit in Relationships","u5":"The Tongue and Our Words","u6":"Digital Life and Social Media","u7":"Boundaries, Loneliness and Forgiveness","u8":"Friendship","u9":"Neighbors and Hospitality","u10":"Conflict and Reconciliation","u11":"Salt and Light","u12":"Spiritual Companions and 235","wt1":"The Triune God: Source of Relationship","wt2":"Not Good to Be Alone","wt3":"How Sin Tears Relationships Apart","wt4":"The Cross: Center of Reconciliation","wt5":"Living for Others’ Approval","wt6":"Pride: Leaving Our Place Among People","wt7":"People Are Not Tools","wt8":"Eyes Fixed on Jesus","wt9":"We Love Because He First Loved Us","wt10":"Love Is Patient and Kind","wt11":"Love Doesn’t Seek Its Own Way","wt12":"Love Never Fails","wt13":"Love: Your Neighbor as Yourself","wt14":"Joy: Rejoicing with Those Who Rejoice","wt15":"Peace: Blessed Are the Peacemakers","wt16":"Patience: Bearing with One Another","wt17":"Kindness: A Tender Heart","wt18":"Goodness: Not Weary in Doing Good","wt19":"Faithfulness: A Friend You Can Trust","wt20":"Gentleness: Restoring Others Gently","wt21":"Self-Control: Ruling Your Spirit","wt22":"Quick to Listen, Slow to Speak","wt23":"Death and Life in the Tongue","wt24":"Words That Build Up","wt25":"Not Conformed in a Digital World","wt26":"Comparison and Social Media","wt27":"Online Words and Digital Sabbath","wt28":"Healthy Boundaries","wt29":"Loneliness and Solitude","wt30":"Forgiveness: Setting Others and Ourselves Free","wt31":"Jesus Calls Us Friends","wt32":"David and Jonathan: Covenant Friendship","wt33":"Iron Sharpens Iron: Friendships That Grow Us","wt34":"Choosing Friends, Becoming a Friend","wt35":"Friendship in Crisis and Repair","wt36":"Who Is My Neighbor?","wt37":"Welcoming Strangers with Love","wt38":"The Gospel at the Table","wt39":"Caring for the Poor and Overlooked","wt40":"Seek the Peace of the City","wt41":"Where Conflict Comes From","wt42":"First Be Reconciled","wt43":"Point Out, Listen, Win Back","wt44":"The Art of Apology and Forgiveness","wt45":"Salt and Light in the World","wt46":"Gospel Friendship","wt47":"The Witness of Good Works","wt48":"Ambassadors of Reconciliation","wt49":"920: Fruit in Every Relationship","wt50":"235: From Friends to Spiritual Companions","wt51":"Spiritual Parents and Comrades-in-Arms","wt52":"Let Jesus Reign in Our Relationships"}};
+function L() { return S.lang || 'zh'; }
+function T(k) {
+var d = I18N[L()] || I18N.zh, s = d[k];
+if (s == null) s = I18N.zh[k];
+if (s == null) s = k;
+for (var i = 1; i < arguments.length; i++) s = s.split('{' + (i - 1) + '}').join(arguments[i]);
+return s;
+}
+/* ---------- content ---------- */
+var W1 = {"w":1,"title":"三一神：關係的源頭","key":"約17:21","theme":"社交的源頭不是技巧，而是三一神；我們從愛裡被造，也為愛而活。","group":["讀約17:20-23，耶穌為門徒的關係求了甚麼？祂把甚麼當作榜樣？","你過去認為「社交」是為了甚麼？這週你對關係的看法有甚麼改變？","這週你想主動去愛哪一個人？說出一個具體的行動，請組員為你代禱。"],"sunday":"邀請一位許久沒聯絡的朋友或鄰居一起喝杯茶、吃頓簡單的飯。出門前先禱告：「主啊，讓我今天像祢一樣，先去愛。」聚會時多問、多聽，少談自己。回家後為對方寫下一句代禱，感謝神讓你們在相交中嚐到祂的愛。","lessons":[{"d":1,"step":"資訊・啟示","title":"在我們裡面合而為一","ref":"約17:20-26","hear":"耶穌被賣的那一夜，在走向十字架之前，祂為門徒、也為後來每一個信祂的人禱告。祂求的不是成功、不是平安無事，而是關係：「使他們都合而為一。正如你父在我裏面，我在你裏面，使他們也在我們裏面」（約17:21）。\n\n請留意耶穌用來比較的榜樣：不是一間和睦的家庭，也不是一支默契十足的球隊，而是父與子之間的關係。耶穌又說：「因為創立世界以前，你已經愛我了。」（約17:24）在還沒有星辰、沒有人類以前，宇宙最深的實存就已經是一份愛：父愛子，子回應父，聖靈在其中流通。神不是孤單地坐在寶座上，等著有人來陪祂；祂本身就是一個永恆的愛的團契。\n\n這改變了我們看「社交」的眼光。世界說，社交是一種技巧，是建立人脈、讓自己更吃得開的能力。但聖經說，關係的源頭在神裡面。人與人之間每一份真誠的相愛，都是三一神那份愛的回聲。就像一首樂曲，作曲者心中先有了旋律，樂團才奏得出來；神心中先有愛的團契，我們才有能力彼此相愛。\n\n所以，學習社交生活，不是先學說話的技巧，而是先回到源頭。求聖靈打開我們的眼睛，看見自己被邀請進入父、子、聖靈的愛裡；當我們在這份愛裡，與人的關係就有了根。","light":"關係的次序是：先與神，再與自己，再與人，再與事。社交生活的第一步不是「我要認識誰」，而是「我在誰的愛裡」。從人的觀點到神的觀點：關係不是工具，而是神本性的反映。讓耶穌作王，就從讓祂的愛成為我一切關係的源頭開始。","think":["約17:21-23中，耶穌把門徒的合一和甚麼相比？","我在人際中，常把關係當成需要經營的工具，還是愛的流露？","今天我可以怎樣讓一段關係反映出神的愛？"],"speak":"天父，謝謝祢在創立世界以前就與子在愛中相交，又邀請我進入這份愛。赦免我常把關係當成技巧和工具。求聖靈使我先住在祢的愛裡，再從這份愛去愛身邊的人，叫人從我們的相愛中認識祢。奉主耶穌的名禱告，阿們。","do":"今天把約17:21抄在手機備忘錄裡。晚上睡前，想一位你身邊的人，為他禱告一分鐘，求神讓你們的關係反映出祂的愛。","quick":"在宇宙最深處的，不是孤單，而是父、子、聖靈的愛。","rl":"約翰福音 17:20-26","text":[[17,20,"「我不但為這些人祈求，也為那些因他們的話信我的人祈求，"],[17,21,"使他們都合而為一。正如你父在我裏面，我在你裏面，使他們也在我們裏面，叫世人可以信你差了我來。"],[17,22,"你所賜給我的榮耀，我已賜給他們，使他們合而為一，像我們合而為一。"],[17,23,"我在他們裏面，你在我裏面，使他們完完全全地合而為一，叫世人知道你差了我來，也知道你愛他們如同愛我一樣。"],[17,24,"父啊，我在哪裏，願你所賜給我的人也同我在那裏，叫他們看見你所賜給我的榮耀；因為創立世界以前，你已經愛我了。"],[17,25,"公義的父啊，世人未曾認識你，我卻認識你；這些人也知道你差了我來。"],[17,26,"我已將你的名指示他們，還要指示他們，使你所愛我的愛在他們裏面，我也在他們裏面。」"]]},{"d":2,"step":"信服","title":"按神形像造的關係人","ref":"創1:26-28","hear":"一位在科技公司工作的年輕弟兄說，他的生活很有效率：上班對電腦，下班對手機，週末一個人追劇。「人際關係太麻煩了，」他說，「我一個人也過得很好。」直到有一次他重感冒，躺在租來的小房間裡三天，手機裡幾百個聯絡人，卻想不出可以請誰幫他買一碗粥。\n\n我們常有一個舊觀念：人基本上是獨立的個體，關係是加分題，有空才經營，沒空就算了。但神的觀點很不同。創世記說：「我們要照著我們的形像、按著我們的樣式造人」（創1:26）。請注意神說的是「我們」。許多教父讀到這裡，都看見三一神的影子：一位在愛中彼此相交的神，照著自己的樣式造人。接著經文說：「神就照著自己的形像造人，乃是照著他的形像造男造女。」（創1:27）人一被造，就是複數的，就是在關係中的。\n\n這意思是，關係不是人生的附加品，而是我們被造的本相。就像魚為水而造，鳥為天空而造，人是為愛與被愛而造的。一個人把自己關起來，不是「比較自由」，而是離開了被造的本位，就像把魚放在乾地上，看似安靜，其實正在缺氧。\n\n那位弟兄病好之後，開始參加教會的小組。他不太會說話，就負責帶飲料。半年後他說：「原來我不是不需要人，我只是以為不需要。」這正是神的恩典：祂按著自己的形像造我們，也一步步帶我們回到關係裡。","light":"從人的觀點到神的觀點：人不只是「有」關係，人「是」為關係而造。有己的生命想要獨立、自足、作自己的王；無己的生命承認：我需要神，也需要人。回到本位，就是回到神照著祂形像所設計的關係中。","think":["創1:26-27中，「我們」和「造男造女」顯明甚麼？","我是否也曾以為「一個人過得很好」，不需要別人？","這週我可以向誰承認「我需要你」，讓關係更真實？"],"speak":"天父，謝謝祢照著祢的形像造我，使我能愛、也能被愛。我承認有時把自己關起來，以為不需要任何人。求祢醫治我心裡的防衛，帶我回到祢所設計的關係裡，也讓我成為別人可以依靠的人。奉主耶穌的名禱告，阿們。","do":"今天傳一則訊息給一位你平常很少主動聯絡的人（家人、舊同學或同事），具體謝謝他曾經幫過你的一件事。","quick":"人不只是有關係，人是為關係而造。","rl":"創世記 1:26-28","text":[[1,26,"神說：「我們要照著我們的形像、按著我們的樣式造人，使他們管理海裏的魚、空中的鳥、地上的牲畜，和全地，並地上所爬的一切昆蟲。」"],[1,27,"神就照著自己的形像造人，乃是照著他的形像造男造女。"],[1,28,"神就賜福給他們，又對他們說：「要生養眾多，遍滿地面，治理這地，也要管理海裏的魚、空中的鳥，和地上各樣行動的活物。」"]]},{"d":3,"step":"實踐","title":"愛是從神來的","ref":"約壹4:7-12","hear":"約翰寫這封信時，已經是一位年老的使徒。據說他晚年被人抬到聚會中，只反覆說一句話：「小子們，要彼此相愛。」無論這傳說是否完全準確，約翰書信的確把愛說得極其簡單，也極其深刻：「沒有愛心的，就不認識神，因為神就是愛。」（約壹4:8）\n\n約翰沒有說「神有愛」，而是說「神就是愛」。愛不是神的其中一個嗜好，而是祂的本性。而這份愛不是停在理論裡，它有行動：「神差他獨生子到世間來，使我們藉著他得生」（約壹4:9）。三一神的愛向外流出，流到十字架上，也流到我們心裡。\n\n接著約翰說了一句讓人驚訝的話：「從來沒有人見過神，我們若彼此相愛，神就住在我們裏面」（約壹4:12）。世人看不見神，但他們看得見一個基督徒怎樣對待鄰居、怎樣回覆群組的訊息、怎樣對待餐廳裡忙碌的服務生。我們的相愛，成了看不見之神的「看得見的樣子」。\n\n所以今天的操練很簡單：讓神的愛通過你，流到一個真實的人身上。不必轟轟烈烈，像水管一樣就好——水管不必自己製造水，只要通暢、不堵塞。也許是對總是幫大家訂便當的同事說聲謝謝，也許是陪社區裡獨居的長輩聊十分鐘，也許是在群組裡為一位被冷落的人回一句溫暖的話。愛是從神來的，你只要讓它流出去。","light":"用心靠聖靈，不要用腦靠自己。愛不是靠意志擠出來的，而是從神裡面流出來的。920的「2」就是每一個與我有關係的人；今天選一個「2」，讓基督的生命藉著你流向他。水管不必驕傲，也不必自卑；它只要通暢，水自然會流到該去的地方。","think":["約壹4:9-10中，神的愛是怎樣顯明出來的？","我的愛比較像水庫（只存不流），還是像水管？","今天我要讓神的愛流向誰？用甚麼方式？"],"speak":"天父，祢就是愛，祢差祢的獨生子來，使我得生。求祢讓我成為一條通暢的水管，不堵塞、不保留，今天把祢的愛帶給一個真實的人。使人藉著我們的彼此相愛，看見祢的樣子。奉主耶穌的名禱告，阿們。","do":"今天中午以前，想好一位對象：一位常被忽略的同事、鄰居或長輩。今天之內主動問候他，並為他做一件小事，例如幫忙、陪伴或送一杯飲料。","quick":"世人看不見神，卻看得見我們怎樣彼此相愛。","rl":"約翰一書 4:7-12","text":[[4,7,"親愛的弟兄啊，我們應當彼此相愛，因為愛是從神來的。凡有愛心的，都是由神而生，並且認識神。"],[4,8,"沒有愛心的，就不認識神，因為神就是愛。"],[4,9,"神差他獨生子到世間來，使我們藉著他得生，神愛我們的心在此就顯明了。"],[4,10,"不是我們愛神，乃是神愛我們，差他的兒子為我們的罪作了挽回祭，這就是愛了。"],[4,11,"親愛的弟兄啊，神既是這樣愛我們，我們也當彼此相愛。"],[4,12,"從來沒有人見過神，我們若彼此相愛，神就住在我們裏面，愛他的心在我們裏面得以完全了。"]]},{"d":4,"step":"檢討・修正","title":"巴別塔式的社交","ref":"創11:1-9","hear":"人類歷史上第一個大型「團隊合作」，是巴別塔。他們有共同的語言、共同的目標、共同的技術，看起來非常合一。但他們說：「我們要建造一座城和一座塔，塔頂通天，為要傳揚我們的名」（創11:4）。他們的合一不是為了神，而是為了自己的名；不是彼此成全，而是彼此利用，好讓自己被看見。\n\n結果神變亂了他們的口音，他們彼此聽不懂，就分散了。以自己為中心的連結，表面上很緊密，裡面其實很脆弱。今天許多社交圈也像巴別塔：大家聚在一起，是因為彼此有用；一旦沒有利益，就散了。\n\n請用這段經文照照自己。我參加聚會、加入群組、維持某些關係，是為了愛，還是為了「傳揚我的名」？我會不會只跟對我有幫助的人來往？我在別人面前，是在建造他們，還是在建造自己的塔？這些問題不是為了定罪，而是讓聖靈指出有己的地方。\n\n好消息是，故事沒有停在巴別。到了五旬節，聖靈降臨，各國的人都聽見門徒用自己的鄉談說話（參 徒2:6）。巴別塔因有己而分散，五旬節因聖靈而合一。修正的道路不是更努力經營人脈，而是放下自己的塔，讓聖靈把我們重新連在一起。今天向神承認一個你在關係裡「為自己建塔」的地方，把它交給祂。","light":"有己是人類墮落的根源，也是一切關係破口的根。巴別塔要「傳揚我們的名」，三一神的團契卻是彼此榮耀。讓耶穌得著一切的榮耀，我們的關係就不再是為自己建塔，而是一同建立屬神的體系。拆下自己的塔，不是失去，而是得著真正的同伴。","think":["創11:4中，人建塔的動機是甚麼？","我有哪一段關係，其實是在為自己「建塔」？","我要怎樣把這段關係的動機重新交給神？"],"speak":"主耶穌，我承認我常在人群中為自己建塔，想被看見、被肯定，只和對我有用的人來往。求祢赦免我，拆毀我心裡的巴別塔。求聖靈使我的關係不再為了我的名，而是為了祢的名。奉主耶穌的名禱告，阿們。","do":"今天想一位你因為「沒甚麼用」而疏遠的人，例如退休的前輩或不善交際的同學，主動傳一句問候給他，不帶任何目的。","quick":"以自己為中心的連結，看似緊密，其實脆弱。","rl":"創世記 11:1-9","text":[[11,1,"那時，天下人的口音、言語都是一樣。"],[11,2,"他們往東邊遷移的時候，在示拿地遇見一片平原，就住在那裏。"],[11,3,"他們彼此商量說：「來吧！我們要做磚，把磚燒透了。」他們就拿磚當石頭，又拿石漆當灰泥。"],[11,4,"他們說：「來吧！我們要建造一座城和一座塔，塔頂通天，為要傳揚我們的名，免得我們分散在全地上。」"],[11,5,"耶和華降臨，要看看世人所建造的城和塔。"],[11,6,"耶和華說：「看哪，他們成為一樣的人民，都是一樣的言語，如今既做起這事來，以後他們所要做的事就沒有不成就的了。"],[11,7,"我們下去，在那裏變亂他們的口音，使他們的言語彼此不通。」"],[11,8,"於是耶和華使他們從那裏分散在全地上；他們就停工，不造那城了。"],[11,9,"因為耶和華在那裏變亂天下人的言語，使眾人分散在全地上，所以那城名叫巴別。"]]},{"d":5,"step":"反覆・繁殖","title":"保守合而為一的心","ref":"弗4:1-6","hear":"這一週，我們回到了關係的源頭。我們看見耶穌為門徒禱告，求他們像父與子一樣合一；我們看見人是照著神的形像、在關係中被造的；我們學習讓神的愛像水一樣流過我們；也照見了自己心裡的巴別塔。現在，我們要把這份領受鞏固下來，並且傳出去。\n\n保羅在以弗所書提醒教會：「用和平彼此聯絡，竭力保守聖靈所賜合而為一的心。」（弗4:3）請留意，合一是「聖靈所賜」的，不是我們製造的；但我們要「竭力保守」。就像神給我們一座花園，花是祂種的，但除草、澆水是我們的責任。接著保羅說：「一神，就是眾人的父，超乎眾人之上，貫乎眾人之中，也住在眾人之內。」（弗4:6）三一神不只是我們關係的榜樣，祂也住在我們中間，親自把我們連在一起。\n\n怎樣保守呢？保羅給了一份清單：「凡事謙虛、溫柔、忍耐，用愛心互相寬容」（弗4:2）。這些都不是高深的技巧，而是有己死去、基督活出來的生命。這也是接下來一整年要一點一點操練的。\n\n反覆，就是每天早晨提醒自己：「我是被三一神的愛所愛的人。」繁殖，就是把這週學到的，用自己的話告訴一個人。可以是你的小組組員、孩子、室友，或一位慕道的朋友。告訴他：「我們不是為孤單而造的，我們是為愛而造的。」","light":"改變觀念就改變生命。這週的新觀念是：關係的源頭是三一神。八大步驟中的「繁殖」，就是把領受傳下去；235的「2」提醒我們，信仰不是獨行的，要找一位同伴一起走。愛在傳遞中不會變少，反而越分越多。","think":["弗4:2-3中，保守合一需要哪些品格？","這週哪一個真理最觸動我？為甚麼？","我要把這週的領受分享給誰？甚麼時候？"],"speak":"天父，謝謝祢這一週帶我回到關係的源頭。求聖靈幫助我竭力保守合而為一的心，在家庭、教會和朋友之間活出謙虛、溫柔和忍耐。也求祢給我勇氣，把祢的愛告訴一個人。奉主耶穌的名禱告，阿們。","do":"今天約一位弟兄姊妹（見面或通話皆可），用三分鐘分享這週最觸動你的一句經文，並邀請他也分享，最後彼此代禱。","quick":"合一是聖靈所賜的，我們的責任是竭力保守。","rl":"以弗所書 4:1-6","text":[[4,1,"我為主被囚的勸你們：既然蒙召，行事為人就當與蒙召的恩相稱。"],[4,2,"凡事謙虛、溫柔、忍耐，用愛心互相寬容，"],[4,3,"用和平彼此聯絡，竭力保守聖靈所賜合而為一的心。"],[4,4,"身體只有一個，聖靈只有一個，正如你們蒙召同有一個指望。"],[4,5,"一主，一信，一洗，"],[4,6,"一神，就是眾人的父，超乎眾人之上，貫乎眾人之中，也住在眾人之內。"]]}],"kl":"約翰福音 17:21","keyText":"使他們都合而為一。正如你父在我裏面，我在你裏面，使他們也在我們裏面，叫世人可以信你差了我來。"};
+var CACHE = {};
+var TOOLS = {};
+function getJSON(names, ok, fail) {
+var i = 0;
+function next(lastErr) {
+if (i >= names.length) return fail && fail(lastErr);
+var url = names[i++] + '?v=' + APPVER;
+var x = new XMLHttpRequest();
+x.open('GET', url, true);
+x.timeout = 20000;
+x.onload = function () {
+if (x.status >= 200 && x.status < 300 || (x.status === 0 && x.responseText)) {
+try { return ok(JSON.parse(x.responseText)); } catch (e) { return next(url + ' JSON'); }
+}
+next(url + ' HTTP ' + x.status);
+};
+x.onerror = x.ontimeout = function () { next(url + ' ' + T('netErr')); };
+x.send();
+}
+next('');
+}
+function stageFile(lang, s) { return 'c-' + lang + '-s' + s + '.json'; }
+function loadStage(s, cb) {
+var lang = L(), k = lang + s;
+if (CACHE[k]) return cb(CACHE[k]);
+getJSON([stageFile(lang, s), 'content/' + stageFile(lang, s)], function (j) {
+var m = {};
+for (var i = 0; i < j.weeks.length; i++) m[j.weeks[i].w] = j.weeks[i];
+CACHE[k] = m; cb(m);
+}, function (err) { cb(null, err); });
+}
+function getWeek(w, cb) {
+if (w === 1 && L() === 'zh' && typeof W1 !== 'undefined' && !CACHE.zh1) return cb(W1);
+loadStage(stageOf(w), function (m, err) { cb(m ? m[w] : null, err); });
+}
+function loadTools(cb) {
+var lang = L();
+if (TOOLS[lang]) return cb(TOOLS[lang]);
+getJSON(['t-' + lang + '.json', 'content/t-' + lang + '.json'], function (j) { TOOLS[lang] = j; cb(j); }, function (e) { cb(null, e); });
+}
+/* ---------- progress ---------- */
+function weekDone(w) { var n = 0; for (var d = 1; d <= 5; d++) if (S.done[lid(w, d)]) n++; return n; }
+function totalDone() { var n = 0; each(S.done, function () { n++; }); return n; }
+function stageComplete(s) { var st = STAGES[s - 1]; for (var w = st[1]; w <= st[2]; w++) if (weekDone(w) < 5) return false; return true; }
+function level() { var n = 0; for (var s = 1; s <= 5; s++) { if (stageComplete(s)) n++; else break; } return n; }
+function nextLesson() {
+var p = PATHS[S.path] || PATHS.main;
+for (var i = 0; i < p.length; i++) for (var d = 1; d <= 5; d++) if (!S.done[lid(p[i], d)]) return { w: p[i], d: d, idx: i };
+return null;
+}
+function pathProgress(id) { var p = PATHS[id], n = 0; for (var i = 0; i < p.length; i++) n += weekDone(p[i]); return [n, p.length * 5]; }
+/* ---------- speech ---------- */
+var VOICES = {
+zh: [['yunjhe', 'zh-TW-YunJheNeural'], ['yunfan', 'zh-CN-Yunfan:DragonHDLatestNeural'], ['xiaochen', 'zh-CN-Xiaochen:DragonHDLatestNeural']],
+zs: [['yunfan', 'zh-CN-Yunfan:DragonHDLatestNeural'], ['xiaochen', 'zh-CN-Xiaochen:DragonHDLatestNeural'], ['yunjhe', 'zh-TW-YunJheNeural']],
+en: [['andrew', 'en-US-Andrew:DragonHDLatestNeural'], ['ava', 'en-US-Ava:DragonHDLatestNeural']]
+};
+function voiceName() { var vs = VOICES[L()], k = S.set.voice; for (var i = 0; i < vs.length; i++) if (vs[i][0] === k) return vs[i][1]; return vs[0][1]; }
+function rateAttr() { return (S.set.rate >= 0 ? '+' : '') + (S.set.rate * 5) + '%'; }
+function cnNum(n) {
+n = parseInt(n, 10); var d = '零一二三四五六七八九';
+if (n < 10) return d.charAt(n);
+if (n < 20) return '十' + (n % 10 ? d.charAt(n % 10) : '');
+if (n < 100) return d.charAt(Math.floor(n / 10)) + '十' + (n % 10 ? d.charAt(n % 10) : '');
+if (n < 200) return '一百' + (n % 100 ? (n % 100 < 10 ? '零' : '') + cnNum(n % 100) : '');
+return String(n);
+}
+function sanitize(t) {
+t = String(t || '').replace(/<[^>]+>/g, ' ').replace(/&[a-z]+;/g, ' ');
+if (L() === 'en') return t.replace(/\s{2,}/g, ' ').trim();
+t = t.replace(/[《》「」『』【】“”]/g, '');
+t = t.replace(/(\d{1,3}):(\d{1,3})(?:[–-](\d{1,3}))?/g, function (m, a, b, c) { return cnNum(a) + (L() === 'zs' ? '章' : '章') + cnNum(b) + (c ? '到' + cnNum(c) : '') + '節'; });
+t = t.replace(/321/g, '三二一').replace(/920/g, '九二零').replace(/235/g, '二三五');
+return t.replace(/[：]/g, '，').replace(/\s{2,}/g, ' ').trim();
+}
+function ttsChunks(t) {
+t = sanitize(t); if (!t) return [];
+var out = [], buf = '', stops = L() === 'en' ? '.!?;\n' : '。！？；\n', min = L() === 'en' ? 220 : 110;
+for (var i = 0; i < t.length; i++) { var ch = t.charAt(i); buf += ch; if (stops.indexOf(ch) >= 0 && buf.length >= min) { out.push(buf); buf = ''; } }
+if (buf.replace(/\s/g, '')) out.push(buf);
+var fin = [], lim = L() === 'en' ? 600 : 300;
+for (var j = 0; j < out.length; j++) { var s = out[j]; while (s.length > lim) { fin.push(s.slice(0, lim)); s = s.slice(lim); } if (s) fin.push(s); }
+return fin;
+}
+var AU = null, SPK = { on: false, pause: false, tok: 0, list: [], i: 0, title: '' };
+function audioEl() { if (!AU) { AU = new Audio(); AU.preload = 'auto'; AU.setAttribute('playsinline', ''); } return AU; }
+function ttsFetch(piece, ok, fail) {
+var x = new XMLHttpRequest();
+x.open('POST', SVC.tts, true); x.responseType = 'blob'; x.timeout = 30000;
+x.setRequestHeader('Content-Type', 'application/json');
+x.onload = function () { if (x.status === 200) ok(x.response); else fail(); };
+x.onerror = x.ontimeout = fail;
+x.send(JSON.stringify({ voice: voiceName(), rate: rateAttr(), sil: 140, silc: 140, sile: 260, text: piece }));
+}
+function speak(text, title) {
+stopSpeak();
+var chunks = ttsChunks(text); if (!chunks.length) return;
+if (!S.set.human || navigator.onLine === false) return sayNative(text, title);
+var my = ++SPK.tok, blobs = [], fails = 0;
+SPK = { on: true, pause: false, tok: my, list: chunks, i: 0, title: title || T('reading') };
+drawSpk(); toast(T('ttsPrep'));
+function get(k) { if (k >= chunks.length || blobs[k]) return; blobs[k] = 'p'; ttsFetch(chunks[k], function (b) { blobs[k] = b; if (k === SPK.i) playAt(k); }, function () { fails++; blobs[k] = 'x'; if (my === SPK.tok && k === SPK.i) { stopSpeak(); sayNative(chunks.slice(k).join(''), title); } }); }
+function playAt(k) {
+if (my !== SPK.tok) return;
+if (k >= chunks.length) return stopSpeak();
+SPK.i = k; drawSpk(); get(k); get(k + 1); get(k + 2);
+var b = blobs[k]; if (!b || b === 'p') return; if (b === 'x') return;
+var a = audioEl(); a.src = URL.createObjectURL(b);
+a.onended = function () { playAt(k + 1); };
+var pr = a.play(); if (pr && pr['catch']) pr['catch'](function () { });
+}
+get(0); get(1);
+SPK.go = playAt;
+}
+function sayNative(t, title) {
+if (!window.speechSynthesis) return toast(T('noTTS'));
+speechSynthesis.cancel();
+var u = new SpeechSynthesisUtterance(sanitize(t));
+u.lang = L() === 'en' ? 'en-US' : (L() === 'zs' ? 'zh-CN' : 'zh-TW'); u.rate = 0.95 + S.set.rate * 0.05;
+var vs = speechSynthesis.getVoices(), re = L() === 'en' ? /^en/i : (L() === 'zs' ? /zh[-_]CN/i : /zh[-_](TW|HK)/i);
+for (var i = 0; i < vs.length; i++) if (re.test(vs[i].lang)) { u.voice = vs[i]; break; }
+u.onend = function () { SPK.on = false; drawSpk(); };
+SPK = { on: true, pause: false, tok: SPK.tok + 1, list: [], i: 0, title: title || T('reading'), nat: 1 };
+drawSpk(); speechSynthesis.speak(u);
+}
+function stopSpeak() {
+SPK.tok++; SPK.on = false; SPK.pause = false;
+try { audioEl().pause(); } catch (e) { }
+try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) { }
+drawSpk();
+}
+function togglePause() {
+if (SPK.nat) { if (SPK.pause) speechSynthesis.resume(); else speechSynthesis.pause(); }
+else { var a = audioEl(); if (SPK.pause) a.play(); else a.pause(); }
+SPK.pause = !SPK.pause; drawSpk();
+}
+function spkSkip(n) { if (SPK.nat || !SPK.go) return; var k = Math.max(0, Math.min(SPK.list.length - 1, SPK.i + n)); try { audioEl().pause(); } catch (e) { } SPK.go(k); }
+function drawSpk() {
+var el = $('#spk');
+if (!SPK.on) { if (el) el.parentNode.removeChild(el); return; }
+if (!el) { el = document.createElement('div'); el.id = 'spk'; el.className = 'spk'; document.body.appendChild(el); }
+var prog = SPK.list.length ? ' · ' + (SPK.i + 1) + '/' + SPK.list.length : '';
+el.innerHTML = '<span class="t">🔊 ' + esc(SPK.title) + prog + '</span>' +
+(SPK.nat ? '' : '<button onclick="spkSkip(-1)" aria-label="prev">⏮</button>') +
+'<button onclick="togglePause()" aria-label="pause">' + (SPK.pause ? '▶' : '⏸') + '</button>' +
+(SPK.nat ? '' : '<button onclick="spkSkip(1)" aria-label="next">⏭</button>') +
+'<button onclick="stopSpeak()" aria-label="stop">✕</button>';
+}
+/* ---------- 小智 ---------- */
+var XZ = { open: false, msgs: [], busy: false, ctx: '' };
+function xzSystem() {
+var lang = L();
+var base = I18N[lang === 'en' ? 'en' : 'zh'].xzSys;
+if (lang === 'zs') base = I18N.zs.xzSys;
+return base + (XZ.ctx ? '\n\n' + XZ.ctx : '');
+}
+function openXz(q, ctx) {
+XZ.open = true; if (ctx) XZ.ctx = ctx;
+if (q) { XZ.msgs.push({ role: 'user', text: q }); drawXz(); xzCall(); } else drawXz();
+}
+function closeXz() { XZ.open = false; drawXz(); }
+function xzSend() { var i = $('#xzin'); if (!i || !i.value.replace(/\s/g, '') || XZ.busy) return; XZ.msgs.push({ role: 'user', text: i.value }); i.value = ''; drawXz(); xzCall(); }
+function xzCall() {
+XZ.busy = true; drawXz();
+if (navigator.onLine === false) { XZ.msgs.push({ role: 'assistant', text: T('xzOffline') }); XZ.busy = false; return drawXz(); }
+var x = new XMLHttpRequest(); x.open('POST', SVC.xz, true); x.timeout = 45000;
+x.setRequestHeader('Content-Type', 'application/json');
+var msgs = []; var arr = XZ.msgs.slice(-12);
+for (var i = 0; i < arr.length; i++) msgs.push({ role: arr[i].role, content: arr[i].text });
+if (msgs.length && msgs[0].role !== 'user') msgs.shift();
+x.onload = function () {
+var t = '';
+try { var d = JSON.parse(x.responseText); var c = d.content || []; for (var j = 0; j < c.length; j++) if (c[j].type === 'text') t += c[j].text; } catch (e) { }
+if (x.status !== 200 || !t) t = T('xzFail');
+XZ.msgs.push({ role: 'assistant', text: t.replace(/\*\*/g, '').replace(/^#+\s*/gm, '') }); XZ.busy = false; drawXz();
+};
+x.onerror = x.ontimeout = function () { XZ.msgs.push({ role: 'assistant', text: T('xzFail') }); XZ.busy = false; drawXz(); };
+x.send(JSON.stringify({ model: SVC.model, max_tokens: 1000, system: xzSystem(), messages: msgs }));
+}
+function drawXz() {
+var el = $('#xz');
+if (!el) { el = document.createElement('div'); el.id = 'xz'; el.className = 'xz'; document.body.appendChild(el); }
+el.className = 'xz' + (XZ.open ? ' on' : '');
+if (!XZ.open) return;
+var b = '';
+if (!XZ.msgs.length) {
+b = '<div class="card"><p class="h3">' + esc(T('xzHi')) + '</p><p class="sm muted">' + esc(T('xzNote')) + '</p><div class="chips" style="flex-wrap:wrap">';
+var qs = T('xzQuick').split('|');
+for (var i = 0; i < qs.length; i++) b += '<button class="chip" onclick="openXz(this.textContent)">' + esc(qs[i]) + '</button>';
+b += '</div></div>';
+}
+for (var j = 0; j < XZ.msgs.length; j++) {
+var m = XZ.msgs[j];
+b += '<div class="xm ' + (m.role === 'user' ? 'u' : 'a') + '">' + esc(m.text) + (m.role === 'user' ? '' : '<div style="text-align:right"><button class="play" onclick="speak(XZ.msgs[' + j + '].text,\'' + esc(T('xz')) + '\')">🔊</button></div>') + '</div>';
+}
+if (XZ.busy) b += '<div class="xm a muted">' + esc(T('xzThinking')) + '</div>';
+el.innerHTML = '<div class="hd"><button class="ib" onclick="closeXz()" aria-label="close">✕</button><b class="grow">' + esc(T('xz')) + '</b><button class="btn sm" onclick="XZ.msgs=[];drawXz()">' + esc(T('xzNew')) + '</button></div>' +
+'<div class="bd" id="xzb">' + b + '</div>' +
+'<div class="ft"><textarea id="xzin" rows="1" style="min-height:46px" placeholder="' + esc(T('xzPh')) + '"></textarea><button class="btn pri" onclick="xzSend()">' + esc(T('send')) + '</button></div>';
+var bd = $('#xzb'); bd.scrollTop = bd.scrollHeight;
+}
+/* ---------- update ---------- */
+var BUSY = false;
+function checkUpdate(manual) {
+getJSON(['version.json'], function (j) {
+if (j && j.v && j.v !== APPVER) {
+if (!BUSY) { location.reload(); return; }
+var b = $('#upd'); if (b) b.style.display = 'block';
+} else if (manual) toast(T('upToDate'));
+}, function () { if (manual) toast(T('netErr')); });
+}
+/* 321社交生活 · views (ES5) */
+var R = { tab: 'today', page: null, stack: [], sub: {} };
+var IC = {
+today: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg>',
+course: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20h18M5 20V10l7-5 7 5v10M9 20v-5h6v5"/></svg>',
+one: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3.3 2.7-6 6-6s6 2.7 6 6M10 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>',
+serve: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg>',
+grow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21V11M12 11c0-4 3-7 8-7 0 5-3 8-8 7zM12 14c0-3-2.5-5.5-7-5.5 0 4 2.5 6 7 5.5z"/></svg>',
+me: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>',
+back: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg>',
+set: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>'
+};
+function go(tab) { R.tab = tab; R.page = null; R.stack = []; render(); window.scrollTo(0, 0); }
+function open_(p) { if (R.page) R.stack.push(R.page); R.page = p; render(); window.scrollTo(0, 0); }
+function back() { stopSpeak(); R.page = R.stack.length ? R.stack.pop() : null; render(); }
+function topbar(title, withBack, right) {
+return '<div class="top">' + (withBack ? '<button class="ib" onclick="back()" aria-label="back">' + IC.back + '</button>' : '') +
+'<h1>' + esc(title) + '</h1>' + (right || '') + '</div>';
+}
+function stageName(s) { return T('st' + s); }
+function unitName(u) { return T('u' + u); }
+function wkLabel(w) { return T('wkN', w); }
+function sheet(html) { $('#sbody').innerHTML = html; $('#sheet').className = 'sheet on'; }
+function closeSheet() { $('#sheet').className = 'sheet'; }
+function render() {
+document.documentElement.setAttribute('data-lang', L());
+document.documentElement.style.setProperty('--fs', S.set.fs + 'px');
+if (S.set.theme) document.documentElement.setAttribute('data-theme', S.set.theme); else document.documentElement.removeAttribute('data-theme');
+BUSY = !!(R.page && R.page.t === 'lesson');
+var app = $('#app');
+if (!S.lang || !S.mode) { app.innerHTML = vOnboard(); $('#tabbar').style.display = 'none'; $('#fab').style.display = 'none'; return; }
+$('#tabbar').style.display = ''; $('#fab').style.display = '';
+drawTabs();
+if (R.page) {
+var p = R.page;
+if (p.t === 'lesson') return vLesson(p.w, p.d, p.q);
+if (p.t === 'week') return vWeek(p.w);
+if (p.t === 'card') return vCard(p.id);
+if (p.t === 'recon') return vRecon(p.id);
+if (p.t === 'journal') return vJournal();
+if (p.t === 'settings') return vSettings();
+if (p.t === 'person') return vPerson(p.id);
+if (p.t === 'paths') return vPaths();
+}
+if (R.tab === 'today') return vToday();
+if (R.tab === 'course') return vCourse();
+if (R.tab === 'one') return vOne();
+if (R.tab === 'grow') return vGrow();
+if (R.tab === 'me') return vMe();
+}
+function drawTabs() {
+var tabs = ['today', 'course', 'one', 'grow', 'me'], h = '';
+for (var i = 0; i < tabs.length; i++) h += '<button class="' + (R.tab === tabs[i] && !R.page ? 'on' : '') + '" onclick="go(\'' + tabs[i] + '\')">' + IC[tabs[i]] + '<span>' + esc(T('tab_' + tabs[i])) + '</span></button>';
+$('#tabbar').innerHTML = h;
+$('#fab').textContent = T('xzBtn');
+}
+function loading(title, back_) { $('#app').innerHTML = topbar(title, back_) + '<div class="empty">' + esc(T('loading')) + '</div>'; }
+function loadErr(title, err, retry) {
+$('#app').innerHTML = topbar(title, true) + '<div class="card c"><p>' + esc(T('loadFail')) + '</p><p class="xs muted">' + esc(err || '') + '</p><button class="btn pri" onclick="' + retry + '">' + esc(T('retry')) + '</button></div>';
+}
+/* ---------- onboarding ---------- */
+var OB = { lang: '', mode: '', path: 'main' };
+function vOnboard() {
+if (!OB.lang) OB.lang = S.lang || (/^zh-(CN|SG)|Hans/i.test(navigator.language || '') ? 'zs' : (/^zh/i.test(navigator.language || '') ? 'zh' : (navigator.language ? 'en' : 'zh')));
+var keep = S.lang; S.lang = OB.lang;
+var langs = [['zh', '繁體中文'], ['zs', '简体中文'], ['en', 'English']];
+var h = '<div class="ob"><div class="hero" style="background-image:url(hero-s.jpg)"></div><div class="c"><div class="h2" style="font-size:1.5em;margin:0">' + esc(T('appName')) + '</div><p class="muted" style="margin:2px 0 10px">' + esc(T('tagline')) + '</p></div>';
+h += '<div class="seg">'; for (var i = 0; i < langs.length; i++) h += '<button class="' + (OB.lang === langs[i][0] ? 'on' : '') + '" onclick="OB.lang=\'' + langs[i][0] + '\';render()">' + langs[i][1] + '</button>'; h += '</div>';
+h += '<p class="kv c" style="margin:14px 4px">' + esc(T('obVerse')) + '</p>';
+h += '<p class="h3">' + esc(T('obMode')) + '</p>';
+var modes = ['self', 'group', 'church', 'air'];
+for (var j = 0; j < modes.length; j++) h += '<button class="opt ' + (OB.mode === modes[j] ? 'on' : '') + '" onclick="OB.mode=\'' + modes[j] + '\';render()"><b>' + esc(T('mode_' + modes[j])) + '</b><span class="sm muted">' + esc(T('mode_' + modes[j] + '_d')) + '</span></button>';
+h += '<p class="h3" style="margin-top:16px">' + esc(T('obPath')) + '</p><select onchange="OB.path=this.value">';
+for (var k = 0; k < PATH_IDS.length; k++) h += '<option value="' + PATH_IDS[k] + '"' + (OB.path === PATH_IDS[k] ? ' selected' : '') + '>' + esc(T('path_' + PATH_IDS[k])) + '</option>';
+h += '</select><p class="xs muted">' + esc(T('path_' + OB.path + '_d')) + '</p>';
+h += '<input type="text" id="obname" placeholder="' + esc(T('obName')) + '" value="' + esc(S.name) + '" style="margin-top:8px">';
+h += '<button class="btn pri full" style="margin-top:16px" onclick="obDone()">' + esc(T('obStart')) + '</button></div>';
+S.lang = keep;
+return h;
+}
+function obDone() {
+if (!OB.mode) return toast(T('obPick'));
+S.lang = OB.lang; S.mode = OB.mode; S.path = OB.path; S.name = ($('#obname').value || '').slice(0, 20); S.start = today();
+save(); render();
+}
+/* ---------- today ---------- */
+function vToday() {
+var n = nextLesson(), h = topbar(T('appName'), false, '<button class="ib" onclick="open_({t:\'settings\'})" aria-label="settings">' + IC.set + '</button>');
+var d = new Date(), hr = d.getHours();
+var greet = hr < 11 ? T('gMorning') : (hr < 18 ? T('gDay') : T('gEve'));
+h += '<div id="upd" class="banner" style="display:none" onclick="location.reload()">' + esc(T('newVer')) + '</div>';
+h += '<p class="sm muted" style="margin:0">' + esc(greet + (S.name ? '，' + S.name : '')) + ' · ' + esc(T('lvlName' + level())) + '</p>';
+var pp = pathProgress(S.path);
+h += '<div class="hero" style="background-image:url(hero-s.jpg);margin-bottom:8px"></div><div class="row sp" style="margin:0 2px"><span class="tag">' + esc(T('path_' + S.path)) + '</span><span class="xs muted">' + esc(T('progress', pp[0], pp[1])) + '</span></div><div class="bar" style="margin:6px 2px 4px"><i style="width:' + Math.round(pp[0] * 100 / pp[1]) + '%"></i></div>';
+var wkend = d.getDay() === 0 || d.getDay() === 6;
+if (wkend) h += '<div id="sunCard"></div>';
+h += '<div id="nextCard"><div class="card"><p class="muted">' + esc(T('loading')) + '</p></div></div>';
+h += '<div id="cardWk"></div>';
+h += '<div class="grid2">' +
+tile('💞', T('t_920'), T('t_920_d'), "go('one');R.sub.one='920';render()") +
+tile('🗣', T('t_words'), T('t_words_d'), "go('grow');R.sub.grow='words';render()") +
+tile('🕯', T('t_five'), T('t_five_d'), "go('one');R.sub.one='five';render()") +
+tile('💬', T('xz'), T('t_xz_d'), 'openXz()') + '</div>';
+h += '<div class="foot">' + esc(T('foot')) + '</div>';
+$('#app').innerHTML = h;
+if (!n) { $('#nextCard').innerHTML = '<div class="card c"><p class="h2">' + esc(T('allDone')) + '</p><p class="muted">' + esc(T('allDone_d')) + '</p><button class="btn pri" onclick="open_({t:\'paths\'})">' + esc(T('choosePath')) + '</button></div>'; }
+else getWeek(n.w, function (wk, err) {
+var el = $('#nextCard'); if (!el) return;
+if (!wk) { el.innerHTML = '<div class="card c"><p>' + esc(T('loadFail')) + '</p><p class="xs muted">' + esc(err || '') + '</p><button class="btn" onclick="render()">' + esc(T('retry')) + '</button></div>'; return; }
+var l = wk.lessons[n.d - 1], s = stageOf(n.w);
+var dots = ''; for (var i = 1; i <= 5; i++) dots += '<i class="' + (S.done[lid(n.w, i)] ? 'on' : '') + '"></i>';
+el.innerHTML = '<div class="card stage" style="--sc:' + SCOL[s] + '"><div class="row sp"><span class="tag">' + esc(stageName(s) + ' · ' + wkLabel(n.w)) + '</span><span class="dots">' + dots + '</span></div>' +
+'<p class="eyebrow" style="margin-top:10px">' + esc(wk.title) + '</p><p class="h2">' + esc(l.title) + '</p>' +
+'<p class="sm muted" style="margin:0 0 4px">' + esc(T('dN', n.d) + ' · ' + l.step + ' · ' + l.rl) + '</p>' +
+'<p class="kv" style="margin:8px 0 14px">' + qt(l.quick) + '</p>' +
+'<div class="row"><button class="btn pri grow" onclick="open_({t:\'lesson\',w:' + n.w + ',d:' + n.d + '})">' + esc(T('startToday')) + '</button><button class="btn" onclick="open_({t:\'lesson\',w:' + n.w + ',d:' + n.d + ',q:1})">' + esc(T('quick3')) + '</button></div></div>';
+if (wkend && $('#sunCard')) $('#sunCard').innerHTML = sundayCard(n.d === 1 && n.w > 1 ? null : wk, n.w);
+});
+loadTools(function (t) {
+var el = $('#cardWk'); if (!el || !t) return;
+var c = t.cards[(isoWeek(new Date()) - 1) % t.cards.length];
+el.innerHTML = '<div class="ocard" style="margin:12px 0;cursor:pointer" onclick="open_({t:\'card\',id:\'' + c.id + '\'})"><span class="xs" style="opacity:.85;letter-spacing:.1em">' + esc(T('cardOfWeek')) + '</span><div class="h2" style="color:#fff;margin:6px 0 0">' + esc(c.t) + '</div><div class="v">' + esc(c.v) + '</div><div class="r">' + esc(c.rl) + ' · ' + esc(T('tapAct')) + '</div></div>';
+});
+}
+function tile(ic, t, d, on) { return '<div class="tile" onclick="' + on + '"><span class="ic">' + ic + '</span><b>' + esc(t) + '</b><span class="xs muted">' + esc(d) + '</span></div>'; }
+function sundayCard(wk, w) {
+if (!wk) { getWeek(w - 1, function (pw) { var el = $('#sunCard'); if (el && pw) el.innerHTML = sundayCard(pw); }); return ''; }
+var k = 'w' + pad(wk.w), s = S.sun[k] || {};
+return '<div class="card" style="border-color:var(--gold)"><p class="eyebrow">🧪 ' + esc(T('sunday')) + ' · ' + esc(wkLabel(wk.w)) + '</p><p class="pray" style="margin:0 0 12px">' + esc(wk.sunday) + '</p>' +
+'<div class="q"><label>' + esc(T('sunR')) + '</label><textarea oninput="sunSave(\'' + k + '\',\'r\',this.value)">' + esc(s.r || '') + '</textarea></div>' +
+'<div class="q"><label>' + esc(T('sunO')) + '</label><textarea oninput="sunSave(\'' + k + '\',\'o\',this.value)">' + esc(s.o || '') + '</textarea></div>' +
+'<div class="q"><label>' + esc(T('sunS')) + '</label><textarea oninput="sunSave(\'' + k + '\',\'s\',this.value)">' + esc(s.s || '') + '</textarea></div></div>';
+}
+function sunSave(k, f, v) { S.sun[k] = S.sun[k] || {}; S.sun[k][f] = v; S.sun[k].ts = now(); save(); }
+/* ---------- lesson ---------- */
+function vLesson(w, d, q) {
+loading(wkLabel(w), true);
+getWeek(w, function (wk, err) {
+if (!wk) return loadErr(wkLabel(w), err, 'render()');
+var l = wk.lessons[d - 1], id = lid(w, d), s = stageOf(w), nt = S.notes[id] || {};
+var right = '<button class="ib" onclick="open_({t:\'lesson\',w:' + w + ',d:' + d + (q ? '' : ',q:1') + '});R.stack.pop()">' + esc(q ? T('full') : T('quick3')) + '</button>';
+var h = topbar(wkLabel(w) + ' · ' + T('dN', d), true, right);
+h += '<div class="stage" style="--sc:' + SCOL[s] + ';margin-top:4px"><span class="tag">' + esc(stageName(s) + ' · ' + unitName(unitOf(w))) + '</span><p class="eyebrow" style="margin-top:8px">' + esc(wk.title + ' · ' + l.step) + '</p><div class="h2" style="font-size:1.5em">' + esc(l.title) + '</div></div>';
+var verses = '';
+for (var i = 0; i < l.text.length; i++) if (l.text[i][2]) verses += '<sup>' + (l.text.length > 1 && l.text[0][0] !== l.text[l.text.length - 1][0] ? l.text[i][0] + ':' : '') + l.text[i][1] + '</sup>' + esc(l.text[i][2]) + (L() === 'en' ? ' ' : '');
+var vtxt = ''; for (var j = 0; j < l.text.length; j++) vtxt += l.text[j][2] + (L() === 'en' ? ' ' : '');
+h += sec('看', T('see'), '<p class="sm muted" style="margin:0 0 6px">' + esc(l.rl) + '</p><div class="scr">' + verses + '</div>', 'speak(LCUR.vt,LCUR.rl)');
+if (!q) {
+var paras = l.hear.split(/\n\s*\n/), ph = '';
+for (var k = 0; k < paras.length; k++) ph += '<p>' + esc(paras[k]) + '</p>';
+h += sec('聽', T('hear'), '<div class="prose">' + ph + '</div><div class="light"><b>' + esc(T('light321')) + '</b><br>' + esc(l.light) + '</div>', 'speak(LCUR.hear+\'\\n\'+LCUR.light,LCUR.title)');
+var qs = '';
+for (var m = 0; m < 3; m++) qs += '<div class="q"><label>' + (m + 1) + '. ' + esc(l.think[m]) + '</label><textarea oninput="noteSave(\'' + id + '\',\'q' + m + '\',this.value)" placeholder="' + esc(T('writeHere')) + '">' + esc(nt['q' + m] || '') + '</textarea></div>';
+h += sec('想', T('think'), qs + '<button class="btn sm" onclick="askXzLesson()">💬 ' + esc(T('askXz')) + '</button>');
+h += sec('講', T('speak'), '<div class="pray">' + esc(l.speak) + '</div><div class="q" style="margin-top:10px"><label class="sm muted">' + esc(T('myPrayer')) + '</label><textarea oninput="noteSave(\'' + id + '\',\'p\',this.value)">' + esc(nt.p || '') + '</textarea></div>', 'speak(LCUR.speak,\'' + esc(T('speak')) + '\')');
+} else {
+h += sec('聽', T('quickTitle'), '<p class="kv">' + qt(l.quick) + '</p>');
+}
+h += sec('行', T('do'), '<div class="do">' + esc(l['do']) + '<label class="chk"><input type="checkbox" ' + (nt.did ? 'checked' : '') + ' onchange="noteSave(\'' + id + '\',\'did\',this.checked?1:0)">' + esc(T('iWill')) + '</label></div>');
+h += '<div class="q"><label class="sm muted">' + esc(T('reviewQ')) + '</label><textarea oninput="noteSave(\'' + id + '\',\'j\',this.value)" placeholder="' + esc(T('reviewPh')) + '">' + esc(nt.j || '') + '</textarea></div>';
+var done = S.done[id];
+h += '<button class="btn ' + (done ? '' : 'gold') + ' full" style="margin:10px 0" onclick="finishLesson(' + w + ',' + d + ')">' + esc(done ? T('doneAgain') : T('finish')) + '</button>';
+h += '<div class="row" style="margin-bottom:20px">' + (d > 1 || w > 1 ? '<button class="btn grow" onclick="navLesson(' + w + ',' + d + ',-1)">‹ ' + esc(T('prev')) + '</button>' : '') + '<button class="btn grow" onclick="open_({t:\'week\',w:' + w + '})">' + esc(T('weekInfo')) + '</button>' + (d < 5 || w < 52 ? '<button class="btn grow" onclick="navLesson(' + w + ',' + d + ',1)">' + esc(T('next')) + ' ›</button>' : '') + '</div>';
+window.LCUR = { vt: vtxt, rl: l.rl, hear: l.hear, light: l.light, speak: l.speak, title: l.title, wk: wk, l: l };
+$('#app').innerHTML = h;
+});
+}
+function qt(s) { return L() === 'en' ? '“' + esc(s) + '”' : '「' + esc(s) + '」'; }
+var SECN = { '看': 1, '聽': 2, '想': 3, '講': 4, '行': 5 };
+function sec(k, t, body, play) {
+return '<div class="sec card"><div class="lbl"><span class="k">' + esc(L() === 'en' ? SECN[k] : (L() === 'zs' ? T('k_' + k) : k)) + '</span><span>' + esc(t) + '</span>' + (play ? '<button class="play" onclick="' + play + '">🔊 ' + esc(T('listen')) + '</button>' : '') + '</div>' + body + '</div>';
+}
+function noteSave(id, f, v) { S.notes[id] = S.notes[id] || {}; S.notes[id][f] = v; S.notes[id].ts = now(); save(); }
+function finishLesson(w, d) {
+var id = lid(w, d), was = !!S.done[id], lv = level();
+S.done[id] = now(); save(); stopSpeak();
+if (!was && level() > lv) { sheet('<div class="c"><div class="lvl" style="justify-content:center"><div class="bdg">' + level() + '</div></div><p class="h2">' + esc(T('lvlUp', T('lvlName' + level()))) + '</p><p class="muted">' + esc(T('lvlName' + level() + '_d')) + '</p><p class="kv">' + esc(T('glory')) + '</p><button class="btn pri full" onclick="closeSheet()">' + esc(T('amen')) + '</button></div>'); }
+else toast(T('doneToast'));
+if (!was && d === 5 && weekDone(w) === 5) setTimeout(function () { toast(T('weekDoneToast')); }, 2300);
+back();
+}
+function navLesson(w, d, dir) {
+d += dir; if (d < 1) { w--; d = 5; } if (d > 5) { w++; d = 1; }
+if (w < 1 || w > 52) return;
+R.page = { t: 'lesson', w: w, d: d }; render(); window.scrollTo(0, 0);
+}
+function askXzLesson() {
+var c = window.LCUR; if (!c) return openXz();
+openXz(T('xzLessonQ', c.title), T('xzCtx', c.wk.title, c.title, c.rl, c.vt.slice(0, 600), c.hear.slice(0, 900)));
+}
+/* ---------- week ---------- */
+function vWeek(w) {
+loading(wkLabel(w), true);
+getWeek(w, function (wk, err) {
+if (!wk) return loadErr(wkLabel(w), err, 'render()');
+var s = stageOf(w);
+var h = topbar(wkLabel(w), true);
+h += '<div class="card stage" style="--sc:' + SCOL[s] + '"><span class="tag">' + esc(stageName(s) + ' · ' + unitName(unitOf(w))) + '</span><div class="h2" style="margin-top:8px">' + esc(wk.title) + '</div><p class="kv" style="margin:6px 0">' + esc(wk.theme) + '</p><hr class="s"><p class="eyebrow">' + esc(T('memory')) + ' · ' + esc(wk.kl) + '</p><p class="kv" style="margin:0">' + esc(wk.keyText) + '</p><div style="text-align:right"><button class="play" onclick="speak(\'' + esc(wk.keyText).replace(/'/g, '') + '\',\'' + esc(wk.kl) + '\')">🔊 ' + esc(T('listen')) + '</button></div></div>';
+h += '<div class="card">';
+for (var d = 1; d <= 5; d++) {
+var l = wk.lessons[d - 1], dn = S.done[lid(w, d)];
+h += '<div class="wk" onclick="open_({t:\'lesson\',w:' + w + ',d:' + d + '})"><div class="n ' + (dn ? 'done' : '') + '">' + (dn ? '✓' : d) + '</div><div class="grow"><b>' + esc(l.title) + '</b><div class="xs muted">' + esc(l.step + ' · ' + l.rl) + '</div></div></div>';
+}
+h += '</div>';
+var g = ''; for (var i = 0; i < wk.group.length; i++) g += '<p style="margin:6px 0">' + (i + 1) + '. ' + esc(wk.group[i]) + '</p>';
+h += '<div class="card"><p class="eyebrow">👥 ' + esc(T('groupQ')) + '</p>' + g + '<button class="btn sm" onclick="shareWeek(' + w + ')">' + esc(T('copyShare')) + '</button></div>';
+h += '<div class="card"><p class="eyebrow">🧪 ' + esc(T('sunday')) + '</p><p class="pray" style="margin:0">' + esc(wk.sunday) + '</p></div>';
+$('#app').innerHTML = h;
+});
+}
+function shareWeek(w) {
+getWeek(w, function (wk) {
+if (!wk) return;
+var t = T('appName') + ' · ' + wkLabel(w) + '\n' + wk.title + '\n' + wk.theme + '\n\n' + wk.kl + '\n' + wk.keyText + '\n\n' + T('groupQ') + '\n';
+for (var i = 0; i < wk.group.length; i++) t += (i + 1) + '. ' + wk.group[i] + '\n';
+shareText(t);
+});
+}
+function shareText(t) {
+if (navigator.share) { navigator.share({ text: t })['catch'](function () { }); return; }
+copyText(t);
+}
+function copyText(t) {
+try { navigator.clipboard.writeText(t).then(function () { toast(T('copied')); }, function () { fbCopy(t); }); } catch (e) { fbCopy(t); }
+}
+function fbCopy(t) { var a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); toast(T('copied')); } catch (e) { } document.body.removeChild(a); }
+/* ---------- course ---------- */
+function vCourse() {
+var h = topbar(T('tab_course'), false, '<button class="ib" onclick="open_({t:\'paths\'})">' + esc(T('paths')) + '</button>');
+var pp = pathProgress(S.path);
+h += '<div class="card"><div class="row sp"><b>' + esc(T('path_' + S.path)) + '</b><span class="sm muted">' + Math.round(pp[0] * 100 / pp[1]) + '%</span></div><div class="bar" style="margin-top:8px"><i style="width:' + Math.round(pp[0] * 100 / pp[1]) + '%"></i></div><p class="xs muted" style="margin:6px 0 0">' + esc(T('path_' + S.path + '_d')) + '</p></div>';
+if (S.path !== 'main') {
+var p = PATHS[S.path];
+h += '<div class="card">';
+for (var i = 0; i < p.length; i++) h += wkRow(p[i], (i + 1) + '');
+h += '</div>';
+}
+for (var s = 1; s <= 5; s++) {
+var st = STAGES[s - 1];
+h += '<div class="card stage" style="--sc:' + SCOL[s] + '"><p class="eyebrow" style="color:' + SCOL[s] + '">' + esc(T('stageN', s)) + ' · ' + esc(T('wRange', st[1], st[2])) + '</p><div class="h2">' + esc(stageName(s)) + '</div><p class="sm muted" style="margin:0 0 6px">' + esc(T('st' + s + '_d')) + '</p>';
+for (var u = 0; u < UNITS.length; u++) {
+var un = UNITS[u]; if (un[1] < st[1] || un[1] > st[2]) continue;
+h += '<p class="h3" style="margin-top:12px">U' + un[0] + ' ' + esc(unitName(un[0])) + '</p>';
+for (var w = un[1]; w <= un[2]; w++) h += wkRow(w);
+}
+h += '</div>';
+}
+$('#app').innerHTML = h;
+loadStageTitles();
+}
+function wkRow(w, num) {
+var n = weekDone(w), dots = ''; for (var i = 1; i <= 5; i++) dots += '<i class="' + (S.done[lid(w, i)] ? 'on' : '') + '"></i>';
+return '<div class="wk" onclick="open_({t:\'week\',w:' + w + '})"><div class="n ' + (n === 5 ? 'done' : '') + '">' + (num || w) + '</div><div class="grow"><b class="wt" data-w="' + w + '">' + esc(T('wt' + w)) + '</b><div class="dots" style="margin-top:4px">' + dots + '</div></div></div>';
+}
+function loadStageTitles() { }
+function vPaths() {
+var h = topbar(T('paths'), true);
+for (var i = 0; i < PATH_IDS.length; i++) {
+var id = PATH_IDS[i], pp = pathProgress(id);
+h += '<button class="opt ' + (S.path === id ? 'on' : '') + '" onclick="S.path=\'' + id + '\';save();back();toast(T(\'pathSet\'))"><b>' + esc(T('path_' + id)) + '</b><span class="sm muted">' + esc(T('path_' + id + '_d')) + '</span><div class="bar" style="margin-top:8px"><i style="width:' + Math.round(pp[0] * 100 / pp[1]) + '%"></i></div></button>';
+}
+h += '<p class="xs muted">' + esc(T('pathNote')) + '</p>';
+$('#app').innerHTML = h;
+}
+/* ---------- one another ---------- */
+function vOne() {
+var sub = R.sub.one || '920';
+var h = topbar(T('tab_one'));
+var segs = [['920', T('seg_920')], ['five', T('seg_five')], ['host', T('seg_host')], ['recon', T('seg_recon')]];
+h += '<div class="seg">'; for (var i = 0; i < segs.length; i++) h += '<button class="' + (sub === segs[i][0] ? 'on' : '') + '" onclick="R.sub.one=\'' + segs[i][0] + '\';render()">' + esc(segs[i][1]) + '</button>'; h += '</div><div id="oneBody"></div>';
+$('#app').innerHTML = h;
+loadTools(function (t) {
+var el = $('#oneBody'); if (!el) return;
+if (!t) { el.innerHTML = '<div class="empty">' + esc(T('loadFail')) + ' <button class="btn sm" onclick="render()">' + esc(T('retry')) + '</button></div>'; return; }
+if (sub === '920') el.innerHTML = one920();
+if (sub === 'five') el.innerHTML = oneFive(t);
+if (sub === 'host') el.innerHTML = oneHost(t);
+if (sub === 'recon') el.innerHTML = oneRecon(t);
+});
+}
+function oneCards(t) {
+var c = t.cards[(isoWeek(new Date()) - 1) % t.cards.length], h = '';
+h += '<div class="ocard" onclick="open_({t:\'card\',id:\'' + c.id + '\'})" style="cursor:pointer"><span class="xs" style="opacity:.85;letter-spacing:.1em">' + esc(T('cardOfWeek')) + '</span><div class="h2" style="color:#fff">' + esc(c.t) + '</div><div class="v">' + esc(c.v) + '</div><div class="r">' + esc(c.rl) + '</div></div>';
+h += '<p class="sm muted" style="margin:14px 2px 6px">' + esc(T('cardsIntro', t.cards.length)) + '</p><div class="grid2">';
+for (var i = 0; i < t.cards.length; i++) {
+var k = t.cards[i], cnt = 0; for (var j = 0; j < S.cardLog.length; j++) if (S.cardLog[j].id === k.id) cnt++;
+h += '<div class="tile" onclick="open_({t:\'card\',id:\'' + k.id + '\'})"><span class="xs muted">' + esc(k.rl) + '</span><b>' + esc(k.t) + '</b>' + (cnt ? '<span class="pill" style="background:var(--soft);color:var(--ok)">✓ ' + cnt + '</span>' : '') + '</div>';
+}
+return h + '</div>';
+}
+function vCard(id) {
+loadTools(function (t) {
+var c = null; for (var i = 0; i < t.cards.length; i++) if (t.cards[i].id === id) c = t.cards[i];
+if (!c) return back();
+var h = topbar(c.t, true);
+h += '<div class="ocard"><div class="h2" style="color:#fff">' + esc(c.t) + '</div><div class="v">' + esc(c.v) + '</div><div class="r">' + esc(c.rl) + '</div></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('doThis')) + '</p><div class="do">' + esc(c.a) + '</div><div class="q" style="margin-top:12px"><label class="sm">' + esc(T('forWhom')) + '</label><input type="text" id="cfor" placeholder="' + esc(T('forWhomPh')) + '"></div><button class="btn pri full" onclick="cardDid(\'' + c.id + '\')">' + esc(T('iDidIt')) + '</button></div>';
+var logs = '';
+for (var j = S.cardLog.length - 1; j >= 0; j--) if (S.cardLog[j].id === id) logs += '<div class="mini"><span class="xs muted">' + fmtDate(S.cardLog[j].ts) + '</span><span>' + esc(S.cardLog[j].who || '—') + '</span></div>';
+if (logs) h += '<div class="card"><p class="eyebrow">' + esc(T('history')) + '</p>' + logs + '</div>';
+h += '<button class="btn full" onclick="speak(\'' + esc(c.v).replace(/'/g, '') + '\',\'' + esc(c.rl) + '\')">🔊 ' + esc(T('listen')) + '</button>';
+$('#app').innerHTML = h;
+});
+}
+function cardDid(id) {
+var who = ($('#cfor').value || '').slice(0, 30);
+S.cardLog.push({ id: id, who: who, ts: now() });
+if (who) { var p = findPersonByName(who); if (p) p.log.push({ k: 'card', ts: now() }); }
+save(); toast(T('praiseGod')); render();
+}
+/* 920 */
+var CIRC = ['fam', 'friend', 'nb', 'work', 'seek', 'hard'];
+function findPersonByName(n) { for (var i = 0; i < S.ppl.length; i++) if (S.ppl[i].n === n) return S.ppl[i]; return null; }
+function lastTs(p) { var m = 0; for (var i = 0; i < p.log.length; i++) if (p.log[i].ts > m) m = p.log[i].ts; return m; }
+function heat(p) { var t = lastTs(p); if (!t) return '#B9B2C4'; var d = (now() - t) / 864e5; return d < 7 ? '#3E8E5A' : (d < 30 ? '#D9A520' : '#B9B2C4'); }
+function ring920() {
+var W = 320, cx = 160, cy = 160, h = '<svg viewBox="0 0 320 320" style="width:100%;max-width:340px;display:block;margin:0 auto" role="img" aria-label="920">';
+h += '<circle cx="160" cy="160" r="70" fill="none" stroke="var(--line)" stroke-dasharray="4 5"/><circle cx="160" cy="160" r="128" fill="none" stroke="var(--line)" stroke-dasharray="4 5"/>';
+h += '<circle cx="160" cy="160" r="34" fill="var(--brand)"/><text x="160" y="157" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">' + esc(T('me')) + '</text><text x="160" y="174" text-anchor="middle" fill="#F2C75C" font-size="11">0</text>';
+var n = S.ppl.length;
+for (var i = 0; i < n; i++) {
+var p = S.ppl[i], r = (p.c === 'friend' || p.c === 'fam') ? 70 : 128, a = (i / Math.max(n, 1)) * Math.PI * 2 - Math.PI / 2;
+var x = cx + r * Math.cos(a), y = cy + r * Math.sin(a);
+h += '<g style="cursor:pointer" onclick="open_({t:\'person\',id:\'' + p.id + '\'})"><circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="17" fill="' + heat(p) + '"/><text x="' + x.toFixed(1) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">' + esc(p.n.slice(0, L() === 'en' ? 2 : 1)) + '</text></g>';
+}
+return h + '</svg>';
+}
+function one920() {
+var h = '<div class="card"><p class="sm" style="margin:0 0 8px">' + esc(T('t920_d')) + '</p>' + ring920() + '<p class="xs muted c">' + esc(T('heatKey')) + '</p></div>';
+h += '<div class="card"><div class="row"><input type="text" id="pn" placeholder="' + esc(T('pName')) + '" class="grow"><select id="pc" style="width:auto">';
+for (var i = 0; i < CIRC.length; i++) h += '<option value="' + CIRC[i] + '">' + esc(T('c_' + CIRC[i])) + '</option>';
+h += '</select></div><button class="btn pri full" style="margin-top:8px" onclick="addPerson()">＋ ' + esc(T('addPerson')) + '</button></div>';
+if (!S.ppl.length) return h + '<div class="empty">' + esc(T('noPeople')) + '</div>';
+h += '<div class="card">';
+for (var c = 0; c < CIRC.length; c++) {
+var list = []; for (var j = 0; j < S.ppl.length; j++) if (S.ppl[j].c === CIRC[c]) list.push(S.ppl[j]);
+if (!list.length) continue;
+h += '<p class="eyebrow" style="margin-top:8px">' + esc(T('c_' + CIRC[c])) + '</p>';
+for (var k = 0; k < list.length; k++) h += personRow(list[k]);
+}
+return h + '</div>';
+}
+function personRow(p) {
+var t = lastTs(p);
+return '<div class="person"><div class="av" style="background:' + heat(p) + '" onclick="open_({t:\'person\',id:\'' + p.id + '\'})">' + esc(p.n.slice(0, 1)) + '</div><div class="grow" onclick="open_({t:\'person\',id:\'' + p.id + '\'})"><b>' + esc(p.n) + '</b><div class="xs muted">' + (t ? esc(T('lastCare', fmtDate(t))) : esc(T('noCare'))) + '</div></div>' +
+'<button class="btn sm" onclick="logP(\'' + p.id + '\',\'pray\')">🙏</button><button class="btn sm" onclick="logP(\'' + p.id + '\',\'care\')">💬</button></div>';
+}
+function addPerson() {
+var n = ($('#pn').value || '').replace(/^\s+|\s+$/g, '').slice(0, 20); if (!n) return toast(T('pName'));
+S.ppl.push({ id: uid(), n: n, c: $('#pc').value, log: [], note: '' }); save(); render();
+}
+function logP(id, k) { for (var i = 0; i < S.ppl.length; i++) if (S.ppl[i].id === id) S.ppl[i].log.push({ k: k, ts: now() }); save(); toast(T(k === 'pray' ? 'loggedPray' : 'loggedCare')); render(); }
+function vPerson(id) {
+var p = null; for (var i = 0; i < S.ppl.length; i++) if (S.ppl[i].id === id) p = S.ppl[i];
+if (!p) return back();
+var h = topbar(p.n, true);
+h += '<div class="card"><p class="eyebrow">' + esc(T('c_' + p.c)) + '</p><div class="row wrap">' +
+'<button class="btn" onclick="logP(\'' + id + '\',\'pray\')">🙏 ' + esc(T('lg_pray')) + '</button><button class="btn" onclick="logP(\'' + id + '\',\'care\')">💬 ' + esc(T('lg_care')) + '</button><button class="btn" onclick="logP(\'' + id + '\',\'serve\')">🍲 ' + esc(T('lg_serve')) + '</button><button class="btn" onclick="logP(\'' + id + '\',\'recon\')">🕊 ' + esc(T('lg_recon')) + '</button></div>' +
+'<div class="q" style="margin-top:12px"><label class="sm">' + esc(T('pNote')) + '</label><textarea oninput="pNote(\'' + id + '\',this.value)">' + esc(p.note || '') + '</textarea></div>' +
+'<div class="q"><label class="sm">' + esc(T('fruitFor')) + '</label><select onchange="pFruit(\'' + id + '\',this.value)"><option value="">—</option>';
+for (var f = 0; f < 9; f++) h += '<option value="' + f + '"' + (String(p.f) === String(f) ? ' selected' : '') + '>' + esc(T('fr' + f)) + '</option>';
+h += '</select></div></div>';
+var lg = ''; for (var j = p.log.length - 1; j >= 0 && j > p.log.length - 40; j--) lg += '<div class="mini"><span class="xs muted">' + fmtDate(p.log[j].ts) + '</span><span>' + esc(T('lg_' + p.log[j].k)) + '</span></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('history')) + '</p>' + (lg || '<p class="muted sm">' + esc(T('noCare')) + '</p>') + '</div>';
+h += '<button class="btn full" style="color:var(--bad)" onclick="if(confirm(T(\'delConfirm\'))){delPerson(\'' + id + '\')}">' + esc(T('delete')) + '</button>';
+$('#app').innerHTML = h;
+}
+function pNote(id, v) { for (var i = 0; i < S.ppl.length; i++) if (S.ppl[i].id === id) S.ppl[i].note = v; save(); }
+function pFruit(id, v) { for (var i = 0; i < S.ppl.length; i++) if (S.ppl[i].id === id) S.ppl[i].f = v; save(); }
+function delPerson(id) { var a = []; for (var i = 0; i < S.ppl.length; i++) if (S.ppl[i].id !== id) a.push(S.ppl[i]); S.ppl = a; save(); back(); }
+/* pray */
+function onePray() {
+var h = '<div class="card"><textarea id="prt" placeholder="' + esc(T('prPh')) + '"></textarea><button class="btn pri full" style="margin-top:8px" onclick="addPr()">＋ ' + esc(T('addPr')) + '</button></div>';
+var open = '', ans = '';
+for (var i = S.pr.length - 1; i >= 0; i--) {
+var p = S.pr[i];
+var row = '<div class="mini"><div class="grow"><div>' + esc(p.t) + '</div><span class="xs muted">' + fmtDate(p.ts) + (p.ans ? ' · ✨ ' + esc(T('answered')) + ' ' + fmtDate(p.ans) : '') + '</span></div>' + (p.ans ? '' : '<button class="btn sm" onclick="ansPr(\'' + p.id + '\')">✨</button>') + '<button class="btn sm" onclick="delPr(\'' + p.id + '\')">✕</button></div>';
+if (p.ans) ans += row; else open += row;
+}
+h += '<div class="card"><p class="eyebrow">🙏 ' + esc(T('praying')) + '</p>' + (open || '<p class="muted sm">' + esc(T('noPr')) + '</p>') + '</div>';
+if (ans) h += '<div class="card"><p class="eyebrow">✨ ' + esc(T('answeredList')) + '</p>' + ans + '</div>';
+return h;
+}
+function addPr() { var t = ($('#prt').value || '').replace(/^\s+|\s+$/g, ''); if (!t) return; S.pr.push({ id: uid(), t: t.slice(0, 400), ts: now(), ans: 0 }); save(); render(); }
+function ansPr(id) { for (var i = 0; i < S.pr.length; i++) if (S.pr[i].id === id) S.pr[i].ans = now(); save(); toast(T('praiseGod')); render(); }
+function delPr(id) { var a = []; for (var i = 0; i < S.pr.length; i++) if (S.pr[i].id !== id) a.push(S.pr[i]); S.pr = a; save(); render(); }
+/* recon */
+function oneRecon(t) {
+var h = '<div class="card" style="border-color:var(--bad)"><p class="eyebrow" style="color:var(--bad)">⚠ ' + esc(T('safetyFirst')) + '</p><p class="sm" style="margin:0">' + esc(t.recon.safety) + '</p></div>';
+h += '<div class="card"><p class="sm" style="margin:0 0 10px">' + esc(T('reconIntro')) + '</p><input type="text" id="rcw" placeholder="' + esc(T('reconWho')) + '"><button class="btn pri full" style="margin-top:8px" onclick="newRecon()">' + esc(T('reconNew')) + '</button></div>';
+if (S.rc.length) {
+h += '<div class="card">';
+for (var i = S.rc.length - 1; i >= 0; i--) { var r = S.rc[i]; h += '<div class="wk" onclick="open_({t:\'recon\',id:\'' + r.id + '\'})"><div class="n ' + (r.done ? 'done' : '') + '">' + (r.done ? '✓' : (r.step + 1)) + '</div><div class="grow"><b>' + esc(r.who) + '</b><div class="xs muted">' + esc(t.recon.steps[r.step].t) + ' · ' + fmtDate(r.ts) + '</div></div></div>'; }
+h += '</div>';
+}
+return h;
+}
+function newRecon() { var w = ($('#rcw').value || '').replace(/^\s+|\s+$/g, '').slice(0, 20) || T('someone'); var r = { id: uid(), who: w, step: 0, a: {}, ts: now(), done: 0 }; S.rc.push(r); save(); open_({ t: 'recon', id: r.id }); }
+function vRecon(id) {
+var r = null; for (var i = 0; i < S.rc.length; i++) if (S.rc[i].id === id) r = S.rc[i];
+if (!r) return back();
+loadTools(function (t) {
+var st = t.recon.steps[r.step], h = topbar(T('seg_recon') + ' · ' + r.who, true);
+var dots = ''; for (var k = 0; k < t.recon.steps.length; k++) dots += '<i class="' + (k <= r.step ? 'on' : '') + '"></i>';
+h += '<div class="card"><div class="row sp"><span class="tag">' + esc(T('stepN', r.step + 1, t.recon.steps.length)) + '</span><span class="dots">' + dots + '</span></div><div class="h2" style="margin-top:8px">' + esc(st.t) + '</div><p class="eyebrow">' + esc(st.rl) + '</p><p class="kv" style="margin:0 0 10px">' + esc(st.v) + '</p><p>' + esc(st.d) + '</p>';
+for (var q = 0; q < st.q.length; q++) { var key = r.step + '_' + q; h += '<div class="q"><label>' + esc(st.q[q]) + '</label><textarea oninput="rcSave(\'' + id + '\',\'' + key + '\',this.value)">' + esc(r.a[key] || '') + '</textarea></div>'; }
+if (r.step === 2) { h += '<p class="eyebrow">' + esc(T('openers')) + '</p>'; for (var o = 0; o < t.recon.opens.length; o++) h += '<div class="mini" onclick="copyText(this.textContent)" style="cursor:pointer">💬 ' + esc(t.recon.opens[o]) + '</div>'; }
+h += '</div><div class="row">' + (r.step > 0 ? '<button class="btn grow" onclick="rcStep(\'' + id + '\',-1)">‹ ' + esc(T('prev')) + '</button>' : '') +
+(r.step < t.recon.steps.length - 1 ? '<button class="btn pri grow" onclick="rcStep(\'' + id + '\',1)">' + esc(T('nextStep')) + ' ›</button>' : '<button class="btn gold grow" onclick="rcDone(\'' + id + '\')">' + esc(T('reconDone')) + '</button>') + '</div>';
+h += '<p class="xs muted c" style="margin-top:14px">' + esc(T('reconPrivate')) + '</p>';
+h += '<button class="btn full" style="margin-top:6px" onclick="openXz(T(\'xzRecon\'))">💬 ' + esc(T('askXz')) + '</button>';
+h += '<button class="btn full" style="margin-top:8px;color:var(--bad)" onclick="if(confirm(T(\'delConfirm\'))){delRc(\'' + id + '\')}">' + esc(T('delete')) + '</button>';
+$('#app').innerHTML = h;
+});
+}
+function rcSave(id, k, v) { for (var i = 0; i < S.rc.length; i++) if (S.rc[i].id === id) S.rc[i].a[k] = v; save(); }
+function rcStep(id, n) { for (var i = 0; i < S.rc.length; i++) if (S.rc[i].id === id) S.rc[i].step = Math.max(0, S.rc[i].step + n); save(); render(); window.scrollTo(0, 0); }
+function rcDone(id) { for (var i = 0; i < S.rc.length; i++) if (S.rc[i].id === id) S.rc[i].done = now(); save(); toast(T('praiseGod')); back(); }
+function delRc(id) { var a = []; for (var i = 0; i < S.rc.length; i++) if (S.rc[i].id !== id) a.push(S.rc[i]); S.rc = a; save(); back(); }
+/* ---------- grow ---------- */
+function vGrow() {
+var sub = R.sub.grow || 'words';
+var h = topbar(T('tab_grow'));
+var segs = [['words', T('seg_words')], ['digi', T('seg_digi')], ['fruit', T('seg_fruit')], ['cards', T('seg_cards')], ['235', T('seg_235')]];
+h += '<div class="seg sc">'; for (var i = 0; i < segs.length; i++) h += '<button class="' + (sub === segs[i][0] ? 'on' : '') + '" onclick="R.sub.grow=\'' + segs[i][0] + '\';render()">' + esc(segs[i][1]) + '</button>'; h += '</div><div id="svBody"></div>';
+$('#app').innerHTML = h;
+loadTools(function (t) {
+var el = $('#svBody'); if (!el) return;
+if (!t) { el.innerHTML = '<div class="empty">' + esc(T('loadFail')) + ' <button class="btn sm" onclick="render()">' + esc(T('retry')) + '</button></div>'; return; }
+if (sub === 'words') el.innerHTML = growWords(t);
+if (sub === 'digi') el.innerHTML = growDigi(t);
+if (sub === 'fruit') el.innerHTML = svFruit(t);
+if (sub === 'cards') el.innerHTML = oneCards(t);
+if (sub === '235') el.innerHTML = svWay(t) + sv235();
+});
+}
+function svWay(t) {
+var h = '<div class="card"><p class="h3">' + esc(T('wayTitle')) + '</p><p class="sm muted">' + esc(T('wayIntro')) + '</p><input type="text" id="wayw" placeholder="' + esc(T('wayWhat')) + '">';
+for (var i = 0; i < t.way.length; i++) { var w = t.way[i]; h += '<div class="mini" style="align-items:flex-start"><div class="lvl"><div class="bdg" style="width:44px;height:44px;font-size:1.05em;border-radius:12px">' + esc(w.k) + '</div></div><div class="grow"><b>' + esc(w.t) + '</b><div class="sm">' + esc(w.q) + '</div><label class="chk sm"><input type="checkbox" class="waychk">' + esc(T('yes')) + '</label></div></div>'; }
+h += '<button class="btn gold full" style="margin-top:10px" onclick="wayDone()">' + esc(T('wayGo')) + '</button></div>';
+if (S.way.length) { h += '<div class="card"><p class="eyebrow">' + esc(T('history')) + '</p>'; for (var j = S.way.length - 1; j >= 0 && j > S.way.length - 20; j--) h += '<div class="mini"><span class="xs muted">' + fmtDate(S.way[j].ts) + '</span><span class="grow">' + esc(S.way[j].w || '—') + '</span><span class="xs">' + S.way[j].n + '/5</span></div>'; h += '</div>'; }
+return h;
+}
+function wayDone() { var n = 0; $$('.waychk').forEach(function (c) { if (c.checked) n++; }); S.way.push({ w: ($('#wayw').value || '').slice(0, 40), n: n, ts: now() }); save(); toast(n === 5 ? T('wayAll') : T('wayPart')); render(); }
+var R235 = ['comp', 'parent', 'child', 'team'];
+function sv235() {
+var h = '<div class="card"><p class="h3">235</p><p class="sm muted">' + esc(T('t235_d')) + '</p></div>';
+for (var i = 0; i < R235.length; i++) {
+var k = R235[i], list = '';
+for (var j = 0; j < S.t235.length; j++) if (S.t235[j].k === k) list += '<div class="mini"><span class="grow">' + esc(S.t235[j].n) + '</span><span class="xs muted">' + fmtDate(S.t235[j].ts) + '</span><button class="btn sm" onclick="del235(\'' + S.t235[j].id + '\')">✕</button></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('r_' + k)) + '</p><p class="xs muted" style="margin:0 0 6px">' + esc(T('r_' + k + '_d')) + '</p>' + list + '<div class="row" style="margin-top:6px"><input type="text" id="n235' + k + '" placeholder="' + esc(T('pName')) + '" class="grow"><button class="btn sm" onclick="add235(\'' + k + '\')">＋</button></div></div>';
+}
+return h;
+}
+function add235(k) { var n = ($('#n235' + k).value || '').replace(/^\s+|\s+$/g, '').slice(0, 30); if (!n) return; S.t235.push({ id: uid(), k: k, n: n, ts: now() }); save(); render(); }
+function del235(id) { var a = []; for (var i = 0; i < S.t235.length; i++) if (S.t235[i].id !== id) a.push(S.t235[i]); S.t235 = a; save(); render(); }
+var FR = [3, 3, 3, 3, 3, 3, 3, 3, 3];
+function radar(vals, prev) {
+var cx = 160, cy = 150, R0 = 110, h = '<svg viewBox="0 0 320 300" style="width:100%;max-width:340px;display:block;margin:0 auto" role="img" aria-label="radar">';
+for (var g = 1; g <= 5; g++) { var pts = ''; for (var i = 0; i < 9; i++) { var a = i / 9 * Math.PI * 2 - Math.PI / 2, r = R0 * g / 5; pts += (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1) + ' '; } h += '<polygon points="' + pts + '" fill="none" stroke="var(--line)"/>'; }
+function poly(v, col, op) { var p = ''; for (var i = 0; i < 9; i++) { var a = i / 9 * Math.PI * 2 - Math.PI / 2, r = R0 * (v[i] || 0) / 5; p += (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1) + ' '; } return '<polygon points="' + p + '" fill="' + col + '" fill-opacity="' + op + '" stroke="' + col + '" stroke-width="2"/>'; }
+if (prev) h += poly(prev, '#B9B2C4', 0.15);
+h += poly(vals, '#2A55B0', 0.25);
+for (var k = 0; k < 9; k++) { var a2 = k / 9 * Math.PI * 2 - Math.PI / 2, x = cx + (R0 + 22) * Math.cos(a2), y = cy + (R0 + 18) * Math.sin(a2); h += '<text x="' + x.toFixed(1) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="middle" font-size="12" fill="var(--ink)">' + esc(T('fr' + k)) + '</text>'; }
+return h + '</svg>';
+}
+function svFruit(t) {
+var last = S.fruits.length ? S.fruits[S.fruits.length - 1].v : null, first = S.fruits.length > 1 ? S.fruits[0].v : null;
+FR = last ? last.slice() : [3, 3, 3, 3, 3, 3, 3, 3, 3];
+var h = '<div class="card"><p class="h3">' + esc(T('fruitTitle')) + '</p><p class="sm muted">' + esc(T('fruitIntro')) + '</p>' + (last ? radar(last, first) + '<p class="xs muted c">' + esc(first ? T('fruitCompare', fmtDate(S.fruits[0].ts), fmtDate(S.fruits[S.fruits.length - 1].ts)) : T('fruitLast', fmtDate(S.fruits[S.fruits.length - 1].ts))) + '</p>' : '') + '</div>';
+h += '<div class="card">';
+for (var i = 0; i < 9; i++) {
+var b = ''; for (var s = 1; s <= 5; s++) b += '<button class="' + (FR[i] === s ? 'on' : '') + '" onclick="frSet(' + i + ',' + s + ',this)">' + s + '</button>';
+h += '<p style="margin:6px 0 0"><b>' + esc(t.fruits[i].n) + '</b> <span class="xs muted">' + esc(t.fruits[i].d) + '</span></p><div class="scale">' + b + '</div>';
+}
+h += '<button class="btn pri full" onclick="frSave()">' + esc(T('fruitSave')) + '</button><p class="xs muted c">' + esc(T('fruitNote')) + '</p></div>';
+return h;
+}
+function frSet(i, s, el) { FR[i] = s; var bs = el.parentNode.children; for (var k = 0; k < bs.length; k++) bs[k].className = (k + 1 === s ? 'on' : ''); }
+function frSave() { S.fruits.push({ ts: now(), v: FR.slice() }); if (S.fruits.length > 60) S.fruits.splice(1, 1); save(); toast(T('saved')); render(); }
+/* ---------- me ---------- */
+function temple_old() {
+var h = '<svg viewBox="0 0 340 250" style="width:100%;max-width:380px;display:block;margin:0 auto" role="img" aria-label="temple">';
+var w = 1, rows = [[10, 210], [10, 186], [9, 162], [9, 138], [8, 114], [6, 90]];
+for (var r = 0; r < rows.length; r++) {
+var n = rows[r][0], y = rows[r][1], sw = 28, gap = 4, tot = n * sw + (n - 1) * gap, x0 = 170 - tot / 2;
+for (var i = 0; i < n && w <= 52; i++, w++) {
+var s = stageOf(w), dn = weekDone(w), fill = dn === 5 ? SCOL[s] : (dn ? SCOL[s] : 'var(--soft)'), op = dn === 5 ? 1 : (dn ? 0.45 : 1);
+h += '<rect x="' + (x0 + i * (sw + gap)).toFixed(1) + '" y="' + y + '" width="' + sw + '" height="20" rx="4" fill="' + fill + '" fill-opacity="' + op + '" stroke="var(--line)" style="cursor:pointer" onclick="open_({t:\'week\',w:' + w + '})"><title>' + w + '</title></rect>';
+}
+}
+h += '<rect x="158" y="18" width="24" height="62" rx="4" fill="' + (level() >= 5 ? '#F2C75C' : 'var(--line)') + '"/><rect x="140" y="34" width="60" height="16" rx="4" fill="' + (level() >= 5 ? '#F2C75C' : 'var(--line)') + '"/>';
+return h + '</svg>';
+}
+function vMe() {
+var lv = level(), h = topbar(T('tab_me'), false, '<button class="ib" onclick="open_({t:\'settings\'})" aria-label="settings">' + IC.set + '</button>');
+h += '<div class="card"><div class="lvl"><div class="bdg">' + (lv + 1) + '</div><div><p class="eyebrow" style="margin:0">' + esc(T('myLevel')) + '</p><div class="h2" style="margin:0">' + esc(T('lvlName' + lv)) + '</div><p class="sm muted" style="margin:0">' + esc(T('lvlName' + lv + '_d')) + '</p></div></div>' + longTable() + '<p class="xs muted c">' + esc(T('tableNote')) + '</p></div>';
+var notes = 0; each(S.notes, function () { notes++; });
+h += '<div class="grid2">' + stat(totalDone(), T('statLessons')) + stat(S.cardLog.length, T('statCards')) + stat(S.ppl.length, T('statPeople')) + stat(wwCount(), T('statWords')) + '</div>';
+h += '<div class="card"><div class="wk" onclick="open_({t:\'journal\'})"><div class="n">📓</div><div class="grow"><b>' + esc(T('journal')) + '</b><div class="xs muted">' + esc(T('journal_d')) + '</div></div></div><div class="wk" onclick="open_({t:\'paths\'})"><div class="n">🧭</div><div class="grow"><b>' + esc(T('paths')) + '</b><div class="xs muted">' + esc(T('path_' + S.path)) + '</div></div></div><div class="wk" onclick="open_({t:\'settings\'})"><div class="n">⚙</div><div class="grow"><b>' + esc(T('settings')) + '</b><div class="xs muted">' + esc(T('settings_d')) + '</div></div></div></div>';
+h += '<div class="card"><p class="eyebrow">321</p><p class="sm" style="margin:0;line-height:1.9">' + esc(T('vision321')) + '</p></div>';
+h += '<div class="foot">' + esc(T('foot')) + '<br>v' + esc(APPVER) + '</div>';
+$('#app').innerHTML = h;
+}
+function stat(n, l) { return '<div class="tile c"><div class="h2" style="color:var(--brand);margin:0">' + n + '</div><span class="xs muted">' + esc(l) + '</span></div>'; }
+function vJournal() {
+var h = topbar(T('journal'), true), items = [];
+each(S.notes, function (k, v) { items.push([v.ts || 0, k, v]); });
+items.sort(function (a, b) { return b[0] - a[0]; });
+h += '<button class="btn full" onclick="exportNotes()">' + esc(T('exportNotes')) + '</button>';
+if (!items.length) h += '<div class="empty">' + esc(T('noNotes')) + '</div>';
+for (var i = 0; i < items.length && i < 200; i++) {
+var v = items[i][2], k = items[i][1], w = parseInt(k.slice(1, 3), 10), d = parseInt(k.slice(4), 10), body = '';
+for (var q = 0; q < 3; q++) if (v['q' + q]) body += '<p class="sm" style="margin:4px 0">• ' + esc(v['q' + q]) + '</p>';
+if (v.p) body += '<p class="sm" style="margin:4px 0">🙏 ' + esc(v.p) + '</p>';
+if (v.j) body += '<p class="sm" style="margin:4px 0">✎ ' + esc(v.j) + '</p>';
+if (!body) continue;
+h += '<div class="card" onclick="open_({t:\'lesson\',w:' + w + ',d:' + d + '})" style="cursor:pointer"><p class="eyebrow">' + esc(wkLabel(w) + ' · ' + T('dN', d) + ' · ' + fmtDate(v.ts || 0)) + '</p><b class="wt">' + esc(T('wt' + w)) + '</b>' + body + '</div>';
+}
+$('#app').innerHTML = h;
+}
+function exportNotes() {
+var t = T('appName') + ' — ' + T('journal') + '\n\n', items = [];
+each(S.notes, function (k, v) { items.push([k, v]); }); items.sort();
+for (var i = 0; i < items.length; i++) {
+var k = items[i][0], v = items[i][1], w = parseInt(k.slice(1, 3), 10), d = parseInt(k.slice(4), 10);
+t += wkLabel(w) + ' ' + T('dN', d) + ' ' + T('wt' + w) + '\n';
+for (var q = 0; q < 3; q++) if (v['q' + q]) t += '- ' + v['q' + q] + '\n';
+if (v.p) t += T('myPrayer') + ': ' + v.p + '\n'; if (v.j) t += T('reviewQ') + ': ' + v.j + '\n';
+t += '\n';
+}
+dl(t, T('appName') + '-journal.txt', 'text/plain');
+}
+function dl(text, name, type) {
+try { var b = new Blob([text], { type: type + ';charset=utf-8' }), a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a); toast(T('exported')); } catch (e) { copyText(text); }
+}
+function vSettings() {
+var h = topbar(T('settings'), true);
+var langs = [['zh', '繁體中文'], ['zs', '简体中文'], ['en', 'English']];
+h += '<div class="card"><p class="eyebrow">' + esc(T('language')) + '</p><div class="seg">';
+for (var i = 0; i < langs.length; i++) h += '<button class="' + (L() === langs[i][0] ? 'on' : '') + '" onclick="setLang(\'' + langs[i][0] + '\')">' + langs[i][1] + '</button>';
+h += '</div><p class="xs muted">' + esc(T('langNote')) + '</p></div>';
+var fss = [[15, 'S'], [17, 'M'], [19, 'L'], [22, 'XL']];
+h += '<div class="card"><p class="eyebrow">' + esc(T('fontSize')) + '</p><div class="seg">';
+for (var f = 0; f < fss.length; f++) h += '<button class="' + (S.set.fs === fss[f][0] ? 'on' : '') + '" onclick="S.set.fs=' + fss[f][0] + ';save();render()">' + fss[f][1] + '</button>';
+h += '</div><p class="eyebrow" style="margin-top:12px">' + esc(T('theme')) + '</p><div class="seg">';
+var th = [['', T('auto')], ['light', T('light')], ['dark', T('dark')]];
+for (var t = 0; t < th.length; t++) h += '<button class="' + (S.set.theme === th[t][0] ? 'on' : '') + '" onclick="S.set.theme=\'' + th[t][0] + '\';save();render()">' + esc(th[t][1]) + '</button>';
+h += '</div></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('voice')) + '</p><label class="chk"><input type="checkbox" ' + (S.set.human ? 'checked' : '') + ' onchange="S.set.human=this.checked?1:0;save()">' + esc(T('humanVoice')) + '</label><select style="margin-top:10px" onchange="S.set.voice=this.value;save()">';
+var vs = VOICES[L()];
+for (var v = 0; v < vs.length; v++) h += '<option value="' + vs[v][0] + '"' + (voiceName() === vs[v][1] ? ' selected' : '') + '>' + esc(T('v_' + vs[v][0])) + '</option>';
+h += '</select><p class="eyebrow" style="margin-top:12px">' + esc(T('rate')) + '</p><div class="seg">';
+for (var r = -2; r <= 2; r++) h += '<button class="' + (S.set.rate === r ? 'on' : '') + '" onclick="S.set.rate=' + r + ';save();render()">' + (r > 0 ? '+' : '') + r + '</button>';
+h += '</div><button class="btn sm" onclick="speak(T(\'testVoice\'),T(\'voice\'))">🔊 ' + esc(T('test')) + '</button></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('howUse')) + '</p><select onchange="S.mode=this.value;save()">';
+var ms = ['self', 'group', 'church', 'air'];
+for (var m = 0; m < ms.length; m++) h += '<option value="' + ms[m] + '"' + (S.mode === ms[m] ? ' selected' : '') + '>' + esc(T('mode_' + ms[m])) + '</option>';
+h += '</select><input type="text" style="margin-top:10px" value="' + esc(S.name) + '" placeholder="' + esc(T('obName')) + '" oninput="S.name=this.value.slice(0,20);save()"></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('offline')) + '</p><p class="sm muted" style="margin:0 0 8px">' + esc(T('offline_d')) + '</p><button class="btn full" onclick="dlAll()">⬇ ' + esc(T('dlAll')) + '</button><p class="xs muted" id="dlst"></p></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('backup')) + '</p><div class="row"><button class="btn grow" onclick="dl(JSON.stringify(S),\'321social-backup.json\',\'application/json\')">' + esc(T('exportAll')) + '</button><button class="btn grow" onclick="$(\'#imp\').click()">' + esc(T('importAll')) + '</button></div><input type="file" id="imp" accept=".json,application/json" style="display:none" onchange="importAll(this)"></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('about')) + '</p><p class="sm" style="margin:0 0 8px"><b>' + esc(T('appName')) + '</b> v' + esc(APPVER) + '</p><p class="sm muted" style="margin:0 0 8px">' + esc(T('aboutText')) + '</p><button class="btn sm" onclick="checkUpdate(1)">' + esc(T('checkUpd')) + '</button> <button class="btn sm" style="color:var(--bad)" onclick="if(confirm(T(\'resetConfirm\'))){localStorage.removeItem(KEY);location.reload()}">' + esc(T('reset')) + '</button></div>';
+h += '<div class="foot">' + esc(T('foot')) + '</div>';
+$('#app').innerHTML = h;
+}
+function setLang(l) { stopSpeak(); S.lang = l; S.set.voice = ''; save(); XZ.msgs = []; render(); }
+function dlAll() {
+var files = [], langs = [L()], n = 0;
+for (var s = 1; s <= 5; s++) files.push(stageFile(L(), s));
+files.push('t-' + L() + '.json', 'hero.jpg', 'hero-s.jpg');
+var st = $('#dlst');
+for (var i = 0; i < files.length; i++) (function (f) {
+var x = new XMLHttpRequest(); x.open('GET', f + (/json$/.test(f) ? '?v=' + APPVER : ''), true);
+x.onload = x.onerror = function () { n++; if (st) st.textContent = n + '/' + files.length; if (n === files.length) toast(T('dlDone')); };
+x.send();
+})(files[i]);
+}
+function importAll(inp) {
+var f = inp.files && inp.files[0]; if (!f) return;
+var r = new FileReader();
+r.onload = function () { try { var j = JSON.parse(r.result); if (!j || !j.done) throw 1; localStorage.setItem(KEY, JSON.stringify(j)); location.reload(); } catch (e) { toast(T('importFail')); } };
+r.readAsText(f);
+}
+/* ---------- 321社交生活：五個名字 ---------- */
+function dayNo() { return Math.floor((now() - new Date().getTimezoneOffset() * 60000) / 864e5); }
+function findFive(id) { for (var i = 0; i < S.five.length; i++) if (S.five[i].id === id) return S.five[i]; return null; }
+function oneFive(t) {
+var F = t.five, h = '<div class="card"><p class="h3">🕯 ' + esc(T('fiveIntroT')) + '</p><p class="sm muted" style="margin:0">' + esc(F.intro) + '</p></div>';
+var n = S.five.length;
+if (n) {
+var p = S.five[dayNo() % n], pr = F.prays[dayNo() % F.prays.length];
+h += '<div class="ocard"><span class="xs" style="opacity:.85;letter-spacing:.1em">' + esc(T('fiveToday')) + '</span><div class="h2" style="color:#fff;margin:6px 0 0">' + esc(p.n) + '</div><div class="v">' + esc(pr.p) + '</div><div class="r">' + esc(pr.rl) + '</div><button class="btn sm" style="margin-top:10px" onclick="fiveLog(\'' + p.id + '\',\'pr\')">🙏 ' + esc(T('fivePrayed')) + '</button></div>';
+}
+h += '<div class="card">';
+if (!n) h += '<p class="muted sm">' + esc(T('fiveNone')) + '</p>';
+for (var i = 0; i < n; i++) {
+var q = S.five[i], opts = '';
+for (var k = 0; k < F.steps.length; k++) opts += '<option value="' + k + '"' + ((q.st || 0) === k ? ' selected' : '') + '>' + (k + 1) + '. ' + esc(F.steps[k].t) + '</option>';
+h += '<div class="person" style="align-items:flex-start"><div class="av" style="background:#C9961E">' + esc(q.n.slice(0, L() === 'en' ? 2 : 1)) + '</div><div class="grow"><b>' + esc(q.n) + '</b><div class="xs muted">' + esc(T('prayedN', q.pr.length)) + ' · ' + esc(T('fiveLove')) + ' ' + q.lv.length + '</div><select style="margin-top:6px;padding:6px 8px" onchange="fiveStep(\'' + q.id + '\',this.value)">' + opts + '</select></div>' +
+'<div class="col"><button class="btn sm" onclick="fiveLog(\'' + q.id + '\',\'pr\')">🙏</button><button class="btn sm" onclick="fiveLog(\'' + q.id + '\',\'lv\')">❤</button><button class="btn sm" onclick="if(confirm(T(\'delConfirm\'))){fiveDel(\'' + q.id + '\')}">✕</button></div></div>';
+}
+if (n < 5) h += '<div class="row" style="margin-top:8px"><input type="text" id="fn" class="grow" placeholder="' + esc(T('pName')) + '"><button class="btn pri" onclick="fiveAdd()">＋ ' + esc(T('fiveAdd')) + '</button></div>';
+else h += '<p class="xs muted" style="margin:8px 0 0">' + esc(T('fiveFull')) + '</p>';
+h += '</div><div class="card"><p class="eyebrow">' + esc(T('fiveJourney')) + '</p>';
+for (var j = 0; j < F.steps.length; j++) h += '<div class="mini" style="align-items:flex-start"><span class="pill" style="min-width:26px;text-align:center">' + (j + 1) + '</span><div class="grow"><b>' + esc(F.steps[j].t) + '</b><div class="sm muted">' + esc(F.steps[j].d) + '</div></div></div>';
+h += '</div><div class="card"><p class="eyebrow">' + esc(T('fivePrays')) + '</p>';
+for (var m = 0; m < F.prays.length; m++) h += '<div class="mini"><span class="grow sm">' + esc(F.prays[m].p) + '</span><span class="xs muted">' + esc(F.prays[m].rl) + '</span></div>';
+return h + '</div>';
+}
+function fiveAdd() { var n = ($('#fn').value || '').replace(/^\s+|\s+$/g, '').slice(0, 20); if (!n || S.five.length >= 5) return; S.five.push({ id: uid(), n: n, st: 0, pr: [], lv: [], ts: now() }); save(); render(); }
+function fiveLog(id, k) { var p = findFive(id); if (!p) return; p[k].push(now()); save(); toast(k === 'pr' ? T('loggedPray') : T('loggedLove')); render(); }
+function fiveStep(id, v) { var p = findFive(id); if (!p) return; p.st = parseInt(v, 10) || 0; save(); toast(T('saved')); }
+function fiveDel(id) { var a = []; for (var i = 0; i < S.five.length; i++) if (S.five[i].id !== id) a.push(S.five[i]); S.five = a; save(); render(); }
+/* ---------- 接待計畫 ---------- */
+var HOSTQ = -1;
+function oneHost(t) {
+var H = t.host, h = '<div class="card"><p class="h3">🍲 ' + esc(T('hostTitle')) + '</p>' +
+'<input type="text" id="hw" placeholder="' + esc(T('hostWho')) + '"><div class="row" style="margin-top:8px"><input type="date" id="hd" class="grow" aria-label="' + esc(T('hostWhen')) + '"></div>' +
+'<input type="text" id="hwh" style="margin-top:8px" placeholder="' + esc(T('hostWhat')) + '"><button class="btn pri full" style="margin-top:8px" onclick="hostAdd()">＋ ' + esc(T('hostAdd')) + '</button></div>';
+var open = [], done = [];
+for (var i = 0; i < S.host.length; i++) (S.host[i].done ? done : open).push(S.host[i]);
+open.sort(function (a, b) { return (a.d || '9') < (b.d || '9') ? -1 : 1; });
+h += '<div class="card"><p class="eyebrow">' + esc(T('hostPlans')) + '</p>';
+if (!open.length) h += '<p class="muted sm">' + esc(T('hostNone')) + '</p>';
+for (var j = 0; j < open.length; j++) h += '<div class="mini"><div class="grow"><b>' + esc(open[j].who) + '</b><div class="xs muted">' + esc((open[j].d || '') + (open[j].what ? ' · ' + open[j].what : '')) + '</div></div><button class="btn sm" onclick="hostDone(\'' + open[j].id + '\')">✓ ' + esc(T('hostDoneBtn')) + '</button><button class="btn sm" onclick="hostDel(\'' + open[j].id + '\')">✕</button></div>';
+h += '</div>';
+if (done.length) { h += '<div class="card"><p class="eyebrow">✨ ' + esc(T('hostDoneList')) + '</p>'; for (var k = done.length - 1; k >= 0; k--) h += '<div class="mini"><span class="xs muted">' + fmtDate(done[k].done) + '</span><span class="grow">' + esc(done[k].who) + (done[k].what ? ' · ' + esc(done[k].what) : '') + '</span></div>'; h += '</div>'; }
+if (HOSTQ < 0) HOSTQ = dayNo() % H.ice.length;
+h += '<div class="ocard"><span class="xs" style="opacity:.85;letter-spacing:.1em">💬 ' + esc(T('hostIce')) + '</span><div class="h2" id="iceq" style="color:#fff;margin:8px 0 0;line-height:1.5">' + esc(H.ice[HOSTQ]) + '</div><button class="btn sm" style="margin-top:12px" onclick="hostDraw()">🎲 ' + esc(T('hostDraw')) + '</button></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('hostTips')) + '</p>';
+for (var m = 0; m < H.tips.length; m++) h += '<p class="sm" style="margin:6px 0">' + (m + 1) + '. ' + esc(H.tips[m]) + '</p>';
+return h + '</div>';
+}
+function hostAdd() { var w = ($('#hw').value || '').replace(/^\s+|\s+$/g, '').slice(0, 30); if (!w) return toast(T('hostWho')); S.host.push({ id: uid(), who: w, d: $('#hd').value || '', what: ($('#hwh').value || '').slice(0, 60), done: 0, ts: now() }); save(); render(); }
+function hostDone(id) { for (var i = 0; i < S.host.length; i++) if (S.host[i].id === id) { S.host[i].done = now(); var p = findPersonByName(S.host[i].who); if (p) p.log.push({ k: 'host', ts: now() }); } save(); toast(T('praiseGod')); render(); }
+function hostDel(id) { var a = []; for (var i = 0; i < S.host.length; i++) if (S.host[i].id !== id) a.push(S.host[i]); S.host = a; save(); render(); }
+function hostDraw() { loadTools(function (t) { if (!t) return; var n = t.host.ice.length, k = HOSTQ; while (k === HOSTQ && n > 1) k = Math.floor(Math.random() * n); HOSTQ = k; var el = $('#iceq'); if (el) el.textContent = t.host.ice[k]; }); }
+/* ---------- 言語守望 ---------- */
+var WWA = null;
+function wwCount() { var n = 0; each(S.ww, function () { n++; }); return n; }
+function dayKey(off) { var d = new Date(now() - off * 864e5); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+function growWords(t) {
+var W = t.words, k = today(), cur = S.ww[k] || { a: [-1, -1, -1], n: '' };
+WWA = cur.a.slice();
+var h = '<div class="card"><p class="h3">🗣 ' + esc(T('wwTitle')) + '</p><p class="sm muted" style="margin:0 0 6px">' + esc(T('wwIntro')) + '</p>';
+for (var i = 0; i < W.q.length; i++) {
+var b = ''; for (var s = 0; s < 3; s++) b += '<button class="' + (WWA[i] === s ? 'on' : '') + '" onclick="wwSet(' + i + ',' + s + ',this)">' + esc(T('wwA' + s)) + '</button>';
+h += '<p style="margin:12px 0 0"><b>' + (i + 1) + '.</b> ' + esc(W.q[i]) + '</p><div class="scale">' + b + '</div>';
+}
+h += '<div class="q" style="margin-top:10px"><textarea id="wwn" placeholder="' + esc(T('wwNote')) + '">' + esc(cur.n || '') + '</textarea></div><button class="btn pri full" onclick="wwSave()">' + esc(T('wwSave')) + '</button>';
+var c = 0, dots = ''; for (var d = 20; d >= 0; d--) { var on = !!S.ww[dayKey(d)]; if (on) c++; dots += '<i class="' + (on ? 'on' : '') + '"></i>'; }
+h += '<p class="xs muted" style="margin:12px 0 4px">' + esc(T('wwStreak', c)) + '</p><div class="dots ww">' + dots + '</div></div>';
+var hist = '';
+for (var e = 0; e < 7; e++) { var kk = dayKey(e), v = S.ww[kk]; if (!v) continue; hist += '<div class="mini"><span class="xs muted" style="min-width:44px">' + esc(kk.slice(5).replace('-', '/')) + '</span><span>' + wwIcon(v.a[0], 0) + wwIcon(v.a[1], 1) + wwIcon(v.a[2], 2) + '</span><span class="grow sm">' + esc(v.n || '') + '</span></div>'; }
+if (hist) h += '<div class="card"><p class="eyebrow">' + esc(T('wwHist')) + '</p>' + hist + '</div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('wwBank')) + '</p>';
+for (var g = 0; g < W.cats.length; g++) {
+h += '<p class="h3" style="margin:12px 0 4px">' + esc(W.cats[g].n) + '</p>';
+for (var x = 0; x < W.cats[g].l.length; x++) h += '<div class="mini" style="cursor:pointer" onclick="copyText(this.textContent)">' + esc(W.cats[g].l[x]) + '</div>';
+}
+return h + '</div>';
+}
+function wwIcon(v, i) { if (v < 0 || v == null) return '<span class="ww-i">·</span>'; var good = i === 0 ? v === 0 : v === 2; var mid = v === 1; return '<span class="ww-i" style="color:' + (good ? 'var(--ok)' : (mid ? 'var(--gold)' : 'var(--bad)')) + '">●</span>'; }
+function wwSet(i, s, el) { WWA[i] = s; var bs = el.parentNode.children; for (var k = 0; k < bs.length; k++) bs[k].className = (k === s ? 'on' : ''); }
+function wwSave() { S.ww[today()] = { a: WWA.slice(), n: ($('#wwn').value || '').slice(0, 300), ts: now() }; save(); toast(T('wwDone')); render(); }
+/* ---------- 數位安息 ---------- */
+function growDigi(t) {
+var D = t.digi, k = today(), cur = S.dg[k] || {};
+var h = '<div class="card"><p class="h3">📵 ' + esc(T('dgTitle')) + '</p><p class="sm muted" style="margin:0 0 8px">' + esc(T('dgIntro')) + '</p>' +
+'<div class="q"><label class="sm">' + esc(T('dgMin')) + '</label><input type="number" id="dgm" min="0" max="1440" inputmode="numeric" value="' + (cur.m != null ? cur.m : '') + '"></div>' +
+'<label class="chk"><input type="checkbox" id="dgs" ' + (cur.s ? 'checked' : '') + '>' + esc(T('dgSab')) + '</label><button class="btn pri full" style="margin-top:8px" onclick="dgSave()">' + esc(T('dgSave')) + '</button></div>';
+var mx = 60, vals = [];
+for (var d = 13; d >= 0; d--) { var v = S.dg[dayKey(d)] || null; vals.push(v); if (v && v.m > mx) mx = v.m; }
+var svg = '<svg viewBox="0 0 320 130" style="width:100%;display:block" role="img" aria-label="' + esc(T('dgChart')) + '"><line x1="8" y1="104" x2="312" y2="104" stroke="var(--line)"/>';
+for (var i = 0; i < 14; i++) {
+var x = 12 + i * 21.6, v2 = vals[i], bh = v2 && v2.m ? Math.max(2, v2.m / mx * 86) : 0;
+if (bh) svg += '<rect x="' + x.toFixed(1) + '" y="' + (104 - bh).toFixed(1) + '" width="14" height="' + bh.toFixed(1) + '" rx="3" fill="var(--brand)" fill-opacity=".75"><title>' + v2.m + '</title></rect>';
+if (v2 && v2.s) svg += '<circle cx="' + (x + 7).toFixed(1) + '" cy="116" r="4" fill="var(--gold)"/>';
+}
+svg += '<text x="312" y="12" text-anchor="end" font-size="10" fill="var(--mute)">' + mx + '</text></svg>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('dgChart')) + '</p>' + svg + '<p class="xs muted c" style="margin:4px 0 0">● ' + esc(T('dgSab')) + '</p></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('dgSabDay')) + '</p><input type="text" value="' + esc(S.set.sab || '') + '" placeholder="' + esc(T('dgSabPh')) + '" oninput="S.set.sab=this.value.slice(0,40);save()"></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('dgCheck')) + '</p>';
+for (var c = 0; c < D.checks.length; c++) h += '<label class="chk sm" style="align-items:flex-start;margin:8px 0"><input type="checkbox" class="dgc">' + esc(D.checks[c]) + '</label>';
+h += '<button class="btn full" onclick="dgCheck()">' + esc(T('dgCheckBtn')) + '</button><div id="dgres">' + (S.dgChk ? dgResHtml(S.dgChk.n) : '') + '</div></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('dgTips')) + '</p>';
+for (var m = 0; m < D.tips.length; m++) h += '<p class="sm" style="margin:6px 0">' + (m + 1) + '. ' + esc(D.tips[m]) + '</p>';
+return h + '</div>';
+}
+function dgResHtml(n) { var r = n <= 2 ? 0 : (n <= 4 ? 1 : 2); return '<div class="light" style="margin-top:10px"><b>' + esc(T('dgCheckN', n)) + '</b><br>' + esc(T('dgRes' + r)) + '</div>'; }
+function dgCheck() { var n = 0; $$('.dgc').forEach(function (c) { if (c.checked) n++; }); S.dgChk = { n: n, ts: now() }; save(); $('#dgres').innerHTML = dgResHtml(n); }
+function dgSave() { var m = parseInt($('#dgm').value, 10); S.dg[today()] = { m: isNaN(m) ? null : Math.max(0, Math.min(1440, m)), s: $('#dgs').checked ? 1 : 0, ts: now() }; save(); toast(T('dgSaved')); render(); }
+/* ---------- 我的：長桌與燈 ---------- */
+function longTable() {
+var h = '<svg viewBox="0 0 340 210" style="width:100%;max-width:380px;display:block;margin:0 auto" role="img" aria-label="table">';
+var lv5 = level() >= 5;
+h += '<rect x="163" y="6" width="14" height="44" rx="3" fill="' + (lv5 ? '#F2C75C' : 'var(--line)') + '"/><rect x="148" y="16" width="44" height="12" rx="3" fill="' + (lv5 ? '#F2C75C' : 'var(--line)') + '"/>';
+if (lv5) h += '<circle cx="170" cy="28" r="34" fill="#F2C75C" fill-opacity=".18"/>';
+h += '<rect x="30" y="110" width="280" height="38" rx="10" fill="#8B5E34" fill-opacity=".85"/><rect x="30" y="110" width="280" height="8" rx="4" fill="#A9774A"/>';
+var w = 1;
+for (var side = 0; side < 2; side++) {
+for (var i = 0; i < 26 && w <= 52; i++, w++) {
+var x = 36 + i * 10.7, y = side === 0 ? 96 : 162, s = stageOf(w), dn = weekDone(w);
+var fill = dn ? SCOL[s] : 'var(--soft)', op = dn === 5 ? 1 : (dn ? 0.45 : 1);
+h += '<circle cx="' + x.toFixed(1) + '" cy="' + y + '" r="4.6" fill="' + fill + '" fill-opacity="' + op + '" stroke="var(--line)" style="cursor:pointer" onclick="open_({t:\'week\',w:' + w + '})"><title>' + w + '</title></circle>';
+if (dn === 5) h += '<circle cx="' + x.toFixed(1) + '" cy="' + (side === 0 ? 84 : 174) + '" r="2.2" fill="#F2C75C"/>';
+}
+}
+h += '<text x="170" y="134" text-anchor="middle" font-size="11" fill="#FFF3D6" font-weight="700">' + esc(T('lvlName' + level())) + '</text>';
+return h + '</svg>';
+}
+/* 321社交生活 · boot (ES5) */
+window.onerror = function (m, src, line) { try { var t = $('#toast'); if (t) { t.textContent = 'Error: ' + m + ' @' + line; t.className = 'toast on'; } } catch (e) { } };
+(function boot() {
+render();
+if ('serviceWorker' in navigator && /^https?:/.test(location.protocol)) {
+navigator.serviceWorker.register('sw.js').then(function (reg) {
+reg.addEventListener && reg.addEventListener('updatefound', function () { });
+})['catch'](function () { });
+navigator.serviceWorker.addEventListener && navigator.serviceWorker.addEventListener('controllerchange', function () { if (!BUSY && !window.__reloading) { window.__reloading = 1; location.reload(); } });
+}
+if (/^https?:/.test(location.protocol)) {
+setTimeout(function () { checkUpdate(0); }, 3000);
+setInterval(function () { checkUpdate(0); }, 30 * 60 * 1000);
+document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') checkUpdate(0); });
+}
+window.addEventListener('popstate', function () { if (R.page) back(); });
+})();
+</script>
+</body>
+</html>
