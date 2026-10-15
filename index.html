@@ -27,7 +27,7 @@
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10150608';
+var APPVER = '1.0.202610050829-gx10150916';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -2026,7 +2026,7 @@ var SAGE321 = (function () {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       signal: ctrl ? ctrl.signal : undefined,
-      body: JSON.stringify({ model: C.model, max_tokens: C.maxTokens, system: sys, messages: msgs })
+      body: JSON.stringify(C.sendModel ? { model: C.model, max_tokens: C.maxTokens, system: sys, messages: msgs } : { system: sys, messages: msgs })
     }).then(function (res) {
       if (!res.ok) throw new Error('HTTP ' + res.status);
       return res.json();
@@ -2431,7 +2431,7 @@ var GX = (function () {
       try {
         const r = await fetch(SVC.xz, {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ model: SVC.model, max_tokens: maxT || 1600, system: sys, messages: [{ role: 'user', content: ask }] }),
+          body: JSON.stringify(SVC.sendModel ? { model: SVC.model, max_tokens: SVC.maxTokens || 1000, system: sys, messages: [{ role: 'user', content: ask }] } : { system: sys, messages: [{ role: 'user', content: ask }] }),
           signal: ac ? ac.signal : undefined
         });
         if (!r.ok) throw new Error('http ' + r.status);
@@ -5499,7 +5499,7 @@ body:has(#gxaroot .gxz.on) .xz-fab,body:has(#gxaroot .gxz.on) #fab,body:has(#gxa
       o = o || {};
       const base = o.quicks || (() => []);
       const cfg = Object.assign({
-        worker: SVC.xz, model: SVC.model,
+        worker: SVC.xz, model: SVC.model, sendModel: !!SVC.sendModel, maxTokens: SVC.maxTokens || 1000,
         name: T('小智', 'Xiaozhi'), tagline: T('陪讀 · 解經 · 禱告', 'Read · Reflect · Pray'),
         sysExtra: () => GX.sysExtra(), followups: () => GX.followups(), controls: () => GX.ctl(),
         onCard: (t, q) => GXS.fromAnswer(t, q),
