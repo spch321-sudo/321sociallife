@@ -27,7 +27,7 @@
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10150916';
+var APPVER = '1.0.202610050829-gx10171341';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -2240,7 +2240,7 @@ var SAGE321 = (function () {
       el.id = C.el; el.className = 'gxz';
       GXA_root().appendChild(el);
     }
-    el.className = ('xz ' + (XZ.open ? 'on' : '')).replace(/\s+$/, '');
+    el.className = ('gxz ' + (XZ.open ? 'on' : '')).replace(/\s+$/, '');
     if (!XZ.open) return;
     var oldB = document.getElementById('gxxzb'), oldTop = oldB ? oldB.scrollTop : 0;
     var inp = document.getElementById('gxxzin'), typed = inp ? inp.value : '';
@@ -4730,7 +4730,7 @@ function mx_strBytes(s){const a=new Uint8Array(s.length);for(let i=0;i<s.length;
       ${bgmBlob ? `<p class="gxlab">${esc(T('音量', 'Volume'))}</p>${chips([[0.12, T('小聲', 'Soft')], [0.22, T('適中', 'Medium')], [0.38, T('明顯', 'Strong')]], g.vol, 'vol')}` : ''}
       <p class="gxlab">🎙 ${esc(T('錄製', 'Record'))}</p>
       ${chips([['a', T('🎙 只有聲音', '🎙 Voice only')], ['c', T('🖼 卡片畫面', '🖼 Card video')], ['s', T('📷 自拍畫面', '📷 Selfie video')]], recMode, 'rmode')}
-      <div id="gxsSelfWrap" style="${recMode === 's' ? '' : 'display:none'}"><video id="gxsSelf" muted playsinline autoplay style="width:150px;height:150px;border-radius:50%;object-fit:cover;transform:scaleX(-1);display:block;margin:8px auto;background:#000;border:3px solid var(--brass)"></video></div>
+      <div id="gxsSelfWrap" style="${recMode === 's' ? '' : 'display:none'}"><div style="width:156px;height:156px;margin:8px auto;border-radius:50%;overflow:hidden;border:3px solid var(--brass);background:#000;-webkit-mask-image:-webkit-radial-gradient(white,black);isolation:isolate;position:relative"><video id="gxsSelf" muted playsinline autoplay style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;-webkit-transform:scaleX(-1);transform:scaleX(-1)"></video></div></div>
       <div class="gxrec"><span id="gxsRecSt">${on ? '<span class="recdot"></span>' + esc(recLabel) : esc(T('準備好了就按開始', 'Ready when you are'))}</span><b id="gxsRecTm">${mmss(recSec)}</b></div>
       <button class="btn ${on ? 'danger' : 'pri'}" style="width:100%" data-k="rec">${on ? esc(T('■ 停止並完成', '■ Stop and finish')) : esc(T('● 開始錄製', '● Start recording'))}</button>
       ${bgmBlob ? `<p class="gxlab">${esc(T('不錄音，只配音樂', 'Music only, no voice'))}</p>
@@ -5151,11 +5151,28 @@ var PRON321 = (function () {
     for (var i = 0; i < list.length; i++) s = s.replace(list[i][0], list[i][1]);
     return s;
   }
+  /* 地 dì（名詞）／˙ㄉㄜ（副詞助詞）——晨讀等講義正文「誠實地、單純地」這類副詞極多，
+     所以不採整字 dì，只在名詞語境送同音「帝」：地上萬民、在地上、全地、遍地、此地、大地…
+     先保護副詞（疊字＋地、完全地、普遍地、如此地、實在地…），再換名詞，最後還原。 */
+  var KEEP = R('(完全|安全|健全|周全|齊全|齐全|保全|成全|十全|偉大|伟大|廣大|广大|強大|强大|巨大|盛大|重大|莫大|極大|极大|寬大|宽大|遠大|远大|高大|浩大|龐大|庞大|普遍|如此|彼此|因此|從此|从此|就此|藉此|借此|由此|至此|為此|为此|自在|實在|实在|存在|所在|自然|公平|和平|太平|水平|神聖|神圣|幸福|永遠|永远|適當|适当|恰當|恰当|妥當|妥当|正當|正当|相當|相当|完美|優美|优美|甜美|格外|意外|額外|额外|另外|([㐀-鿿])\\2)地');
+  var DI = [
+    [R('地(?=理(?![解會会睬])|圖|图|點(?![出頭头燃亮])|点(?![出头燃亮])|址|球|極|极|獄|狱|震|勢|势|區(?![分別])|区(?![分别])|方(?![式法向])|位(?![於于])|步|面(?![對对前向])|域|帶(?![到領著來走給回進])|带(?![到领着来走给回进])|形(?![容])|基|殼|壳|層|层|質|质|貌|標|标)'), '帝'],
+    [R('地(?=上(?:萬|万|眾|众|列|君|的|人|各|一切|所有|全|諸|诸|百姓|國|国))'), '帝'],
+    [R('([在到於于從从落倒向降臨临滿满撒])地(?=[上下裡里中面])'), '$1帝'],
+    [R('(全|遍|大|天|此|這|这|那|本|各|之|土|陸|陆|聖|圣|美|福|田|旱|荒|乾|干|死|餘|余|境|領|领|異|异|兩|两|當|当|空|平)地(?![方步位點点圖图理址區区])'), '$1帝']
+  ];
+  function di(s) {
+    if (s.indexOf('地') < 0) return s;
+    s = s.replace(KEEP, function (m) { return m.slice(0, -1) + '\u0001'; });
+    s = run(DI, s);
+    return s.replace(/\u0001/g, '地');
+  }
   /* std：'tw'（臺灣國語）或 'cn'（普通話）；voice：語音名稱（zh-TW-… / zh-CN-…）或語系 */
   function fix(s, std, voice) {
     s = String(s == null ? '' : s);
     if (!/[㐀-鿿]/.test(s)) return s;            // 英文不動
     s = run(SHARED, s);
+    s = di(s);
     var v = String(voice || '');
     var vTW = /zh[-_]TW|zh[-_]HK/i.test(v), vCN = /zh[-_]CN|cmn/i.test(v);
     if (std === 'tw' && vCN) s = run(TW, s);
@@ -5185,7 +5202,7 @@ var PRON321 = (function () {
     if (std === 'cn' && /zh[-_]TW|zh[-_]HK/i.test(v)) return run(CN, s);
     return s;
   }
-  return { fix: fix, fixDiff: fixDiff, hookNative: hookNative, SHARED: SHARED, TW: TW, CN: CN };
+  return { di: di, fix: fix, fixDiff: fixDiff, hookNative: hookNative, SHARED: SHARED, TW: TW, CN: CN };
 })();
 
 
@@ -5471,7 +5488,7 @@ html.gxa-lock,html.gxa-lock body{overflow:hidden}
 .gxroot .gxz{z-index:300}
 .gxroot .xzm,.gxroot .xzhi,.gxroot .xzsv{font-size:calc(var(--fs,17px)*.94)}
 .gxroot .xzin,.gxroot #gxxzin{font-size:max(16px,calc(var(--fs,17px)*.94))}
-body:has(#gxaroot .gxz.on) .xz-fab,body:has(#gxaroot .gxz.on) #fab,body:has(#gxaov.on) .xz-fab,body:has(#gxaov.on) #fab,body:has(#gxaroot #gxs.on) .xz-fab,body:has(#gxaroot #gxs.on) #fab{display:none!important}.gxroot #gxs,.gxroot .gxsmask{z-index:310}
+body:has(#gxaroot .gxz.on) .xz-fab,body:has(#gxaroot .gxz.on) #fab,body:has(#gxaov.on) .xz-fab,body:has(#gxaov.on) #fab,body:has(#gxaroot #gxs.on) .xz-fab,body:has(#gxaroot #gxs.on) #fab{display:none!important}.gxroot #gxs,.gxroot .gxsmask{z-index:310}#gxaroot #gxsSub,#gxaroot #gxsRv{z-index:330!important}
 .gxroot .chn{flex:0 0 auto;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--paper);font-size:17px}
 .gxroot .chrow .s{display:block;font-size:calc(var(--fs)*.76);color:var(--dusk);margin-top:2px}
 `;
