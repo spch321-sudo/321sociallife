@@ -1,6 +1,6 @@
 /* 321社交生活 Service Worker */
-var V = 'sl321-1.0.202610050829-gx10171750-gxa1019-vp1023';
-var SHELL = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './apple-touch-icon.png', './hero-s.jpg', './c-zh-s1.json', './t-zh.json'];
+var V = 'sl321-1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031';
+var SHELL = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './apple-touch-icon.png', './hero-s.jpg', './c-zh-s1.json', './t-zh.json', './peerjs.min.js', './qrcode.js'];
 self.addEventListener('install', function (e) { self.skipWaiting(); e.waitUntil(caches.open(V).then(function (c) { return c.addAll(SHELL); })['catch'](function () { })); });
 self.addEventListener('activate', function (e) {
   e.waitUntil(caches.keys().then(function (ks) { return Promise.all(ks.filter(function (k) { return k !== V; }).map(function (k) { return caches['delete'](k); })); }).then(function () { return self.clients.claim(); }));
