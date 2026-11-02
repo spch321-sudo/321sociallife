@@ -39,7 +39,7 @@ body.crOn .top{top:calc(40px + env(safe-area-inset-top));padding-top:10px}
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3';
+var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -6049,7 +6049,7 @@ const GXHL = (function () {
       <div class="gxbs-hint">${esc0(L('按 ＋ 往下多畫一句，畫線就不只一句，可以連成一整段。', 'Tap ＋ to take in the next sentence, so a highlight can cover a whole passage.'))}</div>
       <textarea class="gxbs-ta" placeholder="${esc0(L('寫下默想…', 'Write your reflection…'))}">${esc0(o.n || '')}</textarea>
       <div class="gxbs-acts"><button class="gxbs-btn primary" data-a="save">${esc0(L('儲存', 'Save'))}</button><button class="gxbs-btn" data-a="ask">${esc0(L('問小智', 'Ask Xiaozhi'))}</button><button class="gxbs-btn" data-a="read">${esc0(L('🔊 從這裡開始朗讀', '🔊 Read from here'))}</button></div>
-      <div class="gxbs-acts2"><button class="gxbs-btn gold" data-a="card">🖼 ${esc0(L('做成美圖', 'Make a card'))}</button><button class="gxbs-btn danger" data-a="del">${esc0(L('刪除畫線', 'Remove highlight'))}</button><button class="gxbs-btn" data-a="close">${esc0(L('關閉', 'Close'))}</button></div></div>`;
+      <div class="gxbs-acts2"><button class="gxbs-btn gold" data-a="card">🖼 ${esc0(L('做成美圖', 'Make a card'))}</button><button class="gxbs-btn" data-a="copy">⧉ ${esc0(L('複製', 'Copy'))}</button><button class="gxbs-btn" data-a="share">↗ ${esc0(L('分享', 'Share'))}</button><button class="gxbs-btn danger" data-a="del">${esc0(L('刪除畫線', 'Remove highlight'))}</button><button class="gxbs-btn" data-a="close">${esc0(L('關閉', 'Close'))}</button></div></div>`;
     GXA_root().appendChild(m);
     m.addEventListener('click', e => { if (e.target === m) close(); });
     const ta = m.querySelector('.gxbs-ta'), q = m.querySelector('.gxbs-quote'), num = m.querySelector('.gxbs-num');
@@ -6063,6 +6063,20 @@ const GXHL = (function () {
     });
     m.querySelectorAll('[data-a]').forEach(b => b.onclick = () => {
       const a = b.getAttribute('data-a'), n = ta.value.trim();
+      /* 複製／分享：面板不關，帶出「經文＋默想＋團契與網址」 */
+      if (a === 'copy' || a === 'share') {
+        const q0 = (m.querySelector('.gxbs-quote') || {}).textContent || '';
+        let tx = (EN() ? '\u201c' + q0 + '\u201d' : '\u300c' + q0 + '\u300d') + (n ? '\n\n' + n : '');
+        try { tx += '\n\n\u2014\u2014 ' + GX.FELLOW + '\n' + GX.home(); } catch (e2) {}
+        tx = toSC(tx);
+        const cp = () => {
+          const done = () => toast(L('已複製，可以貼到群組裡', 'Copied \u2014 paste it anywhere'), 2200);
+          try { navigator.clipboard.writeText(tx).then(done, () => { const ta2 = document.createElement('textarea'); ta2.value = tx; ta2.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta2); ta2.select(); try { document.execCommand('copy'); done(); } catch (e3) {} ta2.remove(); }); }
+          catch (e4) { try { const ta2 = document.createElement('textarea'); ta2.value = tx; ta2.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta2); ta2.select(); document.execCommand('copy'); ta2.remove(); done(); } catch (e5) {} }
+        };
+        if (a === 'share' && navigator.share) { navigator.share({ text: tx })['catch'](function (e6) { if (!e6 || e6.name !== 'AbortError') cp(); }); } else cp();
+        return;
+      }
       close();
       try {
         if (a === 'save') o.onSave(n);
@@ -6304,6 +6318,152 @@ window.GXA_FACTORY();
     pick(md).then(function (r) { if (r) open({ t: r.t, ref: r.ref, n: '' }); else open(fallback); }, function () { open(fallback); });
   }
   window.VPICK321 = { pick: pick, card: card, lang: lang, detect: detect, refs: function (t) { return toc().then(function () { return refs(t); }); } };
+})();
+</script>
+<script id="GXFS">
+/* ═══ 小智全螢幕＋字級（2026-11-03，給 GXA 系 App）═══
+   ① 小智面板佔滿整個畫面（原本是下方抽屜，上面還露出一截頁首）
+   ② 小智回答字級＝內文字級（--fs），面板頂端多一顆「A」可調整小智字級（四段，記在這台裝置） */
+(function () {
+  if (window.__gxfs) return; window.__gxfs = 1;
+  var K = 'gxfs_k', KS = [1, 1.12, 1.25, 1.4], idx = 0;
+  try { idx = Math.max(0, Math.min(KS.length - 1, parseInt(localStorage.getItem(K), 10) || 0)); } catch (e) {}
+  var st = document.createElement('style');
+  st.textContent =
+    '#gxaxz .xzcard{position:fixed!important;left:0!important;right:0!important;top:0!important;bottom:0!important;' +
+    'width:100%!important;max-width:none!important;height:100%!important;height:100dvh!important;max-height:none!important;' +
+    'margin:0!important;border-radius:0!important;padding-top:env(safe-area-inset-top);transform:none!important}' +
+    '#gxaxz .xzm,#gxaxz .xzhi,#gxaxz .xzsv{font-size:calc(var(--fs,17px)*var(--xzk,1))!important}' +
+    '#gxaxz .xzm .xzt{font-size:1em!important}' +
+    '#gxaxz .xzq button{font-size:calc(var(--fs,17px)*var(--xzk,1)*.9)!important}' +
+    '#gxaxz .xzfs{font-family:serif;font-weight:700;min-width:40px}' +
+    '#gxaxz .xzb{padding:12px 10px!important}' +
+    '#gxaxz .xzm.assistant{max-width:100%!important;width:100%;box-sizing:border-box}' +
+    '#gxaxz .xzm.user{max-width:92%!important}';
+  document.head.appendChild(st);
+  function apply() { var x = document.getElementById('gxaxz'); if (x && x.style.getPropertyValue('--xzk') !== String(KS[idx])) x.style.setProperty('--xzk', String(KS[idx])); }
+  function addBtn() {
+    apply();
+    var h = document.querySelector('#gxaxz .xzh');
+    if (!h || h.querySelector('.xzfs')) return;
+    var b = document.createElement('button');
+    b.className = 'ico xzfs'; b.type = 'button'; b.textContent = 'A';
+    var lang = document.documentElement.lang || '';
+    b.setAttribute('aria-label', /^en/i.test(lang) ? 'Text size' : (/Hans|zh-CN/i.test(lang) ? '字级' : '字級'));
+    b.onclick = function (e) {
+      e.stopPropagation(); idx = (idx + 1) % KS.length;
+      try { localStorage.setItem(K, String(idx)); } catch (e2) {}
+      apply();
+      try { if (window.GXA && GXA.toast) GXA.toast((/^en/i.test(lang) ? 'Xiaozhi text size ' : (/Hans|zh-CN/i.test(lang) ? '小智字级 ' : '小智字級 ')) + (idx + 1) + ' / ' + KS.length, 1400); } catch (e3) {}
+    };
+    var first = h.querySelector('button');
+    if (first) h.insertBefore(b, first); else h.appendChild(b);
+  }
+  try { new MutationObserver(addBtn).observe(document.body, { childList: true, subtree: true }); } catch (e) {}
+  addBtn();
+})();
+</script>
+<script id="GXMS">
+/* ═══ 朗讀補強（2026-11-03）：鎖屏／切到別的 App 也繼續唸、鎖屏有「正在播放」控制、朗讀中螢幕不休眠 ═══
+   不改朗讀引擎，只聽 <audio> 的播放事件（真人語音）與 speechSynthesis（內建語音）。 */
+(function () {
+  if (window.__gxms) return; window.__gxms = 1;
+  var SIL = 'UklGRiQAAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YQAAAAA=';
+  var cur = null, playing = null, wl = null, offT = 0;
+  function isSil(a) { try { return String(a.src || '').indexOf(SIL) >= 0; } catch (e) { return false; } }
+  function awake(on) {
+    try {
+      if (on && navigator.wakeLock && !wl) {
+        navigator.wakeLock.request('screen').then(function (l) { wl = l; l.addEventListener('release', function () { wl = null; }); }, function () {});
+      } else if (!on && wl) { wl.release(); wl = null; }
+    } catch (e) {}
+  }
+  function title() {
+    var t = document.querySelector('.spk .t'); if (t && t.textContent) return t.textContent.replace(/^[^\w一-鿿]+/, '').slice(0, 60);
+    return (document.title || '321').slice(0, 60);
+  }
+  function setup(a) {
+    cur = a;
+    if (!('mediaSession' in navigator)) return;
+    var ms = navigator.mediaSession;
+    try {
+      ms.metadata = new MediaMetadata({ title: title(), artist: /^en/i.test(document.documentElement.lang || '') ? 'Kingdom 321 Online Fellowship' : '國度321空中團契', album: (document.title || '321').slice(0, 40),
+        artwork: [{ src: 'icon-192.png', sizes: '192x192', type: 'image/png' }, { src: 'icon-512.png', sizes: '512x512', type: 'image/png' }] });
+    } catch (e) {}
+    try { ms.setActionHandler('play', function () { if (cur) cur.play(); }); } catch (e) {}
+    try { ms.setActionHandler('pause', function () { if (cur) cur.pause(); }); } catch (e) {}
+    try { ms.setActionHandler('stop', function () { if (cur) cur.pause(); }); } catch (e) {}
+    try { ms.playbackState = 'playing'; } catch (e) {}
+  }
+  function settle() {
+    clearTimeout(offT);
+    offT = setTimeout(function () {
+      if (playing) return;
+      var sp = false; try { sp = !!(window.speechSynthesis && speechSynthesis.speaking); } catch (e) {}
+      if (!sp) { awake(false); try { navigator.mediaSession.playbackState = 'none'; } catch (e) {} }
+    }, 3000);
+  }
+  function onPlay() { var a = this; if (isSil(a)) return; playing = a; setup(a); awake(true); clearTimeout(offT); }
+  function onPause() { if (this === playing) { playing = null; try { navigator.mediaSession.playbackState = 'paused'; } catch (x) {} settle(); } }
+  function onEnded() { if (this === playing) playing = null; settle(); }
+  /* 朗讀的 <audio> 多半是 new Audio()（不在頁面裡），所以在第一次 play() 時才掛上事件 */
+  try {
+    var P0 = HTMLMediaElement.prototype.play;
+    HTMLMediaElement.prototype.play = function () {
+      var a = this;
+      if (a.tagName === 'AUDIO' && !a.__gxm) { a.__gxm = 1; a.addEventListener('play', onPlay); a.addEventListener('pause', onPause); a.addEventListener('ended', onEnded); }
+      return P0.apply(this, arguments);
+    };
+  } catch (e) {}
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && playing && !playing.paused) awake(true); });
+  try {
+    if (window.speechSynthesis) {
+      var sp0 = speechSynthesis.speak.bind(speechSynthesis);
+      speechSynthesis.speak = function (u) {
+        try { awake(true); var oe = u.onend; u.onend = function () { settle(); if (oe) return oe.apply(this, arguments); }; var er = u.onerror; u.onerror = function () { settle(); if (er) return er.apply(this, arguments); }; } catch (e) {}
+        return sp0(u);
+      };
+    }
+  } catch (e) {}
+})();
+</script>
+<script id="GXPG">
+/* ═══ 課程頁頂列 🔊 整頁跟讀（2026-11-03）：從課程標題一路唸到最後一段，沿用本頁的朗讀引擎與控制列；再按一次停止 ═══ */
+(function () {
+  if (window.__gxpg) return; window.__gxpg = 1;
+  function pageText() {
+    var out = [], t = window.LCUR && window.LCUR.title; if (t) out.push(t);
+    var secs = document.querySelectorAll('#app .sec');
+    for (var i = 0; i < secs.length; i++) {
+      var c = secs[i].cloneNode(true), rm = c.querySelectorAll('button,textarea,input,select,sup,.chk,.lbl .k,.hl-note,.gxhl-note');
+      for (var j = 0; j < rm.length; j++) rm[j].parentNode.removeChild(rm[j]);
+      var lb = c.querySelector('.lbl'); var lab = lb ? lb.textContent.replace(/\s+/g, ' ').trim() : '';
+      if (lb) lb.parentNode.removeChild(lb);
+      var tx = c.textContent.replace(/\s+/g, ' ').trim();
+      if (tx) out.push((lab ? lab + '。' : '') + tx);
+    }
+    return out.join('\n');
+  }
+  function toggle() {
+    try {
+      if (window.SPK && SPK.on) { stopSpeak(); return; }
+      var tx = pageText(); if (!tx) return;
+      speak(tx, (window.LCUR && LCUR.title) || document.title);
+    } catch (e) {}
+  }
+  function add() {
+    try {
+      if (!window.LCUR || !document.querySelector('#app .sec')) return;
+      var top = document.querySelector('#app .top'); if (!top || top.querySelector('.gxpg')) return;
+      var b = document.createElement('button'); b.className = 'ib gxpg'; b.type = 'button'; b.textContent = '🔊';
+      b.setAttribute('aria-label', /^en/i.test(document.documentElement.lang || '') ? 'Read the whole page' : '整頁朗讀');
+      b.onclick = toggle;
+      var last = top.lastElementChild; top.insertBefore(b, last && last.tagName === 'BUTTON' ? last : null);
+    } catch (e) {}
+  }
+  var app = document.getElementById('app');
+  try { new MutationObserver(function () { setTimeout(add, 0); }).observe(app || document.body, { childList: true, subtree: !app }); } catch (e) {}
+  add();
 })();
 </script>
 </body>

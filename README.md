@@ -31,3 +31,6 @@
 4. 網址：https://spch321-sudo.github.io/321sociallife/
 
 更新時整包覆蓋上傳即可；App 會讀 version.json 自動更新。
+
+## 1.0.202610050829-…-fs1103（2026-11-03）
+- 畫線面板新增「複製」「分享」；小智全螢幕面板與字級（A）鈕（GXFS v2）；課文頁頂列 🔊 整頁朗讀（GXPG）；背景/鎖屏播放 Media Session + Wake Lock（GXMS）
