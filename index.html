@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
+<head><script>(function(){try{var q=location.search,m=q.match(/[?&]join=([A-Za-z0-9]{6})/);if(m){sessionStorage.setItem('cr_j',JSON.stringify({j:m[1],s:/[?&]screen=1/.test(q)?1:0,t:Date.now()}));}else{var o=JSON.parse(sessionStorage.getItem('cr_j')||'null');if(o&&Date.now()-o.t<20000){history.replaceState(null,'',location.pathname+'?join='+o.j+(o.s?'&screen=1':'')+location.hash);}}if(/[?&]screen=1/.test(location.search))window.CR_SCREEN=true;}catch(e){}})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=5">
 <meta name="theme-color" content="#16306E">
@@ -39,7 +39,7 @@ body.crOn .top{top:calc(40px + env(safe-area-inset-top));padding-top:10px}
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws';
+var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws2';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -463,7 +463,7 @@ var q = qrcode(0, 'M'); q.addData(crUrl()); q.make();
 var ms = ''; for (var i = 0; i < CR.conns.length; i++) ms += '<span class="pill">' + esc(CR.conns[i]._nm || T('crGuest')) + '</span> ';
 sheet('<div class="crsheet c"><p class="h2" style="margin:0">📡 ' + esc(T('crTitle')) + '</p><p class="xs muted" style="margin:2px 0 8px">' + esc(T('crScan')) + '</p><div class="crqr">' + q.createSvgTag(5, 8) + '</div><p class="eyebrow" style="margin:8px 0 0">' + esc(T('crCode')) + '</p><div class="crcode">' + esc(CR.code) + '</div>' +
 '<div class="row" style="gap:8px;margin:10px 0"><button class="btn pri grow" onclick="shareText(T(\'crInviteMsg\',CR.code)+\'\\n\'+crUrl())">' + esc(T('crShareLink')) + '</button><button class="btn grow" onclick="copyText(crUrl())">' + esc(T('copy')) + '</button></div>' +
-'<p class="eyebrow" style="text-align:left">' + esc(T('crMembers', CR.conns.length)) + '</p><div style="text-align:left;min-height:24px">' + (ms || '<span class="xs muted">' + esc(T('crNone')) + '</span>') + '</div><p class="xs muted" style="text-align:left">' + esc(T('crTip')) + '</p>' +
+(window.CR_SCR_UI ? CR_SCR_UI(T, crUrl()) : '') + '<p class="eyebrow" style="text-align:left">' + esc(T('crMembers', CR.conns.length)) + '</p><div style="text-align:left;min-height:24px">' + (ms || '<span class="xs muted">' + esc(T('crNone')) + '</span>') + '</div><p class="xs muted" style="text-align:left">' + esc(T('crTip')) + '</p>' +
 '<div class="row" style="gap:8px"><button class="btn grow" onclick="closeSheet()">' + esc(T('close')) + '</button><button class="btn grow" style="color:var(--bad)" onclick="crLeave()">' + esc(T('crEnd')) + '</button></div></div>');
 });
 }

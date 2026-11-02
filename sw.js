@@ -1,5 +1,5 @@
 /* 321社交生活 Service Worker */
-var V = 'sl321-1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws';
+var V = 'sl321-1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws2';
 var SHELL = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './apple-touch-icon.png', './hero-s.jpg', './c-zh-s1.json', './t-zh.json', './peerjs.min.js', './qrcode.js'];
 self.addEventListener('install', function (e) { self.skipWaiting(); e.waitUntil(caches.open(V).then(function (c) { return c.addAll(SHELL); })['catch'](function () { })); });
 self.addEventListener('activate', function (e) {
