@@ -39,7 +39,7 @@ body.crOn .top{top:calc(40px + env(safe-area-inset-top));padding-top:10px}
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws2';
+var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -322,7 +322,9 @@ return '<div class="top">' + (withBack ? '<button class="ib" onclick="back()" ar
 }
 /* ── 一起共讀：帶領者的課程畫面同步到大家的手機（PeerJS／WebRTC） ── */
 var CR = { role: '', code: '', peer: null, conns: [], conn: null, host: '', n: 0, follow: true, last: {}, tries: 0, scrollT: 0, stT: 0, away: false };
-var CR_PAGES = { lesson: 1, week: 1, card: 1, recon: 1 };
+var CR_SKIP = { settings:1, journal:1, studio:1, marks:1, person:1, church:1, crpanel:1 };
+var CR_TABS = { today:1, course:1, one:1, grow:1 };
+var CR_SUB = { one: 'one', grow: 'grow' };
 var CR_CH = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
 var CR_JOIN = (location.search.match(/[?&]join=([A-Za-z0-9]{6})/) || [])[1] || '';
 if (CR_JOIN) {
@@ -371,9 +373,13 @@ function crDrop(c) { var a = []; for (var i = 0; i < CR.conns.length; i++) if (C
 function crSend(c, m) { try { if (c && c.open) c.send(m); } catch (e) { } }
 function crCast(m) { if (CR.role !== 'host') return; for (var i = 0; i < CR.conns.length; i++) crSend(CR.conns[i], m); }
 function crPage() {
-if (R.page && CR_PAGES[R.page.t]) { var p = R.page, o = { t: p.t }; if (p.w) o.w = p.w; if (p.d) o.d = p.d; if (p.q) o.q = p.q; if (p.id) o.id = p.id; return o; }
-return null;
+var p = R.page, o = {}, k, v;
+if (p) { if (!p.t || CR_SKIP[p.t]) return null; for (k in p) if (p.hasOwnProperty(k)) { v = p[k]; if (typeof v === 'string') o[k] = v.slice(0, 80); else if (typeof v === 'number' || typeof v === 'boolean') o[k] = v; } return o; }
+if (!CR_TABS[R.tab]) return null;
+o.tab = R.tab; if (CR_SUB[R.tab]) o.sub = R.sub[CR_SUB[R.tab]] || '';
+return o;
 }
+function crSync() { if (CR.role === 'host') crAfter(); }
 function crState() { return { t: 'st', page: crPage(), name: crMe(), n: CR.conns.length + 1, pos: CR.last.pos || null, mk: CR.last.mk || null }; }
 function crJoin(code) {
 code = String(code || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
@@ -402,13 +408,13 @@ function crLost() { CR.host = ''; crBar(); if (CR.role !== 'guest') return; if (
 function crGuestData(d) {
 if (!d || !d.t) return;
 if (d.t === 'end') { toast(T('crEnded')); crLeave(); return; }
-if (d.t === 'st') { CR.host = String(d.name || T('crLeader')).slice(0, 20); CR.n = d.n || 0; CR.away = !d.page; if (d.page) CR.hostPage = d.page; if (d.pos) CR.last.pos = d.pos; if (d.mk) CR.last.mk = d.mk; crBar(); if (CR.follow && d.page) crGo(d.page); else crApply(); return; }
+if (d.t === 'st') { CR.host = String(d.name || T('crLeader')).slice(0, 20); CR.n = d.n || 0; CR.away = !d.page; if (d.page) CR.hostPage = d.page; if (d.pos) CR.last.pos = d.pos; if (d.mk) CR.last.mk = d.mk; crBar(); if (CR.follow && d.page) { crGo(d.page); if (d.pos) CR.last.pos = d.pos; if (d.mk) CR.last.mk = d.mk; } else crApply(); return; }
 if (d.t === 'pos') { CR.last.pos = d; if (CR.follow) crScroll(d); return; }
 if (d.t === 'mk') { CR.last.mk = d; if (CR.follow) crMark(d, 1); return; }
 }
-function crKey(p) { return p ? [p.tab || '', p.t || '', p.w || '', p.d || '', p.q || '', p.id || ''].join('|') : ''; }
+function crKey(p) { return p ? [p.tab || '', p.sub || '', p.t || '', p.w || '', p.d || '', p.q || '', p.id || ''].join('|') : ''; }
 function crGo(pg) {
-if (pg.tab) { if (R.page || R.tab !== pg.tab) { R.page = null; R.stack = []; R.tab = pg.tab; render(); window.scrollTo(0, 0); } else crApply(); return; }
+if (pg.tab) { var sk = CR_SUB[pg.tab], sb = pg.sub || ''; if (R.page || R.tab !== pg.tab || (sk && (R.sub[sk] || '') !== sb)) { CR.last.pos = null; CR.last.mk = null; R.page = null; R.stack = []; R.tab = pg.tab; if (sk) R.sub[sk] = sb; render(); window.scrollTo(0, 0); } else crApply(); return; }
 if (crKey(pg) === crKey(R.page)) { crApply(); return; }
 CR.last.pos = null; CR.last.mk = null; R.stack = []; R.page = pg; render(); window.scrollTo(0, 0);
 }
@@ -420,6 +426,7 @@ if (!blk || s == null) return blk; var ss = qa('.sent', blk); return ss.length ?
 function crScroll(d) {
 if (now() - raManualAt < 5000) return;
 if (d.top0) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+if (d.f != null) { var mx = Math.max(0, document.documentElement.scrollHeight - window.innerHeight); window.scrollTo({ top: Math.round(mx * d.f), behavior: 'smooth' }); return; }
 var el = crFind(d.l, d.b); if (!el) return;
 var dy = el.getBoundingClientRect().top - (d.y || 100); if (Math.abs(dy) > 4) window.scrollBy({ top: dy, behavior: 'smooth' });
 }
@@ -428,16 +435,17 @@ eachA(qa('.cr-pt'), function (e) { e.className = e.className.replace(/\s*cr-pt/g
 var el = crFind(d.l, d.b, d.s); if (!el) return; el.className += ' cr-pt';
 if (move && now() - raManualAt > 5000) { try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) { } }
 }
-function crApply() { if (CR.role !== 'guest' || !CR.follow) return; setTimeout(function () { if (CR.last.mk) crMark(CR.last.mk, 0); if (CR.last.pos) crScroll(CR.last.pos); }, 120); }
+function crApply() { if (CR.role !== 'guest' || !CR.follow) return; setTimeout(function () { if (CR.last.mk) crMark(CR.last.mk, 0); if (CR.last.pos) crScroll(CR.last.pos); }, 120); if (CR.last.pos && CR.last.pos.f != null) setTimeout(function () { if (CR.role === 'guest' && CR.follow && CR.last.pos && CR.last.pos.f != null) crScroll(CR.last.pos); }, 900); }
 function crAfter() {
 if (CR.role === 'host') { clearTimeout(CR.stT); CR.stT = setTimeout(function () { CR.last.pos = null; CR.last.mk = null; crCast(crState()); }, 150); }
 else if (CR.role === 'guest') crApply();
 crBar();
 }
 function crSendPos() {
-if (CR.role !== 'host' || !CR.conns.length) return;
+if (CR.role !== 'host' || !CR.conns.length || !crPage()) return;
 if (window.scrollY < 12) { CR.last.pos = { t: 'pos', top0: 1 }; crCast(CR.last.pos); return; }
 var bs = qa('#app .blk'), sec = false; if (!bs.length) { bs = qa('#app .sec'); sec = true; } for (var i = 0; i < bs.length; i++) { var r = bs[i].getBoundingClientRect(); if (r.bottom > 110) { CR.last.pos = sec ? { t: 'pos', l: '#sec', b: String(i), y: Math.round(r.top) } : { t: 'pos', l: bs[i].getAttribute('data-l'), b: bs[i].getAttribute('data-b'), y: Math.round(r.top) }; crCast(CR.last.pos); return; } }
+var mx = document.documentElement.scrollHeight - window.innerHeight; CR.last.pos = { t: 'pos', f: mx > 0 ? Math.round(window.scrollY / mx * 1000) / 1000 : 0 }; crCast(CR.last.pos);
 }
 window.addEventListener('scroll', function () { if (CR.role !== 'host' || !CR.conns.length) return; clearTimeout(CR.scrollT); CR.scrollT = setTimeout(crSendPos, 220); }, { passive: true });
 function crSentMsg(el, k) { var b = blkOf(el); if (!b) return null; return { t: 'mk', k: k, l: b.getAttribute('data-l'), b: b.getAttribute('data-b'), s: +el.getAttribute('data-s') }; }
