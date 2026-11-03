@@ -39,7 +39,7 @@ body.crOn .top{top:calc(40px + env(safe-area-inset-top));padding-top:10px}
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103-xz1103';
+var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103-xz1103-au1103';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -293,14 +293,188 @@ var bd = $('#xzb'); bd.scrollTop = bd.scrollHeight;
 }
 /* ---------- update ---------- */
 var BUSY = false;
-function checkUpdate(manual) {
-getJSON(['version.json'], function (j) {
-if (j && j.v && j.v !== APPVER) {
-if (!BUSY) { location.reload(); return; }
-var b = $('#upd'); if (b) b.style.display = 'block';
-} else if (manual) toast(T('upToDate'));
-}, function () { if (manual) toast(T('netErr')); });
-}
+/* ---------- 自動更新 AUPD（ES5，321 系 App 共用）----------
+   偵測：載入後、回到前景、每 30 分鐘、恢復連線，讀 version.json（不吃快取）並呼叫 reg.update()。
+   套用：偵測到新版，空閒時自動換新（先要求瀏覽器重抓主要檔案 → 通知新 SW 接手 → 重整），不必按。
+        朗讀、錄音錄影、輸入框有未存內容、共讀、面板／工作室開著時只顯示「有新版本」更新條，空閒後自動套用。
+   防無限重整：同一個新版只自動重整一次；仍是舊檔就清自家快取硬更新一次；再不行只留更新條（可點）。 */
+var AUPD = (function () {
+  var CFG = {
+    ver: function () { return APPVER; },
+    pfx: 'sl321-',
+    sw: 'sw.js',
+    busy: function () { return BUSY || (typeof CR !== 'undefined' && !!CR.role) || (typeof XZ !== 'undefined' && !!XZ.busy); },
+    toast: function (m) { toast(m); },
+    lang: function () { return L(); },
+    before: function () {  }
+  };
+  var U = { reg: null, target: '', pending: false, applying: 0, inited: 0 };
+  var TX = {
+    zh: { newVer: '有新版本，點一下立即更新', updating: '正在更新到新版…', latest: '目前已是最新版 v', found: '找到新版本，正在更新…', foundBusy: '找到新版本，忙完就會自動更新', netErr: '無法檢查更新，請確認網路', checking: '檢查更新中…', done: '已更新到新版 v' },
+    zs: { newVer: '有新版本，点一下立即更新', updating: '正在更新到新版…', latest: '目前已是最新版 v', found: '找到新版本，正在更新…', foundBusy: '找到新版本，忙完就会自动更新', netErr: '无法检查更新，请确认网络', checking: '检查更新中…', done: '已更新到新版 v' },
+    en: { newVer: 'A new version is ready. Tap to update', updating: 'Updating to the new version…', latest: 'You are on the latest version v', found: 'New version found, updating…', foundBusy: 'New version found. It will update when you are idle', netErr: 'Cannot check for updates. Please check your connection', checking: 'Checking for updates…', done: 'Updated to version ' }
+  };
+  function now() { return +new Date(); }
+  function ver() { try { return String(CFG.ver()); } catch (e) { return ''; } }
+  function lg() {
+    var l = ''; try { l = CFG.lang() || ''; } catch (e) { }
+    if (!l) l = document.documentElement.getAttribute('lang') || '';
+    if (/^en/i.test(l)) return 'en';
+    if (/hans|^zs|^sc|^zh-cn|^zh-sg/i.test(l)) return 'zs';
+    return 'zh';
+  }
+  function T(k) { return (TX[lg()] || TX.zh)[k]; }
+  function ssGet(k) { try { return sessionStorage.getItem(k) || ''; } catch (e) { return ''; } }
+  function ssSet(k, v) { try { sessionStorage.setItem(k, v); } catch (e) { } }
+  function say(m) {
+    if (CFG.toast) { try { CFG.toast(m); return; } catch (e) { } }
+    var t = document.getElementById('aupd-toast');
+    if (!t) {
+      t = document.createElement('div'); t.id = 'aupd-toast';
+      t.style.cssText = 'position:fixed;left:50%;bottom:90px;transform:translateX(-50%);max-width:86vw;background:rgba(30,30,30,.92);color:#fff;padding:10px 16px;border-radius:12px;font-size:15px;z-index:2147483000;text-align:center';
+      document.body.appendChild(t);
+    }
+    t.textContent = m; t.style.display = 'block'; clearTimeout(say.tm); say.tm = setTimeout(function () { t.style.display = 'none'; }, 2600);
+  }
+  function busy() {
+    try { if (CFG.busy && CFG.busy()) return true; } catch (e) { }
+    try { if (window.CR) { var rl = window.CR.role; if (typeof rl === 'function') rl = rl(); if (rl || (typeof CR.on === 'function' && CR.on())) return true; } } catch (e) { }
+    try { if (window.CR321 && CR321.on && CR321.on()) return true; } catch (e) { }
+    try { if (window.MX && MX.busy && MX.busy()) return true; } catch (e) { }
+    try { if (window.speechSynthesis && speechSynthesis.speaking) return true; } catch (e) { }
+    try { var m = document.querySelectorAll('audio,video'); for (var i = 0; i < m.length; i++) { if (!m[i].paused && !m[i].ended && !m[i].muted && m[i].volume > 0) return true; } } catch (e) { }
+    try {
+      var a = document.activeElement;
+      if (a && (a.tagName === 'TEXTAREA' || (a.tagName === 'INPUT' && /^(text|search|url|email|tel|password|number|)$/i.test(a.type || '')) || a.isContentEditable) && (a.value || (a.isContentEditable && a.textContent))) return true;
+    } catch (e) { }
+    try { if (window.__recOn) return true; } catch (e) { }
+    try { if (document.querySelector('.rw-mask,.hlsheet-mask,.gxs-ov.on,.spk-now')) return true; } catch (e) { }
+    return false;
+  }
+  function bar(on) {
+    var b = document.getElementById('updbar');
+    if (!on) { if (b && b.parentNode) b.parentNode.removeChild(b); return; }
+    if (!b) {
+      b = document.createElement('div'); b.id = 'updbar'; b.className = 'updbar';
+      b.style.cssText = 'position:fixed;left:0;right:0;top:0;z-index:2147483000;background:#B98A2E;color:#fff;font-weight:700;text-align:center;font-size:15px;cursor:pointer;padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top,0px))';
+      b.onclick = function () { apply(ssGet('auTry') === U.target); };
+      document.body.appendChild(b);
+    }
+    b.textContent = T('newVer');
+  }
+  function verFetch(ok, fail) {
+    var x = new XMLHttpRequest();
+    try { x.open('GET', 'version.json?t=' + now(), true); } catch (e) { if (fail) fail(); return; }
+    try { x.setRequestHeader('Cache-Control', 'no-cache'); } catch (e) { }
+    x.timeout = 15000;
+    x.onload = function () { if (x.status >= 200 && x.status < 300) { try { return ok(JSON.parse(x.responseText)); } catch (e) { } } if (fail) fail(); };
+    x.onerror = x.ontimeout = function () { if (fail) fail(); };
+    x.send();
+  }
+  function reloadFresh() {
+    if (window.__reloading) return; window.__reloading = 1;
+    var s = location.search.replace(/([?&])u=\d+&?/, '$1').replace(/[?&]$/, '');
+    s += (s ? '&' : '?') + 'u=' + now();
+    try { location.replace(location.pathname + s + location.hash); } catch (e) { location.reload(); }
+  }
+  /* 換新檔之前先叫瀏覽器重抓主要檔案，免得重整後又讀到 HTTP 快取裡的舊檔 */
+  function prefetch(cb) {
+    var done = 0, fin = function () { if (!done) { done = 1; cb(); } };
+    setTimeout(fin, 2500);
+    try {
+      var seen = {}, urls = [], add = function (u) { if (u && !seen[u]) { seen[u] = 1; urls.push(u); } };
+      add(location.pathname); add(CFG.sw);
+      var ss = document.getElementsByTagName('script');
+      for (var i = 0; i < ss.length; i++) { if (ss[i].src && ss[i].src.indexOf(location.origin) === 0) add(ss[i].src); }
+      Promise.all(urls.map(function (u) { return fetch(u, { cache: 'reload' })['catch'](function () { }); })).then(fin, fin);
+    } catch (e) { fin(); }
+  }
+  /* 重整前先登出本 App 的 Service Worker：新舊 SW 交接的瞬間導覽請求會被舊 SW 卡住（實測 8 秒以上、
+     甚至讀到舊頁），登出後導覽直接走網路，重整後新頁面會重新註冊乾淨的新 SW。 */
+  function dropSW(done) {
+    var fired = 0, fin = function () { if (!fired) { fired = 1; done(); } };
+    setTimeout(fin, 1500);
+    try {
+      if (navigator.serviceWorker && navigator.serviceWorker.getRegistration) navigator.serviceWorker.getRegistration().then(function (r) { return r && r.unregister(); }).then(fin, fin);
+      else fin();
+    } catch (e) { fin(); }
+  }
+  function apply(hard) {
+    if (U.applying) return; U.applying = 1; setTimeout(function () { U.applying = 0; }, 12000);
+    bar(false); say(T('updating'));
+    ssSet('auTry', U.target || 'x'); if (hard) ssSet('auHard', U.target || 'x');
+    try { CFG.before(); } catch (e) { }
+    prefetch(function () {
+      if (!hard) { dropSW(function () { setTimeout(reloadFresh, 100); }); return; }
+      var jobs = [], go = function () { setTimeout(reloadFresh, 100); };
+      try { if (window.caches && caches.keys) jobs.push(caches.keys().then(function (ks) { return Promise.all(ks.filter(function (k) { return !CFG.pfx || k.indexOf(CFG.pfx) === 0; }).map(function (k) { return caches['delete'](k); })); })); } catch (e) { }
+      try { if (navigator.serviceWorker && navigator.serviceWorker.getRegistration) jobs.push(navigator.serviceWorker.getRegistration().then(function (r) { return r && r.unregister(); })); } catch (e) { }
+      if (window.Promise) Promise.all(jobs).then(go, go); else go();
+      setTimeout(go, 2000);
+    });
+  }
+  /* 空閒才套用；同一版：第一次一般更新、第二次硬更新、硬更新過仍是舊檔就只留更新條 */
+  function tick() {
+    if (!U.pending || busy()) return;
+    var v = U.target;
+    if (ssGet('auHard') === v) { U.pending = false; bar(true); return; }
+    apply(ssGet('auTry') === v);
+  }
+  function onNew(v) {
+    if (!v || v === ver()) return;
+    U.target = v; U.pending = true;
+    if (busy()) { bar(true); return; }
+    tick();
+  }
+  function check(manual) {
+    if (navigator.onLine === false) { if (manual) say(T('netErr')); return; }
+    if (manual) say(T('checking'));
+    try { if (U.reg) { var up = U.reg.update(); if (up && up['catch']) up['catch'](function () { }); } } catch (e) { }
+    verFetch(function (j) {
+      var v = j && (j.v || j.version); v = v ? String(v) : '';
+      if (v && v !== ver()) {
+        if (manual) { U.target = v; U.pending = false; say(T('found')); apply(ssGet('auTry') === v); }
+        else onNew(v);
+      } else if (manual) say(T('latest') + ver());
+    }, function () { if (manual) say(T('netErr')); });
+  }
+  function force() { U.target = U.target || 'force'; U.pending = false; apply(true); }
+  function register() {
+    if (!('serviceWorker' in navigator) || !/^https?:/.test(location.protocol)) return;
+    var sw = navigator.serviceWorker;
+    try {
+      sw.register(CFG.sw, { updateViaCache: 'none' }).then(function (reg) {
+        U.reg = reg;
+        var track = function (w) { if (w) w.addEventListener('statechange', function () { if (w.state === 'installed' && sw.controller) check(0); }); };
+        track(reg.installing); track(reg.waiting);
+        reg.addEventListener('updatefound', function () { track(reg.installing); });
+      })['catch'](function () { });
+    } catch (e) { }
+    /* 同網域的各 321 App 共用 origin，別支 App 的 SW 也可能廣播 sw-updated：只理會自己這支 sw.js 的通知，而且不直接相信版本字串，回頭讀 version.json 確認 */
+    sw.addEventListener('message', function (e) {
+      var d = e.data || {}; if (d.t !== 'sw-updated') return;
+      try { var src = e.source && e.source.scriptURL; if (src && src !== new URL(CFG.sw, location.href).href) return; } catch (x) { }
+      check(0);
+    });
+    sw.addEventListener('controllerchange', function () { if (U.target && !busy()) tick(); });
+  }
+  function init() {
+    if (U.inited) return; U.inited = 1;
+    if (!/^https?:/.test(location.protocol)) return;
+    try { if (/[?&]u=\d+/.test(location.search) && history.replaceState) { var s = location.search.replace(/([?&])u=\d+&?/, '$1').replace(/[?&]$/, ''); history.replaceState(null, '', location.pathname + s + location.hash); } } catch (e) { }
+    if (ssGet('auTry') && ssGet('auTry') === ver()) { ssSet('auTry', ''); ssSet('auHard', ''); setTimeout(function () { say(T('done') + ver()); }, 1200); }
+    register();
+    setTimeout(function () { check(0); }, 2500);
+    setInterval(function () { check(0); }, 30 * 60 * 1000);
+    setInterval(function () { if (U.pending) tick(); }, 15000);
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') check(0); });
+    window.addEventListener('pageshow', function (e) { if (e.persisted) check(0); });
+    window.addEventListener('online', function () { check(0); });
+  }
+  return { init: init, check: check, force: force, tick: tick, busy: busy, ver: ver, state: U };
+})();
+AUPD.init();
+function checkUpdate(manual) { AUPD.check(!!manual); }
 /* 321社交生活 · views (ES5) */
 var R = { tab: 'today', page: null, stack: [], sub: {} };
 var IC = {
@@ -1028,7 +1202,7 @@ for (var m = 0; m < ms.length; m++) h += '<option value="' + ms[m] + '"' + (S.mo
 h += '</select><input type="text" style="margin-top:10px" value="' + esc(S.name) + '" placeholder="' + esc(T('obName')) + '" oninput="S.name=this.value.slice(0,20);save()"></div>';
 h += '<div class="card"><p class="eyebrow">' + esc(T('offline')) + '</p><p class="sm muted" style="margin:0 0 8px">' + esc(T('offline_d')) + '</p><button class="btn full" onclick="dlAll()">⬇ ' + esc(T('dlAll')) + '</button><p class="xs muted" id="dlst"></p></div>';
 h += '<div class="card"><p class="eyebrow">' + esc(T('backup')) + '</p><div class="row"><button class="btn grow" onclick="dl(JSON.stringify(S),\'321social-backup.json\',\'application/json\')">' + esc(T('exportAll')) + '</button><button class="btn grow" onclick="$(\'#imp\').click()">' + esc(T('importAll')) + '</button></div><input type="file" id="imp" accept=".json,application/json" style="display:none" onchange="importAll(this)"></div>';
-h += '<div class="card"><p class="eyebrow">' + esc(T('about')) + '</p><p class="sm" style="margin:0 0 8px"><b>' + esc(T('appName')) + '</b> v' + esc(APPVER) + '</p><p class="sm muted" style="margin:0 0 8px">' + esc(T('aboutText')) + '</p><button class="btn sm" onclick="checkUpdate(1)">' + esc(T('checkUpd')) + '</button> <button class="btn sm" style="color:var(--bad)" onclick="if(confirm(T(\'resetConfirm\'))){localStorage.removeItem(KEY);location.reload()}">' + esc(T('reset')) + '</button></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('about')) + '</p><p class="sm" style="margin:0 0 8px"><b>' + esc(T('appName')) + '</b> v' + esc(APPVER) + '</p><p class="sm muted" style="margin:0 0 8px">' + esc(T('aboutText')) + '</p><button class="btn sm" onclick="checkUpdate(1)">' + esc(T('checkUpd')) + '</button> <button class="btn sm" onclick="AUPD.force()">' + (L() === 'en' ? 'Force update' : (L() === 'zs' ? '强制更新' : '強制更新')) + '</button> <button class="btn sm" style="color:var(--bad)" onclick="if(confirm(T(\'resetConfirm\'))){localStorage.removeItem(KEY);location.reload()}">' + esc(T('reset')) + '</button></div>';
 h += '<div class="foot">' + esc(T('foot')) + '</div>';
 $('#app').innerHTML = h;
 }
@@ -1182,17 +1356,6 @@ return h + '</svg>';
 window.onerror = function (m, src, line) { try { var t = $('#toast'); if (t) { t.textContent = 'Error: ' + m + ' @' + line; t.className = 'toast on'; } } catch (e) { } };
 (function boot() {
 render();
-if ('serviceWorker' in navigator && /^https?:/.test(location.protocol)) {
-navigator.serviceWorker.register('sw.js').then(function (reg) {
-reg.addEventListener && reg.addEventListener('updatefound', function () { });
-})['catch'](function () { });
-navigator.serviceWorker.addEventListener && navigator.serviceWorker.addEventListener('controllerchange', function () { if (!BUSY && !window.__reloading) { window.__reloading = 1; location.reload(); } });
-}
-if (/^https?:/.test(location.protocol)) {
-setTimeout(function () { checkUpdate(0); }, 3000);
-setInterval(function () { checkUpdate(0); }, 30 * 60 * 1000);
-document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') checkUpdate(0); });
-}
 window.addEventListener('popstate', function () { if (R.page) back(); });
 })();
 
