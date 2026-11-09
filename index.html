@@ -43,7 +43,7 @@ body.crOn .top{top:calc(40px + env(safe-area-inset-top));padding-top:10px}
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103-xz1103-au1103-xzm1103-rf1105-fw1105h-par1107-cs1109';
+var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103-xz1103-au1103-xzm1103-rf1105-fw1105h-par1107-cs1109-nv1109';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -409,9 +409,9 @@ var AUPD = (function () {
   };
   var U = { reg: null, target: '', pending: false, applying: 0, inited: 0 };
   var TX = {
-    zh: { newVer: '有新版本，點一下立即更新', updating: '正在更新到新版…', latest: '目前已是最新版 v', found: '找到新版本，正在更新…', foundBusy: '找到新版本，忙完就會自動更新', netErr: '無法檢查更新，請確認網路', checking: '檢查更新中…', done: '已更新到新版 v' },
-    zs: { newVer: '有新版本，点一下立即更新', updating: '正在更新到新版…', latest: '目前已是最新版 v', found: '找到新版本，正在更新…', foundBusy: '找到新版本，忙完就会自动更新', netErr: '无法检查更新，请确认网络', checking: '检查更新中…', done: '已更新到新版 v' },
-    en: { newVer: 'A new version is ready. Tap to update', updating: 'Updating to the new version…', latest: 'You are on the latest version v', found: 'New version found, updating…', foundBusy: 'New version found. It will update when you are idle', netErr: 'Cannot check for updates. Please check your connection', checking: 'Checking for updates…', done: 'Updated to version ' }
+    zh: { newVer: '有新版本，點一下立即更新', updating: '正在更新到新版…', latest: '目前已是最新版 v', found: '找到新版本，正在更新…', foundBusy: '找到新版本，忙完就會自動更新', netErr: '無法檢查更新，請確認網路', checking: '檢查更新中…', done: '已更新到最新版本' },
+    zs: { newVer: '有新版本，点一下立即更新', updating: '正在更新到新版…', latest: '目前已是最新版 v', found: '找到新版本，正在更新…', foundBusy: '找到新版本，忙完就会自动更新', netErr: '无法检查更新，请确认网络', checking: '检查更新中…', done: '已更新到最新版本' },
+    en: { newVer: 'A new version is ready. Tap to update', updating: 'Updating to the new version…', latest: 'You are on the latest version v', found: 'New version found, updating…', foundBusy: 'New version found. It will update when you are idle', netErr: 'Cannot check for updates. Please check your connection', checking: 'Checking for updates…', done: 'Updated to the latest version' }
   };
   function now() { return +new Date(); }
   function ver() { try { return String(CFG.ver()); } catch (e) { return ''; } }
@@ -561,7 +561,7 @@ var AUPD = (function () {
     if (U.inited) return; U.inited = 1;
     if (!/^https?:/.test(location.protocol)) return;
     try { if (/[?&]u=\d+/.test(location.search) && history.replaceState) { var s = location.search.replace(/([?&])u=\d+&?/, '$1').replace(/[?&]$/, ''); history.replaceState(null, '', location.pathname + s + location.hash); } } catch (e) { }
-    if (ssGet('auTry') && ssGet('auTry') === ver()) { ssSet('auTry', ''); ssSet('auHard', ''); setTimeout(function () { say(T('done') + ver()); }, 1200); }
+    if (ssGet('auTry') && ssGet('auTry') === ver()) { ssSet('auTry', ''); ssSet('auHard', ''); setTimeout(function () { say(T('done')); }, 1200); }
     register();
     setTimeout(function () { check(0); }, 2500);
     setInterval(function () { check(0); }, 30 * 60 * 1000);
