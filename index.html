@@ -29,6 +29,8 @@ body.crOn .top{top:calc(40px + env(safe-area-inset-top));padding-top:10px}
 .crqr{display:flex;justify-content:center}.crqr svg{width:200px;height:200px;background:#fff;border-radius:12px}
 .crcode{font-size:2em;font-weight:800;letter-spacing:.25em;color:var(--brand);font-family:ui-monospace,Menlo,monospace}
 .crsheet .pill{background:var(--soft);margin:2px;font-size:.9em}
+.cparbar{display:flex;justify-content:flex-end;margin:2px 0 10px}.cparbtn{border:1px solid rgba(128,128,128,.4);background:transparent;color:inherit;border-radius:999px;padding:6px 14px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;line-height:1.3}.cparbtn.on{background:rgba(128,128,128,.14);border-color:currentColor}
+.ocard .parS,.ocard .par{color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.5)}.ocard .par{background:rgba(255,255,255,.12)}
 </style>
 <style id="parcss">.par{margin:6px 0 14px;padding:8px 12px;border-left:3px solid var(--gold);background:var(--soft);border-radius:6px;font-size:.9em;color:var(--mute);line-height:1.75}.parS{display:block;margin:3px 0 12px;padding:1px 0 1px 10px;border-left:2px solid var(--gold);font-size:.86em;color:var(--mute);line-height:1.7;font-weight:400;font-style:normal;text-align:left}.scr .parS{margin:2px 0 8px}.par.pt{margin:2px 0 8px;padding:2px 10px;font-size:.85em}.ib.on{color:var(--gold)}</style>
 <style id="fw1105">.xzm.assistant{max-width:100%!important;width:100%;box-sizing:border-box}</style>
@@ -41,7 +43,7 @@ body.crOn .top{top:calc(40px + env(safe-area-inset-top));padding-top:10px}
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103-xz1103-au1103-xzm1103-rf1105-fw1105h-par1107';
+var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103-xz1103-au1103-xzm1103-rf1105-fw1105h-par1107-cs1109';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -135,7 +137,11 @@ getJSON(['t-' + lang + '.json', 'content/t-' + lang + '.json'], function (j) { T
 }
 /* ---------- 雙語並讀（逐句）---------- */
 var PAR_L = [['zh', '繁', 'zh-Hant'], ['zs', '简', 'zh-Hans'], ['en', 'EN', 'en']];
-function parOn() { return S.par && S.par !== L() ? S.par : ''; }
+/* cs1109 中英並讀：S.par 與全系列共用的 localStorage cpar321（'1'／''）同步——開 App 時依 cpar321 開關，之後只有使用者在本 App 改動並讀時才寫回 cpar321（不因只是看過而覆蓋別的 App 的設定） */
+var CPAR_A=0,CPAR_W=null;
+function cparDef(){return L()==='en'?'zh':'en';}
+function parOn(){var g=S&&S.par&&S.par!==L()?S.par:'';try{var c=localStorage.getItem('cpar321');if(!CPAR_A&&S){CPAR_A=1;if(c==='1'&&!g){S.par=cparDef();save();g=S.par;}else if(c===''&&g){S.par='';save();g='';}CPAR_W=g?'1':'';}else if(CPAR_A){var w=g?'1':'';if(w!==CPAR_W){CPAR_W=w;localStorage.setItem('cpar321',w);}}}catch(e){}return g;}
+function cparBar(){var g=parOn(),l=L(),t=l==='en'?['Chinese parallel','On','Off']:l==='zs'?['中英并读','开','关']:l==='ko'?['영어 병행 읽기','켬','끔']:['中英並讀','開','關'];return '<div class="cparbar"><button class="cparbtn'+(g?' on':'')+'" onclick="cparTog()" aria-pressed="'+(g?'true':'false')+'">🌐 '+t[0]+(l==='en'||l==='ko'?': ':'：')+(g?t[1]:t[2])+'</button></div>';}
 window.XZPAR_HOST = { on: function () { return parOn(); } };
 function parLang() { var g = parOn(), r = 'en'; eachA(PAR_L, function (x) { if (x[0] === g) r = x[2]; }); return r; }
 function splitBy(t, zh) { t = String(t == null ? '' : t); var out = [], m, re;
@@ -160,6 +166,9 @@ function parGroups(arr, ptxt) { if (!ptxt || !parOn()) return null; var pp = Str
 function getParWeek(w, cb) { var g = parOn(); if (!g) return cb(null); loadStageL(g, stageOf(w), function (m) { cb(m ? m[w] : null); }); }
 function parBtn() { var g = parOn(), lb = '⇄'; eachA(PAR_L, function (x) { if (x[0] === g) lb = x[1]; }); return '<button class="ib' + (g ? ' on' : '') + '" onclick="parTog()" aria-label="parallel" style="font-size:15px;font-weight:700">' + lb + '</button>'; }
 function parTog() { var po = ['']; eachA(PAR_L, function (x) { if (x[0] !== L()) po.push(x[0]); }); var ix = po.indexOf(S.par || ''); S.par = po[(ix + 1) % po.length]; save(); var y = window.pageYOffset; render(); window.scrollTo(0, y); }
+/* cs1109：另一語言的工具資料（行動卡、問答…）給並讀用 */
+function toolsAlt(cb) { var g = parOn(); if (!g) return cb(null); if (TOOLS[g]) return cb(TOOLS[g]); getJSON(['t-' + g + '.json', 'content/t-' + g + '.json'], function (j) { TOOLS[g] = j; cb(j); }, function () { cb(null); }); }
+function cparTog() { S.par = parOn() ? '' : cparDef(); save(); var y = window.pageYOffset; render(); window.scrollTo(0, y); }
 function parSet(g) { S.par = g; save(); render(); }
 /* ---------- progress ---------- */
 function weekDone(w) { var n = 0; for (var d = 1; d <= 5; d++) if (S.done[lid(w, d)]) n++; return n; }
@@ -873,7 +882,7 @@ getParWeek(w, function (PX) {
 var PL = PX && PX.lessons && PX.lessons[d - 1];
 var l = wk.lessons[d - 1], id = lid(w, d), s = stageOf(w), nt = S.notes[id] || {};
 var right = '<button class="ib" onclick="open_({t:\'lesson\',w:' + w + ',d:' + d + (q ? '' : ',q:1') + '});R.stack.pop()">' + esc(q ? T('full') : T('quick3')) + '</button>';
-var h = topbar(wkLabel(w) + ' · ' + T('dN', d), true, parBtn() + right);
+var h = topbar(wkLabel(w) + ' · ' + T('dN', d), true, parBtn() + right) + cparBar();
 h += '<div class="stage" style="--sc:' + SCOL[s] + ';margin-top:4px"><span class="tag">' + esc(stageName(s) + ' · ' + unitName(unitOf(w))) + '</span><p class="eyebrow" style="margin-top:8px">' + esc(wk.title + ' · ' + l.step) + '</p><div class="h2" style="font-size:1.5em">' + esc(l.title) + '</div>' + PBt(PL && PL.title) + '</div>';
 var verses = '';
 var pv = {}; if (PL && PL.text && parOn()) for (var pi_ = 0; pi_ < PL.text.length; pi_++) pv[PL.text[pi_][0] + ':' + PL.text[pi_][1]] = PL.text[pi_][2];
@@ -932,7 +941,7 @@ getWeek(w, function (wk, err) {
 if (!wk) return loadErr(wkLabel(w), err, 'render()');
 getParWeek(w, function (PW) {
 var s = stageOf(w);
-var h = topbar(wkLabel(w), true, parBtn());
+var h = topbar(wkLabel(w), true, parBtn()) + cparBar();
 h += '<div class="card stage" style="--sc:' + SCOL[s] + '"><span class="tag">' + esc(stageName(s) + ' · ' + unitName(unitOf(w))) + '</span><div class="h2" style="margin-top:8px">' + esc(wk.title) + '</div>' + PBt(PW && PW.title) + '<p class="kv" style="margin:6px 0">' + ilv(wk.theme, PW && PW.theme) + '</p><hr class="s"><p class="eyebrow">' + esc(T('memory')) + ' · ' + esc(wk.kl) + '</p><p class="kv" style="margin:0">' + ilv(wk.keyText, PW && PW.keyText) + '</p><div style="text-align:right"><button class="play" onclick="speak(\'' + esc(wk.keyText).replace(/'/g, '') + '\',\'' + esc(wk.kl) + '\')">🔊 ' + esc(T('listen')) + '</button></div></div>';
 h += '<div class="card">';
 for (var d = 1; d <= 5; d++) {
@@ -1028,18 +1037,19 @@ h += '<div class="tile" onclick="open_({t:\'card\',id:\'' + k.id + '\'})"><span 
 return h + '</div>';
 }
 function vCard(id) {
-loadTools(function (t) {
+loadTools(function (t) { toolsAlt(function (ta) {
 var c = null; for (var i = 0; i < t.cards.length; i++) if (t.cards[i].id === id) c = t.cards[i];
 if (!c) return back();
-var h = topbar(c.t, true);
-h += '<div class="ocard"><div class="h2" style="color:#fff">' + esc(c.t) + '</div><div class="v">' + esc(c.v) + '</div><div class="r">' + esc(c.rl) + '</div></div>';
-h += '<div class="card"><p class="eyebrow">' + esc(T('doThis')) + '</p><div class="do">' + esc(c.a) + '</div><div class="q" style="margin-top:12px"><label class="sm">' + esc(T('forWhom')) + '</label><input type="text" id="cfor" placeholder="' + esc(T('forWhomPh')) + '"></div><button class="btn pri full" onclick="cardDid(\'' + c.id + '\')">' + esc(T('iDidIt')) + '</button></div>';
+var c2 = null; if (ta && ta.cards) for (var i2 = 0; i2 < ta.cards.length; i2++) if (ta.cards[i2].id === id) c2 = ta.cards[i2];
+var h = topbar(c.t, true) + cparBar();
+h += '<div class="ocard"><div class="h2" style="color:#fff">' + esc(c.t) + '</div>' + PBt(c2 && c2.t) + '<div class="v">' + ilv(c.v, c2 && c2.v) + '</div><div class="r">' + esc(c.rl) + '</div></div>';
+h += '<div class="card"><p class="eyebrow">' + esc(T('doThis')) + '</p><div class="do">' + ilv(c.a, c2 && c2.a) + '</div><div class="q" style="margin-top:12px"><label class="sm">' + esc(T('forWhom')) + '</label><input type="text" id="cfor" placeholder="' + esc(T('forWhomPh')) + '"></div><button class="btn pri full" onclick="cardDid(\'' + c.id + '\')">' + esc(T('iDidIt')) + '</button></div>';
 var logs = '';
 for (var j = S.cardLog.length - 1; j >= 0; j--) if (S.cardLog[j].id === id) logs += '<div class="mini"><span class="xs muted">' + fmtDate(S.cardLog[j].ts) + '</span><span>' + esc(S.cardLog[j].who || '—') + '</span></div>';
 if (logs) h += '<div class="card"><p class="eyebrow">' + esc(T('history')) + '</p>' + logs + '</div>';
 h += '<button class="btn full" onclick="speak(\'' + esc(c.v).replace(/'/g, '') + '\',\'' + esc(c.rl) + '\')">🔊 ' + esc(T('listen')) + '</button>';
 $('#app').innerHTML = h;
-});
+}); });
 }
 function cardDid(id) {
 var who = ($('#cfor').value || '').slice(0, 30);
@@ -1138,11 +1148,11 @@ function newRecon() { var w = ($('#rcw').value || '').replace(/^\s+|\s+$/g, '').
 function vRecon(id) {
 var r = null; for (var i = 0; i < S.rc.length; i++) if (S.rc[i].id === id) r = S.rc[i];
 if (!r) return back();
-loadTools(function (t) {
-var st = t.recon.steps[r.step], h = topbar(T('seg_recon') + ' · ' + r.who, true);
+loadTools(function (t) { toolsAlt(function (ta) {
+var st = t.recon.steps[r.step], st2 = ta && ta.recon && ta.recon.steps ? ta.recon.steps[r.step] : null, h = topbar(T('seg_recon') + ' · ' + r.who, true) + cparBar();
 var dots = ''; for (var k = 0; k < t.recon.steps.length; k++) dots += '<i class="' + (k <= r.step ? 'on' : '') + '"></i>';
-h += '<div class="card"><div class="row sp"><span class="tag">' + esc(T('stepN', r.step + 1, t.recon.steps.length)) + '</span><span class="dots">' + dots + '</span></div><div class="h2" style="margin-top:8px">' + esc(st.t) + '</div><p class="eyebrow">' + esc(st.rl) + '</p><p class="kv" style="margin:0 0 10px">' + esc(st.v) + '</p><p>' + esc(st.d) + '</p>';
-for (var q = 0; q < st.q.length; q++) { var key = r.step + '_' + q; h += '<div class="q"><label>' + esc(st.q[q]) + '</label><textarea oninput="rcSave(\'' + id + '\',\'' + key + '\',this.value)">' + esc(r.a[key] || '') + '</textarea></div>'; }
+h += '<div class="card"><div class="row sp"><span class="tag">' + esc(T('stepN', r.step + 1, t.recon.steps.length)) + '</span><span class="dots">' + dots + '</span></div><div class="h2" style="margin-top:8px">' + esc(st.t) + '</div>' + PBt(st2 && st2.t) + '<p class="eyebrow">' + esc(st.rl) + '</p><p class="kv" style="margin:0 0 10px">' + ilv(st.v, st2 && st2.v) + '</p><p>' + ilv(st.d, st2 && st2.d) + '</p>';
+for (var q = 0; q < st.q.length; q++) { var key = r.step + '_' + q; h += '<div class="q"><label>' + ilv(st.q[q], st2 && st2.q && st2.q[q]) + '</label><textarea oninput="rcSave(\'' + id + '\',\'' + key + '\',this.value)">' + esc(r.a[key] || '') + '</textarea></div>'; }
 if (r.step === 2) { h += '<p class="eyebrow">' + esc(T('openers')) + '</p>'; for (var o = 0; o < t.recon.opens.length; o++) h += '<div class="mini" onclick="copyText(this.textContent)" style="cursor:pointer">💬 ' + esc(t.recon.opens[o]) + '</div>'; }
 h += '</div><div class="row">' + (r.step > 0 ? '<button class="btn grow" onclick="rcStep(\'' + id + '\',-1)">‹ ' + esc(T('prev')) + '</button>' : '') +
 (r.step < t.recon.steps.length - 1 ? '<button class="btn pri grow" onclick="rcStep(\'' + id + '\',1)">' + esc(T('nextStep')) + ' ›</button>' : '<button class="btn gold grow" onclick="rcDone(\'' + id + '\')">' + esc(T('reconDone')) + '</button>') + '</div>';
@@ -1150,7 +1160,7 @@ h += '<p class="xs muted c" style="margin-top:14px">' + esc(T('reconPrivate')) +
 h += '<button class="btn full" style="margin-top:6px" onclick="openXz(T(\'xzRecon\'))">💬 ' + esc(T('askXz')) + '</button>';
 h += '<button class="btn full" style="margin-top:8px;color:var(--bad)" onclick="if(confirm(T(\'delConfirm\'))){delRc(\'' + id + '\')}">' + esc(T('delete')) + '</button>';
 $('#app').innerHTML = h;
-});
+}); });
 }
 function rcSave(id, k, v) { for (var i = 0; i < S.rc.length; i++) if (S.rc[i].id === id) S.rc[i].a[k] = v; save(); }
 function rcStep(id, n) { for (var i = 0; i < S.rc.length; i++) if (S.rc[i].id === id) S.rc[i].step = Math.max(0, S.rc[i].step + n); save(); render(); window.scrollTo(0, 0); }
