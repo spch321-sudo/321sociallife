@@ -637,7 +637,7 @@ XZM.preset.lesson = function (o) {
   function chatEls() { var r = root(); return r ? arr(r.querySelectorAll('.sent.xzs')) : []; }
   function isChatEl(e) { return !!(e && e.classList && e.classList.contains('xzs') && e.closest && e.closest('#xz')); }
   function zRec(k) { return /^[a-z]+\|z:/.test(k); }
-  function zKeys() { var h = HLS(), out = [], k; for (k in h) if (h.hasOwnProperty(k) && zRec(k) && (h[k].lang || 'zh') === g(function () { return L(); }, 'zh')) out.push(k); return out; }
+  function zKeys() { var h = HLS(), out = [], k; for (k in h) if (h.hasOwnProperty(k) && zRec(k) && (h[k].lang || 'zh') === g(function () { return (typeof LX === 'function' ? LX() : L()); }, 'zh')) out.push(k); return out; }
   function refFor(el) {
     var id = X.parse(el.getAttribute('data-xk')).id, m = X.msgById(id), at = m && (m.ts || m.at);
     return T('小智', 'Xiaozhi') + (at ? ' · ' + g(function () { return new Date(at).toLocaleDateString(); }, '') : '');
@@ -646,7 +646,7 @@ XZM.preset.lesson = function (o) {
 
   XZM._mis = MIS;
   var A = {
-    lang: function () { var l = g(function () { return L(); }, 'zh'); return l === 'en' ? 'en' : (l === 'zs' ? 'sc' : 'tc'); },
+    lang: function () { var l = g(function () { return (typeof LX === 'function' ? LX() : L()); }, 'zh'); return l === 'en' ? 'en' : (l === 'zs' ? 'sc' : 'tc'); },
     toast: function (m) { g(function () { toast(m); }); },
     msgs: function () { return CH(); },
     isDone: function (m) { return !!(m && m.role !== 'user' && m.ok && !m.wait && !m.cont && !m.err); },
@@ -1348,7 +1348,7 @@ XZM.preset.mix2 = function (o) {
     function nativeSay(text, done) {
       try {
         if (!window.speechSynthesis) return done();
-        var u = new SpeechSynthesisUtterance(text), l = g(function () { return L(); }, 'zh');
+        var u = new SpeechSynthesisUtterance(text), l = g(function () { return (typeof LX === 'function' ? LX() : L()); }, 'zh');
         u.lang = l === 'en' ? 'en-US' : (l === 'zs' ? 'zh-CN' : 'zh-TW'); u.rate = 1;
         u.onend = u.onerror = function () { done(); };
         speechSynthesis.speak(u);
