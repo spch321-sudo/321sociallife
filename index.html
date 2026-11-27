@@ -43,7 +43,7 @@ body.crOn .top{top:calc(40px + env(safe-area-inset-top));padding-top:10px}
 <div id="toast" class="toast"></div>
 <script>
 /* 321社交生活 · core (ES5) */
-var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103-xz1103-au1103-xzm1103-rf1105-fw1105h-par1107-cs1109-nv1109-lg1111-ml1127';
+var APPVER = '1.0.202610050829-gx10171750-gxa1019-vp1023-cr1031-ws3-fs1103-xz1103-au1103-xzm1103-rf1105-fw1105h-par1107-cs1109-nv1109-lg1111-ml1127-w1';
 var KEY = 'sl321';
 var SVC = { xz: 'https://xiaozhi-proxy.spch321.workers.dev', tts: 'https://azure-tts.spch321.workers.dev', model: 'claude-sonnet-4-6' };
 var STAGES = [[1, 1, 8, 's1'], [2, 9, 21, 's2'], [3, 22, 30, 's3'], [4, 31, 44, 's4'], [5, 45, 52, 's5']];
@@ -142,7 +142,10 @@ if (CACHE[k]) return cb(CACHE[k]);
 getJSON([stageFile(lang, s), 'content/' + stageFile(lang, s)], function (j) {
 var m = {};
 for (var i = 0; i < j.weeks.length; i++) m[j.weeks[i].w] = j.weeks[i];
-CACHE[k] = m; cb(m);
+if (!NL[lang]) { CACHE[k] = m; return cb(m); }
+/* ml1127：新增語言的課程檔是「已翻譯的週」；沒翻到的週留英文 */
+var own = 'c-' + lang + '-s' + s + '.json';
+getJSON([own], function (t) { for (var q = 0; q < t.weeks.length; q++) m[t.weeks[q].w] = t.weeks[q]; CACHE[k] = m; cb(m); }, function () { CACHE[k] = m; cb(m); });
 }, function (err) { cb(null, err); });
 }
 function getWeek(w, cb) {
@@ -1355,7 +1358,7 @@ $('#app').innerHTML = h;
 function setLang(l) { loadPack(l, function () { stopSpeak(); S.lang = l; if (S.par === l) S.par = ''; S.set.voice = ''; save(); XZ.msgs = []; render(); }); }
 function dlAll() {
 var files = [], langs = [L()], n = 0;
-for (var s = 1; s <= 5; s++) files.push(stageFile(L(), s));
+for (var s = 1; s <= 5; s++) { files.push(stageFile(L(), s)); if (NL[L()]) files.push('c-' + L() + '-s' + s + '.json'); }
 files.push('t-' + L() + '.json', 'hero.jpg', 'hero-s.jpg'); if (NL[L()]) files.push('lang-' + L() + '.json');
 var st = $('#dlst');
 for (var i = 0; i < files.length; i++) (function (f) {
